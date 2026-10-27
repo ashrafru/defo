@@ -105,6 +105,42 @@
     await Promise.all([0, 1, 2].map(async () => { while (next < all.length) { const h = all[next++]; for (let i = 0; i < info.parts[h].n; i++) await chunk(cache, h, i, n => { done += n; onProgress && onProgress(done, total); }); } }));
   }
 
+  /* Android app: unpack a tool once into the app's own storage, part by part, so the
+     phone never holds more than one part in memory. Each part is checked against its
+     SHA-256 name; the file size is checked at the end. Returns a URL for the iframe. */
+  function toB64(bytes) {
+    let s = '';
+    for (let i = 0; i < bytes.length; i += 0x8000) s += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000));
+    return btoa(s);
+  }
+  async function installNative(id, onProgress) {
+    const C = g.Capacitor, FS = C.Plugins.Filesystem;
+    const info = await manifest(); const mod = info.modules[id];
+    if (!mod) throw new Error('Unknown tool: ' + id);
+    const path = 'tools/' + id + '-' + mod.sha256.slice(0, 16) + '.html';
+    try { const st = await FS.stat({ path, directory: 'DATA' }); if (Number(st.size) === mod.size) return C.convertFileSrc(st.uri); } catch (e) {}
+    const total = mod.parts.reduce((s, h) => s + info.parts[h].raw, 0); let done = 0;
+    const tmp = path + '.part'; let first = true;
+    for (const h of mod.parts) {
+      const raw = await part(null, info, h);
+      if (g.crypto && crypto.subtle) {
+        const d = hex(await crypto.subtle.digest('SHA-256', raw));
+        if (!d.startsWith(h)) throw new Error('A part of this tool failed its checksum. Reinstall the app.');
+      }
+      for (let i = 0; i < raw.length; i += 3 * 1024 * 1024) {
+        const data = toB64(raw.subarray(i, i + 3 * 1024 * 1024));
+        if (first) { await FS.writeFile({ path: tmp, data, directory: 'DATA', recursive: true }); first = false; }
+        else await FS.appendFile({ path: tmp, data, directory: 'DATA' });
+      }
+      done += raw.length; onProgress && onProgress(done, total);
+    }
+    try { await FS.deleteFile({ path, directory: 'DATA' }); } catch (e) {}
+    await FS.rename({ from: tmp, to: path, directory: 'DATA', toDirectory: 'DATA' });
+    const st = await FS.stat({ path, directory: 'DATA' });
+    if (Number(st.size) !== mod.size) { try { await FS.deleteFile({ path, directory: 'DATA' }); } catch (e) {} throw new Error('This tool did not unpack correctly. Please try again.'); }
+    return C.convertFileSrc(st.uri);
+  }
+
   /* Makes sure every stored part of one tool is on this device, with progress. */
   async function prefetch(id, onProgress) {
     const info = await manifest(); const mod = info.modules[id];
@@ -116,5 +152,5 @@
 
   async function clear() { await caches.delete(PARTS_CACHE); manifestPromise = null; }
 
-  g.AWStore = { manifest, build, prefetch, status, downloadAll, clear };
+  g.AWStore = { manifest, build, prefetch, installNative, status, downloadAll, clear };
 })(self);

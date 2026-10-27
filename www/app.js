@@ -85,7 +85,10 @@ async function loadInto(tab) {
   const cover = el('div', 'loading'); const label = el('div', '', 'Preparing ' + module.short + '…'); const meter = el('div', 'meter'); const bar = el('i'); meter.append(bar); cover.append(label, meter); host.append(cover);
   try {
     const progress = (done, total) => { bar.style.width = Math.min(100, done / total * 100) + '%'; label.textContent = done < total ? 'Downloading ' + module.short + ' · ' + mb(done) + ' of ' + mb(total) : 'Opening ' + module.short + '…'; };
-    if (useSW) {
+    if (NATIVE) {
+      const unpack = (done, total) => { bar.style.width = Math.min(100, done / total * 100) + '%'; label.textContent = done < total ? 'Preparing ' + module.short + ' for first use · ' + Math.round(done / total * 100) + '%' : 'Opening ' + module.short + '…'; };
+      frame.src = await AWStore.installNative(module.id, unpack);
+    } else if (useSW) {
       await AWStore.prefetch(module.id, progress);
       frame.src = 'modules/' + module.id + '.html';
     } else {
