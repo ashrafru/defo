@@ -1,0 +1,17 @@
+Polaris Launcher 1.5.2
+
+The controller is AGPL-3.0-or-later. Its complete source is in SOURCE.
+The twenty-four original tools are by James Alexander. They are unchanged in
+_internal/modules, with their code, copyrights, engine source archives and
+legal notices intact. Consult each HTML for the applicable notices.
+Swiss Ephemeris: Astrodienst AG. WASM packaging: Kuntay Erkus.
+
+Python 3.12.14: Python Software Foundation and contributors, PSF license.
+Source: https://www.python.org/downloads/source/
+PyInstaller 6.22.3: contributors, GPL with bootloader exception.
+Source: https://github.com/pyinstaller/pyinstaller
+
+Edge/Chrome are separately installed software, not bundled in this package.
+No Qt, PySide or QtWebEngine components are included in this launcher.
+
+Ascensional Transits includes Astronomy Engine under its embedded MIT license.

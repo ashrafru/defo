@@ -1,0 +1,20 @@
+{
+  "appId": "nz.co.ashnet.astrologersworkbench",
+  "appName": "Astrologers' Workbench",
+  "webDir": "www",
+  "android": {
+    "allowMixedContent": false,
+    "webContentsDebuggingEnabled": false
+  },
+  "server": {
+    "androidScheme": "https"
+  },
+  "plugins": {
+    "SystemBars": {
+      "insetsHandling": "css",
+      "initialViewportFitValueHint": "cover",
+      "style": "DARK"
+    }
+  },
+  "backgroundColor": "#101f2c"
+}

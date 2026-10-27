@@ -1,0 +1,17 @@
+{
+  "name": "The Astrologers’ Workbench",
+  "short_name": "Workbench",
+  "description": "36 rectification and predictive astrology tools by James Alexander, with Isaac Starkman and Juan Estadella.",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#101f2c",
+  "theme_color": "#101f2c",
+  "icons": [
+    {"src": "img/icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "img/icon-512.png", "sizes": "512x512", "type": "image/png"},
+    {"src": "img/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}

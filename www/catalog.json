@@ -1,0 +1,290 @@
+[
+  {
+    "id": "PSSR_Sieve",
+    "name": "PSSR Sieve",
+    "short": "PSSR Sieve",
+    "group": "Narrow the range",
+    "description": "Trim the birth-time range using relevant precessed solar return contacts.",
+    "keywords": "filter ranges pssr"
+  },
+  {
+    "id": "TheSieve",
+    "name": "The Sieve",
+    "short": "The Sieve",
+    "group": "Narrow the range",
+    "description": "Explore birth-time intervals with secondary progression constraints.",
+    "keywords": "secondary progressions filter"
+  },
+  {
+    "id": "Polaris2",
+    "name": "Polaris2",
+    "short": "Polaris2",
+    "group": "Find candidate times",
+    "description": "Scan candidate birth times against a biography of dated events.",
+    "keywords": "rectifier rectification rank score polaris2"
+  },
+  {
+    "id": "TBCM",
+    "name": "Birthtime Convergence Matrix",
+    "short": "TBCM",
+    "group": "Find candidate times",
+    "description": "Compare bands of time and exact contacts across events.",
+    "keywords": "tbcm matrix partile"
+  },
+  {
+    "id": "TPD_AnchorMapper",
+    "name": "TPD Anchor Mapper",
+    "short": "TPD Anchor Mapper",
+    "group": "Find candidate times",
+    "description": "Find exact birthtimes implied by high-scoring TPD event contacts and inspect where events converge in birthtime and RAMC.",
+    "keywords": "convergence anchor mapper exact partile primary directions isaac weights ramc cluster bands biography events"
+  },
+  {
+    "id": "TPD_ContactNavigator",
+    "name": "Contact Navigator",
+    "short": "Contact Navigator",
+    "group": "Find candidate times",
+    "description": "Move to the previous or next event-relevant primary direction.",
+    "keywords": "tpd exact jump previous next"
+  },
+  {
+    "id": "TPD_3xCompare",
+    "name": "TPD Three-Time Compare",
+    "short": "TPD Three-Time Compare",
+    "group": "Find candidate times",
+    "description": "Compare three candidate birth times live against the same event using primary directions.",
+    "keywords": "three birthtimes live comparison primary directions tpd"
+  },
+  {
+    "id": "EpochFinder",
+    "name": "Epoch Chart Finder",
+    "short": "Epoch Finder",
+    "group": "Explore the epoch",
+    "description": "Find five lunar crossings before birth and highlight the one closest to 273 days before birth.",
+    "keywords": "epoch conception moon ascendant descendant lunar crossings prenatal"
+  },
+  {
+    "id": "TopocentricPrimaryDirections2",
+    "name": "Epoch / Radix Directions",
+    "short": "Epoch / Radix Directions",
+    "group": "Explore the epoch",
+    "description": "Compare Epoch and natal primary directions, including contacts between the two charts.",
+    "keywords": "topocentric primary directions 2 epoch radix natal cross chart"
+  },
+  {
+    "id": "DualTest",
+    "name": "Dual-Test · Radix & Epoch Studio",
+    "short": "Dual-Test",
+    "group": "Explore the epoch",
+    "description": "Compare radix, epoch and their interaction across nine panels of primary directions, secondary progressions and PSSR.",
+    "keywords": "dual test radix epoch studio nine panels interaction"
+  },
+  {
+    "id": "AgeHarmonics",
+    "name": "Age Harmonics",
+    "short": "Age Harmonics",
+    "group": "Age Harmonics",
+    "description": "Calculate internal age harmonic aspects for an event, with category highlighting and ratings.",
+    "keywords": "fractional age internal aspects event isaac weights"
+  },
+  {
+    "id": "AgeHarmonics_Research",
+    "name": "Age Harmonics Research",
+    "short": "AH Research",
+    "group": "Age Harmonics",
+    "description": "Research age harmonics using database charts and dated events, with a Power write-up across the event list.",
+    "keywords": "research age harmonics database events biography power write up isaac"
+  },
+  {
+    "id": "AgeHarmonicsHitlist",
+    "name": "Age Harmonics Hitlist",
+    "short": "AH Hitlist",
+    "group": "Age Harmonics",
+    "description": "Find exact age-harmonic contacts over a date range, with event-category points, full orb windows and text exports.",
+    "keywords": "age harmonics hitlist timeline exact contacts event category isaac weights highlighted orb entry exit"
+  },
+  {
+    "id": "AgeHarmonicsLive",
+    "name": "Age Harmonics Live",
+    "short": "AH Live Chart",
+    "group": "Age Harmonics",
+    "description": "Watch the current age-harmonic chart update with the clock, or select a date, with glyphs and aspect connections.",
+    "keywords": "age harmonics live chart clock current date arbitrary date glyphs aspects"
+  },
+  {
+    "id": "MidpointLab",
+    "name": "Midpoint Lab",
+    "short": "Midpoint Lab",
+    "group": "Explore the chart",
+    "description": "Explore midpoint structures on 45° and 22.5° dials or trees, with Witte reference context and optional hypothetical planets.",
+    "keywords": "midpoints dial wheel trees witte hamburg hypotheticals transneptunian symmetry"
+  },
+  {
+    "id": "FixedStarParans",
+    "name": "Fixed Star Parans",
+    "short": "Fixed Star Parans",
+    "group": "Explore the chart",
+    "description": "Inspect fixed stars on the angles and daily parans, with natal, current-time and live views.",
+    "keywords": "fixed stars parans angular sky rising setting culminating natal daily live"
+  },
+  {
+    "id": "CentralScrutinizer",
+    "name": "Central Scrutinizer",
+    "short": "Central Scrutinizer",
+    "group": "Inspect an event",
+    "description": "Load database cases and life events into nine connected systems, with shared birth data, highlighting and exports.",
+    "keywords": "central scrutinizer studio database nine systems primary directions age harmonics pssr progressions arcs transits biography"
+  },
+  {
+    "id": "StudioHitlist",
+    "name": "Studio Hitlists",
+    "short": "Studio Hitlists",
+    "group": "Inspect an event",
+    "description": "Follow chronological lists of exact contacts across seven systems, with event-category highlighting and ratings.",
+    "keywords": "running hitlist forming date range primary directions progressions arcs transits seven panels"
+  },
+  {
+    "id": "Timeline",
+    "name": "Timeline",
+    "short": "Timeline",
+    "group": "Inspect an event",
+    "description": "Explore primary directions, secondary and tertiary progressions, and outer-planet transits together on a zoomable timeline.",
+    "keywords": "calendar timeline exact contacts orb intervals chronological date range"
+  },
+  {
+    "id": "TPD_Pair_Timeline",
+    "name": "TPD Pair Timeline",
+    "short": "TPD Pair Timeline",
+    "group": "Inspect an event",
+    "description": "Compare two factors in both directions on a calendar, with orb spans, life events and Isaac-weighted event aspects.",
+    "keywords": "direction pair timeline topocentric primary directions direct converse orb windows database biography events isaac"
+  },
+  {
+    "id": "TPD_Event_Timeline",
+    "name": "TPD Event Timeline",
+    "short": "TPD Event Timeline",
+    "group": "Inspect an event",
+    "description": "Compare event-relevant primary directions with dated life events on a shared timeline.",
+    "keywords": "topocentric primary directions timeline events biography isaac points"
+  },
+  {
+    "id": "TPD_Event_Meters",
+    "name": "TPD Event Meters",
+    "short": "TPD Event Meters",
+    "group": "Inspect an event",
+    "description": "Review weighted primary-direction scores across life events using compact meters and inspect each event’s contacts.",
+    "keywords": "tpd primary directions meters score isaac events database average birthtime"
+  },
+  {
+    "id": "CuspCategoryGraph",
+    "name": "Cusp Category Graph",
+    "short": "Cusp Category Graph",
+    "group": "Inspect an event",
+    "description": "Graph cusp-axis activity and normalized event-category scores across selected systems over time.",
+    "keywords": "timeline cusp category graph activation primary directions progressions arcs transits isaac weights"
+  },
+  {
+    "id": "HouseActivationTimeline",
+    "name": "House Activation Timeline",
+    "short": "House Activation Timeline",
+    "group": "Inspect an event",
+    "description": "Explore twelve houses across nine systems with a heatmap, house-activation graph and contact inspector.",
+    "keywords": "house activation timeline heatmap graph cusp systems agreeing contact intensity profile"
+  },
+  {
+    "id": "CategoryActivationTimeline",
+    "name": "Category Activation Timeline",
+    "short": "Category Activation Timeline",
+    "group": "Inspect an event",
+    "description": "Explore event-category activation over time with a heatmap, category graph and weighted-contact inspector.",
+    "keywords": "category activation timeline heatmap graph events isaac score systems agreeing examine date"
+  },
+  {
+    "id": "TopocentricPrimaryDirections",
+    "name": "Topocentric Primary Directions",
+    "short": "Primary Directions",
+    "group": "Inspect an event",
+    "description": "Calculate primary directions for a single date or a date range.",
+    "keywords": "tpd topocentric kuhr"
+  },
+  {
+    "id": "TPD_BiWheel",
+    "name": "TPD Bi-Wheel",
+    "short": "TPD Bi-Wheel",
+    "group": "Inspect an event",
+    "description": "View direct or converse Topocentric Primary Directions alongside the natal chart in a bi-wheel for a selected date.",
+    "keywords": "topocentric primary directions natal biwheel wheel chart direct converse kuhr naibod"
+  },
+  {
+    "id": "PSSR_Aspects",
+    "name": "PSSR Aspects",
+    "short": "PSSR Aspects",
+    "group": "Inspect an event",
+    "description": "Inspect, sort and highlight precessed solar return aspects.",
+    "keywords": "precessed event"
+  },
+  {
+    "id": "LunarAngles",
+    "name": "Lunar Angles",
+    "short": "Lunar Angles",
+    "group": "Explore returns",
+    "description": "Explore planets on the angles in lunar returns for events.",
+    "keywords": "moon angles return"
+  },
+  {
+    "id": "SRA",
+    "name": "Solar Contacts",
+    "short": "Solar Contacts",
+    "group": "Explore returns",
+    "description": "Compare and filter contacts across four solar returns.",
+    "keywords": "sra solar return"
+  },
+  {
+    "id": "NewPartnerHoroscope",
+    "name": "New Partner Horoscope",
+    "short": "New Partner Horoscope",
+    "group": "Relationship charts",
+    "description": "Calculate the older partner’s prenatal and younger partner’s postnatal charts at their meeting location.",
+    "keywords": "relationships couple partners alexander marr prenatal postnatal"
+  },
+  {
+    "id": "AstroConvergenceScanner",
+    "name": "Event Convergence Scanner",
+    "short": "Convergence Scanner",
+    "group": "Connect the evidence",
+    "description": "Find recurring themes across directions, arcs, progressions and transits.",
+    "keywords": "astro convergence scanner repeated themes"
+  },
+  {
+    "id": "OverlapFinder",
+    "name": "Aspect Overlap Finder",
+    "short": "Overlap Finder",
+    "group": "Connect the evidence",
+    "description": "Select event-related aspects across systems to find their shared in-orb dates.",
+    "keywords": "overlap finder period dates intervals primary directions progressions arcs transits isaac"
+  },
+  {
+    "id": "AscensionalTransits",
+    "name": "Ascensional Transits",
+    "short": "Ascensional Transits",
+    "group": "Ascensional Transits",
+    "description": "Compare the event sky with natal ascensional positions, including conjunctions, oppositions and antiscia.",
+    "keywords": "ascensional transits mdo juan estadella meridian semi arc"
+  },
+  {
+    "id": "AscensionalTransitsHitlist",
+    "name": "Ascensional Transits Hit List",
+    "short": "Ascensional Hit List",
+    "group": "Ascensional Transits",
+    "description": "List exact direct and converse ascensional contacts chronologically across a selected time range.",
+    "keywords": "ascensional transits hitlist mdo antiscia exact contacts"
+  },
+  {
+    "id": "AscensionalTransits_LIVE",
+    "name": "Ascensional Transits LIVE",
+    "short": "Ascensional LIVE",
+    "group": "Ascensional Transits",
+    "description": "Watch a live ascensional wheel with recent contacts, upcoming contacts and countdowns.",
+    "keywords": "ascensional transits live wheel countdown clock"
+  }
+]

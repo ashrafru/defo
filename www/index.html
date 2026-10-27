@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Astrologers’ Workbench</title>
+<meta name="description" content="The Astrologers’ Workbench 2.0.1 — 36 rectification and predictive astrology tools for phone and tablet.">
+<meta name="theme-color" content="#101f2c">
+<meta name="color-scheme" content="dark">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Workbench">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="img/icon-192.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="appbar">
+  <button class="brand" id="home" aria-label="About The Astrologers’ Workbench" aria-haspopup="dialog"><img src="img/logo.webp" alt="" width="36" height="36"></button>
+  <div class="appbar-title"><span class="eyebrow">ASTROLOGERS’ WORKBENCH</span><strong id="breadcrumb">Tool library</strong></div>
+  <span id="netState" class="net" hidden>Offline</span>
+</header>
+
+<section id="library" aria-label="Tool library">
+  <div class="search-wrap"><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Find a tool…" aria-label="Find a tool" autocomplete="off"></label></div>
+  <div id="favorites" class="favorites" aria-label="Favorites"></div>
+  <div id="cards"></div>
+  <div id="empty" hidden>No tools match your search. Try “return”, “event” or “directions”.</div>
+  <p class="home-note"><strong>Your tools stay independent.</strong> Birth details, events and calculations remain inside each tool. Open tools keep their state while the app stays open. Use each tool’s own save or export controls before closing it.</p>
+</section>
+
+<section id="workspace" hidden aria-label="Open tools">
+  <div id="stage"></div>
+  <div id="divider" hidden role="separator" tabindex="0" aria-label="Resize compare panes" aria-valuenow="50" aria-valuemin="20" aria-valuemax="80"><i></i></div>
+</section>
+
+<nav class="bottombar" aria-label="Main">
+  <button id="libraryBtn" class="selected"><span class="ico" aria-hidden="true">▦</span><span>Library</span></button>
+  <button id="openBtn" disabled><span class="ico" aria-hidden="true">❐</span><span>Open</span><b id="openCount" hidden>0</b></button>
+  <button id="compare" disabled><span class="ico" aria-hidden="true">◫</span><span>Compare</span></button>
+  <button id="moreBtn"><span class="ico" aria-hidden="true">☰</span><span>More</span></button>
+</nav>
+
+<dialog id="openSheet" class="sheet" aria-labelledby="openTitle">
+  <div class="sheet-head"><h2 id="openTitle">Open tools</h2><button class="x" data-close aria-label="Close">×</button></div>
+  <div id="openList"></div>
+</dialog>
+
+<dialog id="moreSheet" class="sheet" aria-labelledby="moreTitle">
+  <div class="sheet-head"><h2 id="moreTitle">More</h2><button class="x" data-close aria-label="Close">×</button></div>
+  <div class="more-group">
+    <a class="row" href="UserManual.pdf" target="_blank" rel="noopener"><span>User Manual</span><small>PDF</small></a>
+    <a class="row" href="QuickReference.pdf" target="_blank" rel="noopener"><span>Quick Reference</span><small>PDF</small></a>
+    <a class="row" href="https://juanestadella.com/counter/counter.php?book=15" target="_blank" rel="noopener noreferrer"><span>Predictive Astrology · V4</span><small>Juan Estadella ↗</small></a>
+  </div>
+  <div class="more-group offline">
+    <h3>Offline use</h3>
+    <p id="offlineText">Checking stored tools…</p>
+    <div class="meter"><i id="offlineMeter"></i></div>
+    <div class="row-buttons"><button id="saveAll" class="primary">Save all tools offline</button><button id="clearAll">Clear offline copies</button></div>
+  </div>
+  <div class="more-group" id="installGroup" hidden>
+    <h3>Install</h3>
+    <p id="installText"></p>
+    <button id="installBtn" class="primary" hidden>Install app</button>
+  </div>
+  <div class="more-group">
+    <button class="row" id="helpBtn"><span>How the workbench works</span><small>Help</small></button>
+    <button class="row" id="aboutBtn"><span>The story behind the workbench</span><small>About</small></button>
+    <a class="row" id="licLink" href="licences.html" target="_blank" rel="noopener"><span>Licences and source</span><small>AGPL-3.0</small></a>
+  </div>
+  <small class="version">Version 2.0.1 · mobile edition · original HTML tools by James Alexander, unchanged</small>
+</dialog>
+
+<dialog id="helpDialog" class="sheet" aria-labelledby="helpTitle">
+  <div class="sheet-head"><h2 id="helpTitle">A workbench, at your pace.</h2><button class="x" data-close aria-label="Close">×</button></div>
+  <div class="prose">
+  <p><b>Switch freely.</b> Open a tool from the library. Tap <i>Open</i> to move between running tools. Each keeps its inputs and results.</p>
+  <p><b>Follow two leads.</b> Tap <i>Compare</i> to show two tools at once: stacked on a phone held upright, side by side when turned or on a tablet. Drag the bar between them to resize. <i>New copy</i> in a tool’s ⋯ menu opens an independent second instance.</p>
+  <p><b>Keep your favorites close.</b> Star any tool to pin it at the top of the library.</p>
+  <p><b>Make room.</b> Use the zoom control in a tool’s bar to fit wide charts and tables. You can also scroll sideways inside a tool.</p>
+  <p><b>Save inside the tool.</b> Use each tool’s own save or export controls before closing it or the app. Open tools and unsaved input are not restored after closing.</p>
+  <p><b>Offline.</b> A tool is stored on this device the first time you open it. <i>More › Save all tools offline</i> stores the full suite (about 64 MB). Calculations run on your device; city searches and external links need internet.</p>
+  </div>
+</dialog>
+
+<dialog id="aboutDialog" class="project-story" aria-labelledby="aboutTitle">
+<button class="story-close" data-close aria-label="Close project story">×</button>
+<div class="story-heading"><span class="story-kicker">THE STORY BEHIND THE WORKBENCH</span><h2 id="aboutTitle">Exact methods.<br>Open to everyone.</h2><p>How The Astrologers’ Workbench came about<br><span>by James Alexander</span></p></div>
+<div class="story-body">
+<section><h3>A search for dependable methods</h3>
+<p>I was a long-time research astrologer looking for more accurate and reliable rectification methods. I approached astrology with a scientific spirit: calculations should be open to examination, methods should be tested against accurately dated events, and claims of precision should be supported by results. That search grew out of years of research and dissatisfaction with the methods I had encountered.</p>
+<p>Meeting Isaac Starkman changed the direction of that search. His work with Topocentric Primary Directions and exact birthtimes showed me an approach that could be examined systematically, event by event and candidate time by candidate time. It changed how I understood rectification, and what I wanted from the software used to perform it.</p></section>
+<section><h3>From one HTML document to a suite</h3>
+<p>I was dismayed that such valuable, precise systems were available mainly on aging platforms or within very expensive software. I began with a straightforward goal: create an HTML document that could calculate Topocentric Primary Directions in a modern browser.</p>
+<p>The next step was to follow Isaac’s approach of scanning candidate birthtimes and comparing their TPD performance across a biography. Incorporating his weighting matrix brought that work closer to an updated Polaris engine. The result, Polaris2, is a direct descendant of Isaac’s Polaris, adapted to run in a modern browser.</p>
+<p>One program soon suggested others. A collection of auxiliary programs, each running as an HTML document, could support the whole research process. Many of my original software ideas became practical tools for examining events, comparing candidate times and exploring related techniques. Some of their most useful features grew from imaginative solutions and a willingness to approach familiar research problems in less conventional ways. I carried the project from that first calculator through the design and development of the suite, bringing these ideas and techniques together in a shared workbench. Juan Estadella collaborated on key techniques and contributed ideas that helped improve and extend the suite.</p></section>
+<section><h3>The research behind the tools</h3>
+<p>This project owes much to a line of researchers whose work deserves to remain accessible:</p>
+<dl class="research-lineage">
+<div><dt>Carl Kühr</dt><dd>His correction to primary direction calculations is central to the methods used here.</dd></div>
+<div><dt>Wendel Polich &amp; A. P. Nelson Page</dt><dd>Their discovery of the topocentric house system, understood here as a discovery rather than an invention, provides a foundation for this work.</dd></div>
+<div><dt>Alexander Marr</dt><dd>His meticulous research and insistence on reliability echo J. B. Morin’s practice of discarding methods that failed to demonstrate dependable results.</dd></div>
+<div><dt>Isaac Starkman</dt><dd>His research, weighting matrix and remarkable rectification program Polaris made this approach possible. The suite’s Polaris2 carries that work into a modern browser.</dd></div>
+<div><dt>Juan Estadella</dt><dd>His writings and teaching make these methods available to a wider audience. His collaboration has also helped shape techniques and enhancements within this suite.</dd></div>
+<div><dt>James Alexander</dt><dd>His decades of research into rectification and predictive methods, original software ideas and sustained work developing the tools brought this suite together. His work explores practical ways to compare and evaluate exact techniques, with a commitment to making them freely accessible.</dd></div>
+<div><dt>Fadi Mazboudi</dt><dd>A student of Juan’s, helping introduce these methods to others and carry them forward.</dd></div>
+</dl></section>
+<section class="story-purpose"><h3>Given freely to the community</h3><p>The Astrologers’ Workbench brings together <span id="aboutToolCount">36</span> useful programs, offered freely to the astrological community. My purpose is to encourage interest in these golden methods, make their examination easier, and give more astrologers the tools to test, study and develop them.</p><p class="story-signature">James Alexander<br><span>in collaboration with Isaac Starkman and Juan Estadella</span></p></section>
+</div>
+</dialog>
+
+<dialog id="licDialog" class="sheet lic" aria-label="Licences and source"><div class="sheet-head"><h2>Licences and source</h2><button class="x" data-close aria-label="Close">×</button></div><iframe title="Licences and source"></iframe></dialog>
+
+<dialog id="confirmDialog" class="confirm" aria-labelledby="confirmTitle">
+  <h2 id="confirmTitle"></h2><p id="confirmText"></p>
+  <div class="row-buttons"><button id="confirmNo">Cancel</button><button id="confirmYes" class="danger">Close tool</button></div>
+</dialog>
+
+<div id="saved" class="saved" hidden role="status"><span id="savedText"></span><button id="savedShare">Share</button></div>
+<div id="menu" class="menu" hidden role="menu"></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="native.js"></script>
+<script src="loader.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
