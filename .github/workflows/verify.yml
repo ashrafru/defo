@@ -13,11 +13,29 @@ jobs:
       - name: Verify with the official apksigner
         run: |
           BT=$ANDROID_HOME/build-tools/$(ls $ANDROID_HOME/build-tools | sort -V | tail -1)
-          for f in signed/*.apk; do
-            echo "== $f" ; $BT/apksigner verify --verbose --print-certs "$f"
-            $BT/zipalign -c -P 16 -v 4 "$f" | tail -1
-            $BT/aapt2 dump badging "$f" | head -3
-          done > signed/verification.txt 2>&1 || echo "VERIFY FAILED" >> signed/verification.txt
-          cat signed/verification.txt
+          { for f in signed/*.apk; do
+              echo "== $f"; $BT/apksigner verify --verbose --print-certs "$f" || echo "VERIFY FAILED"
+              $BT/zipalign -c -P 16 4 "$f" && echo "zipalign OK" || echo "ZIPALIGN FAILED"
+              $BT/aapt2 dump badging "$f" | head -4
+            done; } > /tmp/verification.txt 2>&1
+          cat /tmp/verification.txt
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules && sudo udevadm trigger --name-match=kvm
+      - name: Run on an Android emulator
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 34
+          target: google_apis
+          arch: x86_64
+          profile: pixel_6
+          disable-animations: true
+          script: bash .github/run-on-emulator.sh
+      - name: Commit results
+        if: always()
+        run: |
+          mkdir -p signed/test && cp /tmp/verification.txt signed/verification.txt || true
+          cp /tmp/emu/* signed/test/ 2>/dev/null || true
           git config user.name "workbench-build"; git config user.email "actions@users.noreply.github.com"
-          git add signed/verification.txt && git commit -m "Verification of signed APK" && git push
+          git add signed && git commit -m "Verification and emulator test of signed APK" && git push
