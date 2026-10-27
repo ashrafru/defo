@@ -1,7 +1,7 @@
-1-launch: pid=3190
-a: tap 'Ascensional Transits' at ''
-2-small: pid=3190
-b: tap 'PSSR Aspects' at ''
-3-medium: pid=3190
+1-launch: pid=3076
+a: tap 'The Sieve' at '477 955'
+2-medium: pid=3076
+b: tap 'Central Scrutinizer' at '522 494'
+3-mid-large: pid=
 c: tap 'Polaris2' at ''
-4-large: pid=3190
+4-large: pid=

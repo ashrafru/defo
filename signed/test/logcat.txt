@@ -1,200 +1,200 @@
-10-27 19:10:38.949  5129  5904 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.007  5129  5884 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.022  5129  5792 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.042  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.091  5129  5725 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.151  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.163  5129  5872 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.226   522   552 D OomAdjuster: Not killing cached processes
-10-27 19:10:39.265  5129  5872 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.316  5129  5398 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.359  5129  5725 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.370  5129  5871 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.388  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.416  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.447  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.459  5129  5725 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.468  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.501  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.530  5129  5904 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.570  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.598  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.605  5129  5398 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.625  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.645  5129  5870 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.653  5129  5870 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.678  5129  5870 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.699  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.717  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.729  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.759  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.767  5129  5795 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.781  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.790  5129  5870 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.799  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.810  5129  5870 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.843  5129  5882 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.849  5129  5885 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.854  5129  5885 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.866  5129  5882 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.875  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:39.880  5129  5870 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:40.225  5129  5870 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:40.235  5129  5885 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:40.242  5129  5885 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:40.282  5129  5885 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:40.292  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:40.299  5129  5870 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:40.306  5129  5870 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:40.313  5129  5870 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:40.320  5129  5870 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:40.327  5129  5870 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:40.333  5129  5870 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:40.364  5129  5870 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:40.387  5129  5870 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:40.405  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:40.428  5129  5885 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:40.451  5129  5885 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:40.482  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:40.502  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:40.533  5129  5885 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:40.552  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:40.587  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:40.614  5129  5885 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:40.637  5129  5885 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:40.672  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:40.688  5129  5783 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:40.719  5129  5783 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:40.780  5129  5783 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:40.853  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:40.860  5129  5725 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:41.319  5129  5725 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:41.402  5129  5783 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:41.438  1602  1727 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:10:41.439  5129  5882 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:41.469  1602  1727 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:10:41.485  5129  5882 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:41.516  5129  5903 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:41.524  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:41.548  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:41.657  1828  2360 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:10:41.667  5129  5885 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:41.689  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:41.700  4782  4919 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:10:41.703  1828  2363 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:10:41.748  4782  4937 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:10:41.755  1828  2360 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:10:41.775  1828  2406 W A       : Can't format flag AndroidGsaVelourJars__velour_crashtest_jar__name to integer.
-10-27 19:10:41.781  5129  5903 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:41.920  1828  2360 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:10:41.920  4782  4937 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:10:41.924  1828  2363 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:10:41.989  5129  5903 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:42.173  5129  5903 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:42.178  5129  5885 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:42.192  1828  2408 W A       : Can't format flag AndroidGsaVelourJars__velour_crashtest_jar__name to integer.
-10-27 19:10:42.232  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:42.243  2607  2876 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:10:42.289  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:42.316  1828  2404 W A       : Can't format flag AndroidGsaVelourJars__velour_crashtest_jar__name to integer.
-10-27 19:10:42.331  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:42.349  2607  2876 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:10:42.464  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:42.495  1730  4240 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:10:42.508  5129  5904 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:42.559  5129  5904 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:42.605  5129  5904 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:42.624  5129  5904 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:42.659  5129  5904 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:42.678  5129  5904 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:42.713  5129  5885 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:42.764  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:42.772  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:42.783  5129  5885 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:42.811  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:42.817  5129  5725 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:42.841  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:42.850  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:42.855  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:42.861  5129  5725 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:42.867  5129  5783 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:42.874  5129  5783 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:42.881  5129  5903 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:42.896  5129  5903 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:42.904  5129  5783 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:42.910  5129  5783 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:42.917  5129  5783 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:42.921  5129  5783 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:42.933  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:42.944  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:42.957  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:42.970  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:42.980  5129  5903 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:42.986  5129  5903 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:42.990  5129  5903 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.000  5129  5783 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.007  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.017  5129  5903 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.028  5129  5903 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.033  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.041  5129  5725 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.046  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.050  5129  5903 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.058  5129  5903 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.063  5129  5903 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.068  5129  5904 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.072  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.077  5129  5904 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.081  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.086  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.091  5129  5725 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.096  5129  5725 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.101  5129  5904 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.107  5129  5725 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.114  5129  5783 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.119  5129  5904 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.124  5129  5904 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.129  5129  5783 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.135  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.140  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.144  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.148  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.153  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.164  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.170  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.181  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.188  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.198  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.206  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.215  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.220  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.228  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.234  5129  5903 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.242  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.259  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.271  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.285  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.301  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.313  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.327  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.336  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.349  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.357  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.365  5129  5903 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.378  5129  5903 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.386  5129  5725 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.397  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.405  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.415  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.422  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.428  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.436  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.451  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.471  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:43.492  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
-10-27 19:10:44.547   522   551 D OomAdjuster: Not killing cached processes
-10-27 19:10:50.063   522   827 D OomAdjuster: Not killing cached processes
-10-27 19:10:55.210   522   551 D OomAdjuster: Not killing cached processes
-10-27 19:11:03.762   522  2328 D OomAdjuster: Not killing cached processes
-10-27 19:11:09.139   522  1782 D OomAdjuster: Not killing cached processes
-10-27 19:11:14.447   522  2483 D OomAdjuster: Not killing cached processes
+10-27 19:14:19.629   519   571 I ActivityManager: Killing 3816:com.android.intentresolver/u0a92 (adj 0): change com.android.intentresolver
+10-27 19:14:20.230   519   571 I ActivityManager: Killing 3923:com.android.nfc/1027 (adj 0): change com.android.nfc
+10-27 19:14:20.393  3076  3977 D ProfileInstaller: Installing profile for nz.co.ashnet.astrologersworkbench
+10-27 19:14:20.428  1691  1691 I AiAiEcho: AppFetcherImplV2 updateApps package:[nz.co.ashnet.astrologersworkbench], userId:[0], reason:[package is added.].
+10-27 19:14:21.012  3221  3888 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:21.144  3221  3889 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:21.980   519   571 I ActivityManager: Killing 2351:com.google.android.gm/u0a143 (adj 0): change com.google.android.gm
+10-27 19:14:22.738  1481  3367 I BlockstoreStorage: Clearing Blockstore Data for package nz.co.ashnet.astrologersworkbench [CONTEXT service_id=258 ]
+10-27 19:14:23.188  1430  3952 I FontLog : Package nz.co.ashnet.astrologersworkbench has no metadata [CONTEXT service_id=132 ]
+10-27 19:14:23.376   519   534 D OomAdjuster: Not killing cached processes
+10-27 19:14:23.832   519   571 I ActivityManager: Killing 4180:com.google.android.settings.intelligence/u0a118 (adj 0): change com.google.android.settings.intelligence
+10-27 19:14:25.662   519   547 I am_pss  : [3076,10192,nz.co.ashnet.astrologersworkbench,66551808,44769280,319488,205905920,0,2,4]
+10-27 19:14:28.374   519  1972 D OomAdjuster: Not killing cached processes
+10-27 19:14:28.623  4693  4693 D nativeloader: InitDefaultPublicLibraries for_preload=1: libandroid.so:libaaudio.so:libamidi.so:libbinder_ndk.so:libc.so:libcamera2ndk.so:libdl.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libicu.so:libicui18n.so:libicuuc.so:libjnigraphics.so:liblog.so:libmediandk.so:libm.so:libnativehelper.so:libnativewindow.so:libOpenMAXAL.so:libOpenSLES.so:libRS.so:libstdc++.so:libsync.so:libvulkan.so:libwebviewchromium_plat_support.so:libz.so
+10-27 19:14:31.455   519   620 I input_interaction: Interaction with: d2f852e nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity (server), [Gesture Monitor] swipe-up (server), [Gesture Monitor] edge-swipe (server), PointerEventDispatcher0 (server), 
+10-27 19:14:32.358   519   547 I am_pss  : [3076,10192,nz.co.ashnet.astrologersworkbench,71147520,47947776,4250624,198991872,0,2,5]
+10-27 19:14:33.379   519   908 D OomAdjuster: Not killing cached processes
+10-27 19:14:36.137   519   547 I am_pss  : [3303,99000,com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0,85425152,64606208,5190656,176746496,0,3,5]
+10-27 19:14:38.388   519   603 D OomAdjuster: Not killing cached processes
+10-27 19:14:41.035  3221  3885 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:41.037  3221  3885 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:41.095  4532  4674 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:41.096  4532  4659 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:41.100  4532  4659 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:41.100  4532  4659 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:41.117  4532  4659 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:41.147  1569  1696 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:41.315  4532  4659 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:41.347  1569  1696 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:42.099  4532  4679 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:42.248  4532  4676 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:42.330  4532  4676 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:42.363  4532  4659 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:42.367  3221  3891 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:42.426  1569  1696 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:42.544   519   571 I ActivityManager: Killing 4313:com.google.android.settings.intelligence/u0a118 (adj 0): change com.google.android.settings.intelligence
+10-27 19:14:42.784  4532  4698 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:42.786  4532  4698 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:42.839  3221  3889 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:43.388   519  2178 D OomAdjuster: Not killing cached processes
+10-27 19:14:43.435  3221  3886 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:43.466  1732  2095 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:45.346  3221  3888 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:45.454  3221  3886 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:45.484  3221  3888 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:45.620  3221  3886 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:45.886  3221  3886 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:46.182  4532  5232 I cr_CronetUrlRequestContext: destroyNativeStreamLocked org.chromium.net.impl.CronetBidirectionalStream@747ff4f
+10-27 19:14:46.338  3221  3885 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:46.347  3221  3888 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:46.529  3221  3888 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:46.900  2661  3103 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:46.990  2661  3086 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:47.240  3221  3891 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:47.315  2661  2925 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:47.571  2661  3104 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:47.573  2661  2925 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:47.953  3221  3889 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:48.100  3221  3888 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:48.456   519  1994 D OomAdjuster: Not killing cached processes
+10-27 19:14:49.113  3221  3889 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:49.260  3221  3891 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:49.435  1732  2079 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:49.511  1569  2852 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:49.684  1569  1696 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:49.766  1569  2852 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:49.790  1732  2095 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:49.852  1569  1696 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:50.207  4532  4674 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:50.584  4532  4679 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:50.591  3221  3888 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:50.685  3221  3885 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:50.855  4532  4674 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:50.965  4532  4695 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:50.991  4532  4674 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:51.025  1732  2079 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:51.045  2661  3104 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:51.119  4532  4695 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:51.427  3221  3887 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:51.441  3221  3891 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:51.459  2661  3103 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:51.618  1732  2095 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:52.132  2661  3103 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:52.157  3221  3891 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:52.211  3221  3889 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:52.353  2661  2925 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:52.464  3221  3891 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:52.489  3221  3885 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:52.513  2661  2925 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:52.595  4532  4695 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:52.678  2661  2925 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:52.687  2661  3103 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:52.764  1569  1696 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:52.880  3221  3891 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:53.041  1569  2852 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:53.102  4532  4659 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:53.145  4532  4695 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:53.193  2661  3104 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:53.195  1569  2852 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:53.217  2661  3104 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:53.304  4532  5201 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:53.316  2661  3103 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:53.393  2661  3104 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:53.468   519  2177 D OomAdjuster: Not killing cached processes
+10-27 19:14:53.665  3221  3888 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:53.687  4532  4660 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:53.723  3221  3885 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:53.742  4532  4675 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:53.870  3221  3888 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:54.067     0     0 I init    : processing action (persist.device_config.lmkd_native.thrashing_limit_critical=*) from (/system/etc/init/lmkd.rc:44)
+10-27 19:14:54.069     0     0 I init    : processing action (lmkd.reinit=1) from (/system/etc/init/lmkd.rc:10)
+10-27 19:14:54.071     0     0 I init    : starting service 'exec 23 (/system/bin/lmkd --reinit)'...
+10-27 19:14:54.073     0     0 I init    : ... started service 'exec 23 (/system/bin/lmkd --reinit)' has pid 5447
+10-27 19:14:53.904   133   133 I lowmemorykiller: lmkd data connection established
+10-27 19:14:53.935   133   133 I lowmemorykiller: Using psi monitors for memory pressure detection
+10-27 19:14:53.935   133   133 I lowmemorykiller: Properties reinitilized
+10-27 19:14:53.935  5447  5447 I lowmemorykiller: lmkd updated properties successfully
+10-27 19:14:53.935   133   133 I lowmemorykiller: lmkd data connection dropped
+10-27 19:14:53.935   133   133 I lowmemorykiller: closing lmkd data connection
+10-27 19:14:54.122     0     0 I init    : Service 'exec 23 (/system/bin/lmkd --reinit)' (pid 5447) exited with status 0 oneshot service took 0.048000 seconds in background
+10-27 19:14:54.124     0     0 I init    : Sending signal 9 to service 'exec 23 (/system/bin/lmkd --reinit)' (pid 5447) process group...
+10-27 19:14:54.093  3221  3888 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:54.100  3221  3889 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:54.434  3221  3885 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:54.513  3221  3885 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:54.650  3221  3891 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:54.696  3221  3889 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:54.697  3221  3889 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:14:58.545   519   811 D OomAdjuster: Not killing cached processes
+10-27 19:15:00.091  1569  1696 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:15:00.122  4532  4675 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:15:00.133  4532  4674 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:15:00.144  4532  4674 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:15:00.188  3221  3888 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:15:00.291  3221  3889 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:15:00.354  2661  2925 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:15:00.490  2661  3104 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:15:00.495  3221  3888 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:15:00.532  2661  2925 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:15:00.580  2661  3104 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:15:00.664  3221  3889 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:15:02.031   519   620 I input_interaction: Interaction with: d2f852e nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity (server), PointerEventDispatcher0 (server), 
+10-27 19:15:03.564   519  2180 D OomAdjuster: Not killing cached processes
+10-27 19:15:05.099  1569  2852 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:15:05.184  1569  2852 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:15:05.302  5564  5564 D nativeloader: InitDefaultPublicLibraries for_preload=1: libandroid.so:libaaudio.so:libamidi.so:libbinder_ndk.so:libc.so:libcamera2ndk.so:libdl.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libicu.so:libicui18n.so:libicuuc.so:libjnigraphics.so:liblog.so:libmediandk.so:libm.so:libnativehelper.so:libnativewindow.so:libOpenMAXAL.so:libOpenSLES.so:libRS.so:libstdc++.so:libsync.so:libvulkan.so:libwebviewchromium_plat_support.so:libz.so
+10-27 19:15:05.384  4532  5201 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:15:05.398  3221  3889 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:15:05.401  3221  3889 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:15:05.561  4532  4674 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:15:05.566  2661  2925 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:15:05.649  2661  3104 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:15:05.767  2661  3103 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:15:05.813  3221  3889 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:15:05.857  3221  3888 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:15:05.858  3221  3888 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:15:05.979  1732  2079 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:15:06.660   519  2098 I ActivityManager: Killing 3076:nz.co.ashnet.astrologersworkbench/u0a192 (adj 0): depends on provider com.google.android.gms/.fonts.provider.FontsProvider in dying proc com.google.android.gms.persistent (adj -10000)
+10-27 19:15:06.660   519  2098 I am_kill : [0,3076,nz.co.ashnet.astrologersworkbench,0,depends on provider com.google.android.gms/.fonts.provider.FontsProvider in dying proc com.google.android.gms.persistent (adj -10000)]
+10-27 19:15:06.708   519  2098 I am_proc_died: [0,3076,nz.co.ashnet.astrologersworkbench,0,2]
+10-27 19:15:06.709   519  2172 I ImeTracker: nz.co.ashnet.astrologersworkbench:3129dcc6: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_REMOVE_CLIENT
+10-27 19:15:06.709   519   535 I WindowManager: WIN DEATH: Window{d2f852e u0 nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity}
+10-27 19:15:06.710   519  2172 I ImeTracker: nz.co.ashnet.astrologersworkbench:3129dcc6: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-27 19:15:06.711   519   535 W InputManager-JNI: Input channel object 'd2f852e nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity (client)' was disposed without first being removed with the input manager!
+10-27 19:15:06.713   519  2098 I ActivityManager: Killing 3303:com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0/u0a192i0 (adj 0): isolated not needed
+10-27 19:15:06.713   519  2098 I am_kill : [0,3303,com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0,0,isolated not needed]
+10-27 19:15:06.739   519  2098 W ActivityTaskManager: Force removing ActivityRecord{d2bd1af u0 nz.co.ashnet.astrologersworkbench/.MainActivity t8}: app died, no saved state
+10-27 19:15:06.739   519  2098 I wm_finish_activity: [0,220975535,8,nz.co.ashnet.astrologersworkbench/.MainActivity,proc died without state saved]
+10-27 19:15:06.741   519  2098 I wm_task_removed: [8,8,0,removeChild, last child = ActivityRecord{d2bd1af u0 nz.co.ashnet.astrologersworkbench/.MainActivity t-1 f}} in Task{e0d19ec #8 type=standard A=10192:nz.co.ashnet.astrologersworkbench}]
+10-27 19:15:06.745   828   862 V WindowManagerShell: Transition requested: android.os.BinderProxy@e74902c TransitionRequestInfo { type = CLOSE, triggerTask = TaskInfo{userId=0 taskId=8 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=nz.co.ashnet.astrologersworkbench/.MainActivity } baseActivity=ComponentInfo{nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity} topActivity=ComponentInfo{nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity} origActivity=null realActivity=ComponentInfo{nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity} numActivities=1 lastActiveTime=40293 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{android.window.IWindowContainerToken$Stub$Proxy@996faf5} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 128 - 0, 0) topActivityInfo=ActivityInfo{43db08a nz.co.ashnet.astrologersworkbench.MainActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+10-27 19:15:06.770   519  1742 I am_proc_died: [0,3303,com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0,0,10]
+10-27 19:15:07.791   519   538 V WindowManager: Sent Transition #8 createdAt=10-27 19:15:06.739 via request=TransitionRequestInfo { type = CLOSE, triggerTask = TaskInfo{userId=0 taskId=8 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=nz.co.ashnet.astrologersworkbench/.MainActivity } baseActivity=ComponentInfo{nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity} topActivity=ComponentInfo{nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity} origActivity=null realActivity=ComponentInfo{nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity} numActivities=1 lastActiveTime=40293 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{79bc8eb Task{e0d19ec #8 type=standard A=10192:nz.co.ashnet.astrologersworkbench}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 128 - 0, 0) topActivityInfo=ActivityInfo{54e5648 nz.co.ashnet.astrologersworkbench.MainActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+10-27 19:15:08.600   519  2016 D OomAdjuster: Not killing cached processes
+10-27 19:15:13.791   519   547 D OomAdjuster: Not killing cached processes
+10-27 19:15:18.847   519   547 D OomAdjuster: Not killing cached processes
+10-27 19:15:23.889   519   519 D OomAdjuster: Not killing cached processes
+10-27 19:15:25.223  1569  1696 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:15:25.224  4532  4695 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:15:25.246  4532  4698 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:15:25.288  3221  3821 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:15:25.310  2661  3103 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:15:25.333  3221  3485 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:15:25.393  3221  3821 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:15:25.425  2661  3104 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:15:25.505  3221  3821 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:15:25.514  2661  3103 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:15:28.988   519  1994 D OomAdjuster: Not killing cached processes
+10-27 19:15:34.479   519  2173 D OomAdjuster: Not killing cached processes
+10-27 19:15:39.593   519  2181 D OomAdjuster: Not killing cached processes
+10-27 19:15:46.498   519  2098 D OomAdjuster: Not killing cached processes
+10-27 19:15:51.439  6152  6152 D nativeloader: InitDefaultPublicLibraries for_preload=1: libandroid.so:libaaudio.so:libamidi.so:libbinder_ndk.so:libc.so:libcamera2ndk.so:libdl.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libicu.so:libicui18n.so:libicuuc.so:libjnigraphics.so:liblog.so:libmediandk.so:libm.so:libnativehelper.so:libnativewindow.so:libOpenMAXAL.so:libOpenSLES.so:libRS.so:libstdc++.so:libsync.so:libvulkan.so:libwebviewchromium_plat_support.so:libz.so
+10-27 19:15:51.779   519  2166 D OomAdjuster: Not killing cached processes
+10-27 19:15:58.086   519   548 D OomAdjuster: Not killing cached processes
+10-27 19:16:03.112   519  2166 D OomAdjuster: Not killing cached processes
+10-27 19:16:08.455   519  2179 D OomAdjuster: Not killing cached processes
+10-27 19:16:13.598   519  2100 D OomAdjuster: Not killing cached processes
+10-27 19:16:19.174   519  2100 D OomAdjuster: Not killing cached processes
+10-27 19:16:24.250   519  2047 D OomAdjuster: Not killing cached processes
+10-27 19:16:30.138   519   547 D OomAdjuster: Not killing cached processes
+10-27 19:16:35.358   519  1777 D OomAdjuster: Not killing cached processes
