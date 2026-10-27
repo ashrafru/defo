@@ -1,0 +1,24 @@
+== signed/AstrologersWorkbench-2.0.1.apk
+Verifies
+Verified using v1 scheme (JAR signing): false
+Verified using v2 scheme (APK Signature Scheme v2): true
+Verified using v3 scheme (APK Signature Scheme v3): true
+Verified using v3.1 scheme (APK Signature Scheme v3.1): false
+Verified using v3.2 scheme (APK Signature Scheme v3.2): false
+Verified using v4 scheme (APK Signature Scheme v4): false
+Verified for SourceStamp: false
+Number of signers: 1
+V3.0 Signer: certificate DN: CN=Astrologers Workbench, O=AshNet, C=NZ
+V3.0 Signer: certificate SHA-256 digest: 7cebce6bfe009968d3a6e9337ef6c50168b60726e91d63347a83c63d00fadd82
+V3.0 Signer: certificate SHA-1 digest: 751c994c85e2c7dfdaf6fef805609d409f06eb61
+V3.0 Signer: certificate MD5 digest: fe11a5c2b6ec157f71d1b3ad718d9ae1
+V3.0 Signer: key algorithm: RSA
+V3.0 Signer: key size (bits): 4096
+V3.0 Signer: public key SHA-256 digest: dcee4361a1782d59832168d7653344c643abf15976ebc6f1e7f60a10e795b285
+V3.0 Signer: public key SHA-1 digest: e65b57f89d4870bfd11ff168d89829a3f5e49d7f
+V3.0 Signer: public key MD5 digest: d91369fce91b206ab898702101a0f89a
+zipalign OK
+package: name='nz.co.ashnet.astrologersworkbench' versionCode='20001' versionName='2.0.1' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'
+minSdkVersion:'24'
+targetSdkVersion:'36'
+uses-permission: name='android.permission.INTERNET'
