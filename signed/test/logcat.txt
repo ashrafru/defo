@@ -1,62 +1,200 @@
-10-27 19:03:29.031     0     0 I Command line: 8250.nr_uarts=1 clocksource=pit no_timer_check console=0 loop.max_part=7 ramoops.mem_address=0xff018000 ramoops.mem_size=0x10000 memmap=0x10000$0xff018000 printk.devkmsg=on bootconfig mac80211_hwsim.radios=0
-10-27 19:03:29.040     0     0 I         : Kernel command line: console=ttynull stack_depot_disable=on cgroup_disable=pressure bootconfig 8250.nr_uarts=1 clocksource=pit no_timer_check console=0 loop.max_part=7 ramoops.mem_address=0xff018000 ramoops.mem_size=0x10000 memmap=0x10000$0xff018000 printk.devkmsg=on bootconfig mac80211_hwsim.radios=0
-10-27 19:03:29.212     0     0 I printk  : console [ttyS0] enabled
-10-27 19:03:29.532     0     0 I printk  : console [ramoops-1] enabled
-10-27 19:03:30.191     0     0 I printk  : console [ttynull0] enabled
-10-27 19:03:31.345     0     0 I init    : Loading module /lib/modules/virtio_console.ko with args ''
-10-27 19:03:31.346     0     0 I init    : Loaded kernel module /lib/modules/virtio_console.ko
-10-27 19:03:34.609     0     0 I init    : starting service 'console'...
-10-27 19:03:34.614     0     0 I init    : ... started service 'console' has pid 141
-10-27 19:03:38.543     0     0 I init    : service 'console' requested start, but it is already running (flags: 2196)
-10-27 19:03:39.998   337   337 D nativeloader: InitDefaultPublicLibraries for_preload=0: libandroid.so:libaaudio.so:libamidi.so:libbinder_ndk.so:libc.so:libcamera2ndk.so:libclang_rt.hwasan-aarch64-android.so:libdl.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libjnigraphics.so:liblog.so:libmediandk.so:libm.so:libnativewindow.so:libOpenMAXAL.so:libOpenSLES.so:libRS.so:libstdc++.so:libsync.so:libvulkan.so:libwebviewchromium_plat_support.so:libz.so
-10-27 19:03:53.609   940   940 I AndroidRuntime: VM exiting with result code 0, cleanup skipped.
-10-27 19:04:02.107  1775  2499 W chromium: [1027/190402.107200:WARNING:dns_config_service_android.cc(81)] Failed to read DnsConfig.
-10-27 19:04:03.064  2501  2501 W dex2oat64: Verification of void com.capacitorjs.plugins.app.AppPlugin$$ExternalSyntheticLambda0.<init>(com.capacitorjs.plugins.app.AppPlugin) took 108.170ms (55.47 bytecodes/s) (1424B approximate peak alloc)
-10-27 19:04:03.068  2501  2548 W dex2oat64: Verification of void com.capacitorjs.plugins.app.AppPlugin$$ExternalSyntheticLambda1.<init>(com.capacitorjs.plugins.app.AppPlugin) took 112.068ms (53.54 bytecodes/s) (1424B approximate peak alloc)
-10-27 19:04:04.127   525   553 I ActivityManager: Start proc 2729:com.android.chrome/u0a150 for service {com.android.chrome/org.chromium.chrome.browser.customtabs.CustomTabsConnectionService}
-10-27 19:04:04.233   525   551 D AppWidgetServiceImpl: Provider info from ComponentInfo{com.android.chrome/org.chromium.chrome.browser.quickactionsearchwidget.QuickActionSearchWidgetProvider$QuickActionSearchWidgetProviderSearch} won't be persisted.
-10-27 19:04:04.233   525   551 D AppWidgetServiceImpl: Provider info from ComponentInfo{com.android.chrome/org.chromium.chrome.browser.quickactionsearchwidget.QuickActionSearchWidgetProvider$QuickActionSearchWidgetProviderDino} won't be persisted.
-10-27 19:04:04.233   525   551 D AppWidgetServiceImpl: Provider info from ComponentInfo{com.android.chrome/org.chromium.chrome.browser.searchwidget.SearchWidgetProvider} won't be persisted.
-10-27 19:04:04.643  2750  2750 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-10-27 19:04:04.653  2750  2750 I AndroidRuntime: Using default boot image
-10-27 19:04:04.653  2750  2750 I AndroidRuntime: Leaving lock profiling enabled
-10-27 19:04:04.854  2750  2750 D nativeloader: InitDefaultPublicLibraries for_preload=1: libandroid.so:libaaudio.so:libamidi.so:libbinder_ndk.so:libc.so:libcamera2ndk.so:libdl.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libicu.so:libicui18n.so:libicuuc.so:libjnigraphics.so:liblog.so:libmediandk.so:libm.so:libnativehelper.so:libnativewindow.so:libOpenMAXAL.so:libOpenSLES.so:libRS.so:libstdc++.so:libsync.so:libvulkan.so:libwebviewchromium_plat_support.so:libz.so
-10-27 19:04:04.970  2750  2750 D AndroidRuntime: Calling main entry com.android.commands.monkey.Monkey
-10-27 19:04:05.325  2750  2750 I AndroidRuntime: VM exiting with result code 0.
-10-27 19:04:06.145   525   551 D AppWidgetServiceImpl: Provider info from ComponentInfo{com.android.chrome/org.chromium.chrome.browser.quickactionsearchwidget.QuickActionSearchWidgetProvider$QuickActionSearchWidgetProviderSearch} won't be persisted.
-10-27 19:04:06.254   525   551 D AppWidgetServiceImpl: Provider info from ComponentInfo{com.android.chrome/org.chromium.chrome.browser.quickactionsearchwidget.QuickActionSearchWidgetProvider$QuickActionSearchWidgetProviderDino} won't be persisted.
-10-27 19:04:06.600   525   553 I ActivityManager: Start proc 2979:com.google.android.webview:webview_service/u0a134 for service {com.google.android.webview/org.chromium.android_webview.services.VariationsSeedServer}
-10-27 19:04:06.695  2863  3006 W chromium: [WARNING:dns_config_service_android.cc(115)] Failed to read DnsConfig.
-10-27 19:04:06.748   525   551 D AppWidgetServiceImpl: Provider info from ComponentInfo{com.android.chrome/org.chromium.chrome.browser.searchwidget.SearchWidgetProvider} won't be persisted.
-10-27 19:04:06.750   525   551 D AppWidgetServiceImpl: Provider info from ComponentInfo{com.android.chrome/org.chromium.chrome.browser.quickactionsearchwidget.QuickActionSearchWidgetProvider$QuickActionSearchWidgetProviderSearch} won't be persisted.
-10-27 19:04:06.750   525   551 D AppWidgetServiceImpl: Provider info from ComponentInfo{com.android.chrome/org.chromium.chrome.browser.quickactionsearchwidget.QuickActionSearchWidgetProvider$QuickActionSearchWidgetProviderDino} won't be persisted.
-10-27 19:04:06.750   525   551 D AppWidgetServiceImpl: Provider info from ComponentInfo{com.android.chrome/org.chromium.chrome.browser.searchwidget.SearchWidgetProvider} won't be persisted.
-10-27 19:04:06.752   525   551 D AppWidgetServiceImpl: Provider info from ComponentInfo{com.android.chrome/org.chromium.chrome.browser.quickactionsearchwidget.QuickActionSearchWidgetProvider$QuickActionSearchWidgetProviderSearch} won't be persisted.
-10-27 19:04:06.752   525   551 D AppWidgetServiceImpl: Provider info from ComponentInfo{com.android.chrome/org.chromium.chrome.browser.quickactionsearchwidget.QuickActionSearchWidgetProvider$QuickActionSearchWidgetProviderDino} won't be persisted.
-10-27 19:04:06.752   525   551 D AppWidgetServiceImpl: Provider info from ComponentInfo{com.android.chrome/org.chromium.chrome.browser.searchwidget.SearchWidgetProvider} won't be persisted.
-10-27 19:04:06.858  2863  3006 E chromium: [ERROR:simple_file_enumerator.cc(21)] opendir /data/user/0/nz.co.ashnet.astrologersworkbench/cache/WebView/Default/HTTP Cache/Code Cache/wasm: No such file or directory (2)
-10-27 19:04:06.859  2863  3006 E chromium: [ERROR:simple_index_file.cc(614)] Could not reconstruct index from disk
-10-27 19:04:06.860  2863  3006 E chromium: [ERROR:simple_file_enumerator.cc(21)] opendir /data/user/0/nz.co.ashnet.astrologersworkbench/cache/WebView/Default/HTTP Cache/Code Cache/js: No such file or directory (2)
-10-27 19:04:06.860  2863  3006 E chromium: [ERROR:simple_index_file.cc(614)] Could not reconstruct index from disk
-10-27 19:04:07.051   525   553 I ActivityManager: Start proc 3029:com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0/u0ai9000 for  {nz.co.ashnet.astrologersworkbench/org.chromium.content.app.SandboxedProcessService0:0}
-10-27 19:04:07.062  1775  2499 W chromium: [1027/190407.062118:WARNING:dns_config_service_android.cc(81)] Failed to read DnsConfig.
-10-27 19:04:07.096  2863  2863 D Capacitor: Starting BridgeActivity
-10-27 19:04:07.479  3029  3029 I cr_WebViewApkApp: Launched version=113.0.5672.136 minSdkVersion=29 isBundle=false processName=com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0
-10-27 19:04:11.061   525   553 I ActivityManager: Start proc 3383:com.google.android.webview:webview_apk/u0a134 for service {com.google.android.webview/org.chromium.android_webview.nonembedded.AwComponentUpdateService}
-10-27 19:04:12.236  3383  3501 W cr_AWNetworkFetcherTask: 	at org.chromium.android_webview.nonembedded.NetworkFetcherTask.download(chromium-TrichromeWebViewGoogle6432.apk-stable-567263637:48)
-10-27 19:04:14.760  1772  2291 W earchbox:search: Long monitor contention with owner CronetInit (3702) at void il.run()(:com.google.android.gms.dynamite_cronetdynamite@231818047@23.18.18 (190800-0):3) waiters=0 in iu org.chromium.net.impl.CronetUrlRequestContext.b(java.lang.String, org.chromium.net.UrlRequest$Callback, java.util.concurrent.Executor, int, java.util.Collection, boolean, boolean, boolean, boolean, int, boolean, int, org.chromium.net.RequestFinishedInfo$Listener, int, long) for 241ms
-10-27 19:04:30.958  4716  4716 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-10-27 19:04:30.974  4716  4716 I AndroidRuntime: Using default boot image
-10-27 19:04:30.974  4716  4716 I AndroidRuntime: Leaving lock profiling enabled
-10-27 19:04:31.077  4716  4716 D nativeloader: InitDefaultPublicLibraries for_preload=1: libandroid.so:libaaudio.so:libamidi.so:libbinder_ndk.so:libc.so:libcamera2ndk.so:libdl.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libicu.so:libicui18n.so:libicuuc.so:libjnigraphics.so:liblog.so:libmediandk.so:libm.so:libnativehelper.so:libnativewindow.so:libOpenMAXAL.so:libOpenSLES.so:libRS.so:libstdc++.so:libsync.so:libvulkan.so:libwebviewchromium_plat_support.so:libz.so
-10-27 19:04:31.124  4716  4716 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-10-27 19:04:32.300  4716  4716 D AndroidRuntime: Shutting down VM
-10-27 19:04:41.064  4350  5101 I cr_CronetUrlRequestContext: destroyNativeStreamLocked org.chromium.net.impl.CronetBidirectionalStream@bf14e49
-10-27 19:04:55.254   525   539 W ActivityManager: Exception when unbinding service nz.co.ashnet.astrologersworkbench/org.chromium.content.app.SandboxedProcessService0:0
-10-27 19:04:55.260   525   539 I ActivityManager: Killing 3029:com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0/u0a192i0 (adj 900): isolated not needed
-10-27 19:05:17.351  5893  5893 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-10-27 19:05:17.366  5893  5893 I AndroidRuntime: Using default boot image
-10-27 19:05:17.366  5893  5893 I AndroidRuntime: Leaving lock profiling enabled
-10-27 19:05:17.457  5893  5893 D nativeloader: InitDefaultPublicLibraries for_preload=1: libandroid.so:libaaudio.so:libamidi.so:libbinder_ndk.so:libc.so:libcamera2ndk.so:libdl.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libicu.so:libicui18n.so:libicuuc.so:libjnigraphics.so:liblog.so:libmediandk.so:libm.so:libnativehelper.so:libnativewindow.so:libOpenMAXAL.so:libOpenSLES.so:libRS.so:libstdc++.so:libsync.so:libvulkan.so:libwebviewchromium_plat_support.so:libz.so
-10-27 19:05:17.524  5893  5893 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-10-27 19:05:18.547  5893  5893 D AndroidRuntime: Shutting down VM
+10-27 19:10:38.949  5129  5904 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.007  5129  5884 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.022  5129  5792 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.042  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.091  5129  5725 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.151  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.163  5129  5872 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.226   522   552 D OomAdjuster: Not killing cached processes
+10-27 19:10:39.265  5129  5872 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.316  5129  5398 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.359  5129  5725 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.370  5129  5871 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.388  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.416  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.447  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.459  5129  5725 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.468  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.501  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.530  5129  5904 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.570  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.598  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.605  5129  5398 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.625  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.645  5129  5870 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.653  5129  5870 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.678  5129  5870 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.699  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.717  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.729  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.759  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.767  5129  5795 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.781  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.790  5129  5870 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.799  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.810  5129  5870 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.843  5129  5882 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.849  5129  5885 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.854  5129  5885 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.866  5129  5882 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.875  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:39.880  5129  5870 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:40.225  5129  5870 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:40.235  5129  5885 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:40.242  5129  5885 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:40.282  5129  5885 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:40.292  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:40.299  5129  5870 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:40.306  5129  5870 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:40.313  5129  5870 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:40.320  5129  5870 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:40.327  5129  5870 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:40.333  5129  5870 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:40.364  5129  5870 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:40.387  5129  5870 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:40.405  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:40.428  5129  5885 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:40.451  5129  5885 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:40.482  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:40.502  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:40.533  5129  5885 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:40.552  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:40.587  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:40.614  5129  5885 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:40.637  5129  5885 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:40.672  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:40.688  5129  5783 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:40.719  5129  5783 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:40.780  5129  5783 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:40.853  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:40.860  5129  5725 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:41.319  5129  5725 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:41.402  5129  5783 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:41.438  1602  1727 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:10:41.439  5129  5882 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:41.469  1602  1727 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:10:41.485  5129  5882 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:41.516  5129  5903 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:41.524  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:41.548  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:41.657  1828  2360 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:10:41.667  5129  5885 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:41.689  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:41.700  4782  4919 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:10:41.703  1828  2363 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:10:41.748  4782  4937 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:10:41.755  1828  2360 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:10:41.775  1828  2406 W A       : Can't format flag AndroidGsaVelourJars__velour_crashtest_jar__name to integer.
+10-27 19:10:41.781  5129  5903 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:41.920  1828  2360 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:10:41.920  4782  4937 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:10:41.924  1828  2363 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:10:41.989  5129  5903 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:42.173  5129  5903 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:42.178  5129  5885 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:42.192  1828  2408 W A       : Can't format flag AndroidGsaVelourJars__velour_crashtest_jar__name to integer.
+10-27 19:10:42.232  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:42.243  2607  2876 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:10:42.289  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:42.316  1828  2404 W A       : Can't format flag AndroidGsaVelourJars__velour_crashtest_jar__name to integer.
+10-27 19:10:42.331  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:42.349  2607  2876 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:10:42.464  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:42.495  1730  4240 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:10:42.508  5129  5904 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:42.559  5129  5904 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:42.605  5129  5904 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:42.624  5129  5904 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:42.659  5129  5904 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:42.678  5129  5904 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:42.713  5129  5885 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:42.764  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:42.772  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:42.783  5129  5885 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:42.811  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:42.817  5129  5725 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:42.841  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:42.850  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:42.855  5129  5894 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:42.861  5129  5725 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:42.867  5129  5783 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:42.874  5129  5783 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:42.881  5129  5903 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:42.896  5129  5903 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:42.904  5129  5783 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:42.910  5129  5783 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:42.917  5129  5783 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:42.921  5129  5783 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:42.933  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:42.944  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:42.957  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:42.970  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:42.980  5129  5903 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:42.986  5129  5903 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:42.990  5129  5903 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.000  5129  5783 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.007  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.017  5129  5903 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.028  5129  5903 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.033  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.041  5129  5725 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.046  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.050  5129  5903 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.058  5129  5903 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.063  5129  5903 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.068  5129  5904 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.072  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.077  5129  5904 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.081  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.086  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.091  5129  5725 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.096  5129  5725 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.101  5129  5904 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.107  5129  5725 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.114  5129  5783 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.119  5129  5904 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.124  5129  5904 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.129  5129  5783 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.135  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.140  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.144  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.148  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.153  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.164  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.170  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.181  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.188  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.198  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.206  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.215  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.220  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.228  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.234  5129  5903 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.242  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.259  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.271  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.285  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.301  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.313  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.327  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.336  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.349  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.357  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.365  5129  5903 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.378  5129  5903 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.386  5129  5725 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.397  5129  5905 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.405  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.415  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.422  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.428  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.436  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.451  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.471  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:43.492  5129  5403 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-27 19:10:44.547   522   551 D OomAdjuster: Not killing cached processes
+10-27 19:10:50.063   522   827 D OomAdjuster: Not killing cached processes
+10-27 19:10:55.210   522   551 D OomAdjuster: Not killing cached processes
+10-27 19:11:03.762   522  2328 D OomAdjuster: Not killing cached processes
+10-27 19:11:09.139   522  1782 D OomAdjuster: Not killing cached processes
+10-27 19:11:14.447   522  2483 D OomAdjuster: Not killing cached processes
