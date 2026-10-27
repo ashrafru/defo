@@ -1,13 +1,13 @@
-1-launch: pid=
+1-launch: pid=2441
 a: tap 'Polaris2' at ''
-2-polaris2: pid=
+2-polaris2: pid=2441
 b: tap 'The Sieve' at ''
-3-sieve: pid=
+3-sieve: pid=2441
 c: tap 'Download project' at ''
-4-export: pid=
+4-export: pid=2441
 ls: /sdcard/Documents/Astrologers: No such file or directory
 ls: Workbench/: No such file or directory
 d: tap 'Central Scrutinizer' at ''
-5-scrutinizer: pid=
-6-leave: pid=
+5-scrutinizer: pid=2441
+6-leave: pid=2441
 run-as: package not debuggable: nz.co.ashnet.astrologersworkbench

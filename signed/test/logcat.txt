@@ -1,200 +1,87 @@
-10-27 19:30:06.528  1726  3546 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:06.907  1654  1907 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:06.953  2531  2793 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:07.031  4661  4683 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:08.722  1556  1703 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:09.164   520   591 D OomAdjuster: Not killing cached processes
-10-27 19:30:10.478  1556  1671 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:12.258  4258  4363 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:12.281  4661  4683 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:12.324  4258  4363 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:12.349  4258  4772 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:12.533  1726  3546 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:12.706  1726  3530 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:12.768  1726  3530 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:12.778  1726  3546 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:12.783  1726  3530 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:12.807  1726  3546 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:12.869  4258  4870 I cr_CronetUrlRequestContext: destroyNativeStreamLocked org.chromium.net.impl.CronetBidirectionalStream@b6a4af
-10-27 19:30:12.908  1556  1703 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:12.983  2531  2717 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:13.043  1556  1671 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:13.058  2531  2793 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:13.180  2531  2793 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:13.224  2531  2717 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:13.267  2531  2793 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:13.366  2531  2717 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:13.431  1654  2986 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:13.533  2531  2717 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:13.569  1726  3546 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:13.621  1726  3546 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:13.624  4258  4771 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:13.664  1726  3530 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:13.716  1726  3546 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:13.716  4152  4647 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:13.734  4258  4772 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:13.742  1726  3530 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:13.786  1726  3530 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:13.806  1726  3546 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:13.853  4258  4771 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:13.854  1726  3533 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:13.992   520   573 I ActivityManager: Killing 4038:com.google.android.settings.intelligence/u0a118 (adj 0): change com.google.android.settings.intelligence
-10-27 19:30:14.058  1726  3546 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:14.231   520   548 D OomAdjuster: Not killing cached processes
-10-27 19:30:14.342  4258  4389 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:14.359  1726  3530 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:14.719  2531  2793 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:14.723  1654  1907 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:14.726  2531  2793 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:14.769  1726  3523 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:14.774  1726  3530 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:15.185  1726  3533 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:16.476  4993  4993 D nativeloader: InitDefaultPublicLibraries for_preload=1: libandroid.so:libaaudio.so:libamidi.so:libbinder_ndk.so:libc.so:libcamera2ndk.so:libdl.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libicu.so:libicui18n.so:libicuuc.so:libjnigraphics.so:liblog.so:libmediandk.so:libm.so:libnativehelper.so:libnativewindow.so:libOpenMAXAL.so:libOpenSLES.so:libRS.so:libstdc++.so:libsync.so:libvulkan.so:libwebviewchromium_plat_support.so:libz.so
-10-27 19:30:16.508  4993  4993 W Monkey  : args: [-p, nz.co.ashnet.astrologersworkbench, -c, android.intent.category.LAUNCHER, 1]
-10-27 19:30:16.509  4993  4993 W Monkey  :  arg: "nz.co.ashnet.astrologersworkbench"
-10-27 19:30:16.509  4993  4993 W Monkey  : data="nz.co.ashnet.astrologersworkbench"
-10-27 19:30:16.537   520   943 I wm_create_activity: [0,217051681,8,nz.co.ashnet.astrologersworkbench/.MainActivity,android.intent.action.MAIN,NULL,NULL,270532608]
-10-27 19:30:16.548   520   943 I ActivityTaskManager: START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=nz.co.ashnet.astrologersworkbench/.MainActivity} with LAUNCH_SINGLE_TASK from uid 2000 (BAL_ALLOW_PERMISSION) result code=0
-10-27 19:30:16.550   838   855 V WindowManagerShell: Transition requested: android.os.BinderProxy@13197df TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=8 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=nz.co.ashnet.astrologersworkbench/.MainActivity } baseActivity=ComponentInfo{nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity} topActivity=ComponentInfo{nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity} origActivity=null realActivity=ComponentInfo{nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity} numActivities=1 lastActiveTime=79945 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{android.window.IWindowContainerToken$Stub$Proxy@3ddcc2c} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 128 - 0, 0) topActivityInfo=ActivityInfo{fad86f5 nz.co.ashnet.astrologersworkbench.MainActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=false isVisibleRequested=false isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
-10-27 19:30:16.570   520   943 D CoreBackPreview: Window{b190d2 u0 Splash Screen nz.co.ashnet.astrologersworkbench}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@6b2d0a0, mPriority=0, mIsAnimationCallback=false}
-10-27 19:30:16.740   520   550 I am_proc_start: [0,5011,10192,nz.co.ashnet.astrologersworkbench,next-top-activity,{nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity}]
-10-27 19:30:16.740   520   550 I ActivityManager: Start proc 5011:nz.co.ashnet.astrologersworkbench/u0a192 for next-top-activity {nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity}
-10-27 19:30:16.747   520   539 V WindowManager: Sent Transition #7 createdAt=10-27 19:30:16.529 via request=TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=8 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=nz.co.ashnet.astrologersworkbench/.MainActivity } baseActivity=ComponentInfo{nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity} topActivity=ComponentInfo{nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity} origActivity=null realActivity=ComponentInfo{nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity} numActivities=1 lastActiveTime=79945 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{eeba1d0 Task{4765646 #8 type=standard A=10192:nz.co.ashnet.astrologersworkbench}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 128 - 0, 0) topActivityInfo=ActivityInfo{c8175c9 nz.co.ashnet.astrologersworkbench.MainActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=false isVisibleRequested=false isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
-10-27 19:30:16.748   520   539 V WindowManager:     info={id=7 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{eeba1d0 Task{4765646 #8 type=standard A=10192:nz.co.ashnet.astrologersworkbench}}} m=OPEN f=NONE leash=Surface(name=Task=8)/@0xadbd282 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0},{WCT{RemoteToken{4310afc Task{710bfa1 #1 type=home}}} m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0x6fadb32 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0}]}
-10-27 19:30:16.829   520  2494 I am_proc_bound: [0,5011,nz.co.ashnet.astrologersworkbench]
-10-27 19:30:16.831   520  2494 I wm_restart_activity: [0,217051681,8,nz.co.ashnet.astrologersworkbench/.MainActivity]
-10-27 19:30:16.832   520  2494 I wm_set_resumed_activity: [0,nz.co.ashnet.astrologersworkbench/.MainActivity,minimalResumeActivityLocked - onActivityStateChanged]
-10-27 19:30:16.890  5011  5011 D nativeloader: Configuring clns-6 for other apk /data/app/~~NY17yz38L35mFmJjlXgPbQ==/nz.co.ashnet.astrologersworkbench-I0ZEirgmTZXRK9wzI9CBcQ==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~NY17yz38L35mFmJjlXgPbQ==/nz.co.ashnet.astrologersworkbench-I0ZEirgmTZXRK9wzI9CBcQ==/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/nz.co.ashnet.astrologersworkbench
-10-27 19:30:16.936  5011  5011 V GraphicsEnvironment: ANGLE GameManagerService for nz.co.ashnet.astrologersworkbench: false
-10-27 19:30:16.936  5011  5011 V GraphicsEnvironment: nz.co.ashnet.astrologersworkbench is not listed in per-application setting
-10-27 19:30:17.015  5011  5048 I cr_VariationsUtils: Failed reading seed file "/data/user/0/nz.co.ashnet.astrologersworkbench/app_webview/variations_seed_new"
-10-27 19:30:17.015  5011  5048 I cr_VariationsUtils: Failed reading seed file "/data/user/0/nz.co.ashnet.astrologersworkbench/app_webview/variations_seed"
-10-27 19:30:17.062   520   550 I am_proc_start: [0,5053,99000,com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0,,{nz.co.ashnet.astrologersworkbench/org.chromium.content.app.SandboxedProcessService0:0}]
-10-27 19:30:17.062   520   550 I ActivityManager: Start proc 5053:com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0/u0ai9000 for  {nz.co.ashnet.astrologersworkbench/org.chromium.content.app.SandboxedProcessService0:0}
-10-27 19:30:17.086  5011  5054 W chromium: [WARNING:dns_config_service_android.cc(115)] Failed to read DnsConfig.
-10-27 19:30:17.100   520  2494 I am_proc_bound: [0,5053,com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0]
-10-27 19:30:17.114  5053  5053 I cr_WebViewApkApp: Launched version=113.0.5672.136 minSdkVersion=29 isBundle=false processName=com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0
-10-27 19:30:17.148   520   550 I am_proc_start: [0,5087,10134,com.google.android.webview:webview_apk,service,{com.google.android.webview/org.chromium.android_webview.nonembedded.AwComponentUpdateService}]
-10-27 19:30:17.148   520   550 I ActivityManager: Start proc 5087:com.google.android.webview:webview_apk/u0a134 for service {com.google.android.webview/org.chromium.android_webview.nonembedded.AwComponentUpdateService}
-10-27 19:30:17.165  5011  5011 D Capacitor: Starting BridgeActivity
-10-27 19:30:17.219  5011  5011 I wm_on_create_called: [217051681,nz.co.ashnet.astrologersworkbench.MainActivity,performCreate,255]
-10-27 19:30:17.221  5011  5011 I wm_on_start_called: [217051681,nz.co.ashnet.astrologersworkbench.MainActivity,handleStartActivity,0]
-10-27 19:30:17.246  5011  5011 I wm_on_resume_called: [217051681,nz.co.ashnet.astrologersworkbench.MainActivity,RESUME_ACTIVITY,7]
-10-27 19:30:17.290  5011  5011 I wm_on_top_resumed_gained_called: [217051681,nz.co.ashnet.astrologersworkbench.MainActivity,topStateChangedWhenResumed]
-10-27 19:30:17.314   520  1702 D CoreBackPreview: Window{776b3d6 u0 nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@a18449d, mPriority=0, mIsAnimationCallback=false}
-10-27 19:30:17.314   520   543 I input_focus: [Focus request 776b3d6 nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity,reason=UpdateInputWindows]
-10-27 19:30:17.539   520   539 I sysui_multi_action: [319,221,321,217,322,1012,325,79,757,761,758,7,759,1,806,nz.co.ashnet.astrologersworkbench,871,nz.co.ashnet.astrologersworkbench.MainActivity,904,com.android.shell,905,0,945,304,1320,4,1321,4]
-10-27 19:30:17.540   520   539 I wm_activity_launch_time: [0,217051681,nz.co.ashnet.astrologersworkbench/.MainActivity,1012]
-10-27 19:30:17.540   520   539 I ActivityTaskManager: Displayed nz.co.ashnet.astrologersworkbench/.MainActivity for user 0: +1s12ms
-10-27 19:30:17.588   520   943 W InputManager-JNI: Input channel object 'b190d2 Splash Screen nz.co.ashnet.astrologersworkbench (client)' was disposed without first being removed with the input manager!
-10-27 19:30:17.589   520  1702 D CoreBackPreview: Window{b190d2 u0 Splash Screen nz.co.ashnet.astrologersworkbench EXITING}: Setting back callback null
-10-27 19:30:17.596   520   623 I input_focus: [Focus entering 776b3d6 nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity (server),reason=Window became focusable. Previous reason: NOT_VISIBLE]
-10-27 19:30:17.598   520  1702 I ImeTracker: nz.co.ashnet.astrologersworkbench:654a166b: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
-10-27 19:30:17.598   520  1702 I ImeTracker: nz.co.ashnet.astrologersworkbench:654a166b: onCancelled at PHASE_SERVER_SHOULD_HIDE
-10-27 19:30:17.608  5087  5121 W cr_AWNetworkFetcherTask: 	at org.chromium.android_webview.nonembedded.NetworkFetcherTask.download(chromium-TrichromeWebViewGoogle6432.apk-stable-567263637:48)
-10-27 19:30:17.632  1537  1537 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x12000000 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=nz.co.ashnet.astrologersworkbench fieldId=0 fieldName=null extras=null}, false)
-10-27 19:30:19.363   520  1702 D OomAdjuster: Not killing cached processes
-10-27 19:30:19.923  4258  4770 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:19.926  4258  4389 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:19.936  4258  4770 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:20.022  1726  3523 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:20.250  1726  3530 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:20.287  2531  2793 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:20.296  1726  3523 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:20.310  2531  2717 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:20.368  1726  3530 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:20.472  2531  2717 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:20.479  2531  2793 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:20.833  1726  3530 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:21.211  1726  3533 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:21.288  1726  3533 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:22.785  5011  5191 D ProfileInstaller: Installing profile for nz.co.ashnet.astrologersworkbench
-10-27 19:30:24.310   520  2585 I ActivityManager: Killing 5011:nz.co.ashnet.astrologersworkbench/u0a192 (adj 0): depends on provider com.google.android.gms/.fonts.provider.FontsProvider in dying proc com.google.android.gms.persistent (adj -10000)
-10-27 19:30:24.310   520  2585 I am_kill : [0,5011,nz.co.ashnet.astrologersworkbench,0,depends on provider com.google.android.gms/.fonts.provider.FontsProvider in dying proc com.google.android.gms.persistent (adj -10000)]
-10-27 19:30:24.329   520  2776 I ImeTracker: nz.co.ashnet.astrologersworkbench:5ccf0c37: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_REMOVE_CLIENT
-10-27 19:30:24.329   520  2776 I ImeTracker: nz.co.ashnet.astrologersworkbench:5ccf0c37: onCancelled at PHASE_SERVER_SHOULD_HIDE
-10-27 19:30:24.329   520  2586 I WindowManager: WIN DEATH: Window{776b3d6 u0 nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity}
-10-27 19:30:24.330   520  2586 W InputManager-JNI: Input channel object '776b3d6 nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity (client)' was disposed without first being removed with the input manager!
-10-27 19:30:24.339   520  2573 I ActivityManager: Process com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0 (pid 5053) has died: fg  BTOP
-10-27 19:30:24.339   520  2573 I am_proc_died: [0,5053,com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0,0,3]
-10-27 19:30:24.339   520  2573 W ActivityManager: Scheduling restart of crashed service nz.co.ashnet.astrologersworkbench/org.chromium.content.app.SandboxedProcessService0:0 in 300964ms for connection
-10-27 19:30:24.339   520  2573 I am_schedule_service_restart: [0,nz.co.ashnet.astrologersworkbench/org.chromium.content.app.SandboxedProcessService0:0,300964]
-10-27 19:30:24.341   520   536 I am_proc_died: [0,5011,nz.co.ashnet.astrologersworkbench,0,2]
-10-27 19:30:24.342   520   536 W ActivityTaskManager: Force removing ActivityRecord{ceff221 u0 nz.co.ashnet.astrologersworkbench/.MainActivity t8}: app died, no saved state
-10-27 19:30:24.342   520   536 I wm_finish_activity: [0,217051681,8,nz.co.ashnet.astrologersworkbench/.MainActivity,proc died without state saved]
-10-27 19:30:24.343   838   855 V WindowManagerShell: Transition requested: android.os.BinderProxy@c8ddbde TransitionRequestInfo { type = CLOSE, triggerTask = TaskInfo{userId=0 taskId=8 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=nz.co.ashnet.astrologersworkbench/.MainActivity } baseActivity=ComponentInfo{nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity} topActivity=ComponentInfo{nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity} origActivity=null realActivity=ComponentInfo{nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity} numActivities=1 lastActiveTime=80229 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{android.window.IWindowContainerToken$Stub$Proxy@d1871bf} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 128 - 0, 0) topActivityInfo=ActivityInfo{ecad08c nz.co.ashnet.astrologersworkbench.MainActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
-10-27 19:30:24.344   520   536 I wm_task_removed: [8,8,0,removeChild, last child = ActivityRecord{ceff221 u0 nz.co.ashnet.astrologersworkbench/.MainActivity t-1 f}} in Task{4765646 #8 type=standard A=10192:nz.co.ashnet.astrologersworkbench}]
-10-27 19:30:24.371   520  2573 D OomAdjuster: Not killing cached processes
-10-27 19:30:24.400   520   539 V WindowManager: Sent Transition #8 createdAt=10-27 19:30:24.342 via request=TransitionRequestInfo { type = CLOSE, triggerTask = TaskInfo{userId=0 taskId=8 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=nz.co.ashnet.astrologersworkbench/.MainActivity } baseActivity=ComponentInfo{nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity} topActivity=ComponentInfo{nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity} origActivity=null realActivity=ComponentInfo{nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity} numActivities=1 lastActiveTime=80229 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{eeba1d0 Task{4765646 #8 type=standard A=10192:nz.co.ashnet.astrologersworkbench}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 128 - 0, 0) topActivityInfo=ActivityInfo{c8175c9 nz.co.ashnet.astrologersworkbench.MainActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
-10-27 19:30:29.377   520   943 D OomAdjuster: Not killing cached processes
-10-27 19:30:34.391   520   549 D OomAdjuster: Not killing cached processes
-10-27 19:30:35.179  1556  1703 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:35.271  4258  4363 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:35.298  4258  4363 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:35.318  1726  3533 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:35.345  1726  3546 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:35.389  4258  4363 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:35.484  2531  2717 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:35.501  1726  3530 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:35.506  1726  3523 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:35.580  2531  2793 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:35.693  2531  2793 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:35.749  2531  2717 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:37.597     0     0 I init    : processing action (persist.device_config.lmkd_native.thrashing_limit_critical=*) from (/system/etc/init/lmkd.rc:44)
-10-27 19:30:37.599     0     0 I init    : processing action (lmkd.reinit=1) from (/system/etc/init/lmkd.rc:10)
-10-27 19:30:37.602     0     0 I init    : starting service 'exec 23 (/system/bin/lmkd --reinit)'...
-10-27 19:30:37.624     0     0 I init    : ... started service 'exec 23 (/system/bin/lmkd --reinit)' has pid 5740
-10-27 19:30:37.433   132   132 I lowmemorykiller: lmkd data connection established
-10-27 19:30:37.467   132   132 I lowmemorykiller: Using psi monitors for memory pressure detection
-10-27 19:30:37.467   132   132 I lowmemorykiller: Properties reinitilized
-10-27 19:30:37.467  5740  5740 I lowmemorykiller: lmkd updated properties successfully
-10-27 19:30:37.467   132   132 I lowmemorykiller: lmkd data connection dropped
-10-27 19:30:37.467   132   132 I lowmemorykiller: closing lmkd data connection
-10-27 19:30:37.664     0     0 I init    : Service 'exec 23 (/system/bin/lmkd --reinit)' (pid 5740) exited with status 0 oneshot service took 0.056000 seconds in background
-10-27 19:30:37.667     0     0 I init    : Sending signal 9 to service 'exec 23 (/system/bin/lmkd --reinit)' (pid 5740) process group...
-10-27 19:30:37.896  5747  5747 D nativeloader: InitDefaultPublicLibraries for_preload=1: libandroid.so:libaaudio.so:libamidi.so:libbinder_ndk.so:libc.so:libcamera2ndk.so:libdl.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libicu.so:libicui18n.so:libicuuc.so:libjnigraphics.so:liblog.so:libmediandk.so:libm.so:libnativehelper.so:libnativewindow.so:libOpenMAXAL.so:libOpenSLES.so:libRS.so:libstdc++.so:libsync.so:libvulkan.so:libwebviewchromium_plat_support.so:libz.so
-10-27 19:30:38.296  1556  1671 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:38.317  1556  1670 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:38.317  4258  4771 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:38.362  1556  1671 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:38.365  1726  3546 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:38.389  1726  3533 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:38.457  4258  4355 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:38.487  1726  3546 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:38.559  1726  3523 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:38.652  4258  4363 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:38.752  1726  3546 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:38.757  2531  2793 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:38.799  2531  2717 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:38.843  4661  4688 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:38.941  1654  2986 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:39.196  2531  2716 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:30:39.391   520  2090 D OomAdjuster: Not killing cached processes
-10-27 19:30:44.420   520  2089 D OomAdjuster: Not killing cached processes
-10-27 19:30:49.492   520   603 D OomAdjuster: Not killing cached processes
-10-27 19:30:52.013  1726  2498 E cr_CronetUrlRequestContext: 	at org.chromium.net.impl.r.run(PG:5)
-10-27 19:30:54.559   520   948 D OomAdjuster: Not killing cached processes
-10-27 19:31:00.573   520   548 D OomAdjuster: Not killing cached processes
-10-27 19:31:06.227   520   826 D OomAdjuster: Not killing cached processes
-10-27 19:31:11.329   520  2183 D OomAdjuster: Not killing cached processes
-10-27 19:31:17.206   520   535 D OomAdjuster: Not killing cached processes
-10-27 19:31:24.748   520   535 D OomAdjuster: Not killing cached processes
-10-27 19:31:29.758   520   591 D OomAdjuster: Not killing cached processes
-10-27 19:31:35.773   520   549 D OomAdjuster: Not killing cached processes
-10-27 19:31:40.847   520   591 D OomAdjuster: Not killing cached processes
-10-27 19:31:43.800  5946  5946 D nativeloader: InitDefaultPublicLibraries for_preload=1: libandroid.so:libaaudio.so:libamidi.so:libbinder_ndk.so:libc.so:libcamera2ndk.so:libdl.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libicu.so:libicui18n.so:libicuuc.so:libjnigraphics.so:liblog.so:libmediandk.so:libm.so:libnativehelper.so:libnativewindow.so:libOpenMAXAL.so:libOpenSLES.so:libRS.so:libstdc++.so:libsync.so:libvulkan.so:libwebviewchromium_plat_support.so:libz.so
-10-27 19:31:46.807   520   591 D OomAdjuster: Not killing cached processes
-10-27 19:31:52.150   520  2607 D OomAdjuster: Not killing cached processes
-10-27 19:31:52.286  1726  2498 E cr_CronetUrlRequestContext: 	at org.chromium.net.impl.r.run(PG:5)
-10-27 19:32:07.273   520  2100 D OomAdjuster: Not killing cached processes
-10-27 19:32:14.375   520   549 D OomAdjuster: Not killing cached processes
-10-27 19:32:16.567  6017  6017 D nativeloader: InitDefaultPublicLibraries for_preload=1: libandroid.so:libaaudio.so:libamidi.so:libbinder_ndk.so:libc.so:libcamera2ndk.so:libdl.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libicu.so:libicui18n.so:libicuuc.so:libjnigraphics.so:liblog.so:libmediandk.so:libm.so:libnativehelper.so:libnativewindow.so:libOpenMAXAL.so:libOpenSLES.so:libRS.so:libstdc++.so:libsync.so:libvulkan.so:libwebviewchromium_plat_support.so:libz.so
-10-27 19:32:19.440   520  2100 D OomAdjuster: Not killing cached processes
-10-27 19:32:26.454   520  2100 D OomAdjuster: Not killing cached processes
-10-27 19:32:28.348  6055  6055 D nativeloader: InitDefaultPublicLibraries for_preload=1: libandroid.so:libaaudio.so:libamidi.so:libbinder_ndk.so:libc.so:libcamera2ndk.so:libdl.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libicu.so:libicui18n.so:libicuuc.so:libjnigraphics.so:liblog.so:libmediandk.so:libm.so:libnativehelper.so:libnativewindow.so:libOpenMAXAL.so:libOpenSLES.so:libRS.so:libstdc++.so:libsync.so:libvulkan.so:libwebviewchromium_plat_support.so:libz.so
-10-27 19:32:33.457   520  2084 D OomAdjuster: Not killing cached processes
-10-27 19:32:41.517   520  2607 D OomAdjuster: Not killing cached processes
-10-27 19:32:52.170   520  2084 D OomAdjuster: Not killing cached processes
-10-27 19:32:59.725   520   549 D OomAdjuster: Not killing cached processes
-10-27 19:33:07.427   520   591 D OomAdjuster: Not killing cached processes
-10-27 19:33:14.924   520   943 D OomAdjuster: Not killing cached processes
+10-27 19:36:10.685   506   860 I sysui_multi_action: [757,1243,758,4,806,org.chromium.webview_shell,1241,android.permission.ACCESS_FINE_LOCATION]
+10-27 19:36:20.942   806   806 I SafetyLabelChangedBroadcastReceiver: received broadcast packageName: nz.co.ashnet.astrologersworkbench, current user: UserHandle{0}, packageChangeEvent: NEW_INSTALL, intent user: UserHandle{0}
+10-27 19:36:21.017   506   561 I ActivityManager: Killing 2140:com.android.intentresolver/u0a61 (adj 0): change com.android.intentresolver
+10-27 19:36:21.706   506   777 I SdkSandboxManager: No SDKs used. Skipping SDK data reconcilation for CallingInfo{mUid=10141, mPackageName='nz.co.ashnet.astrologersworkbench, mAppProcessToken='null'}
+10-27 19:36:21.721   506   506 I notification_cancel_all: [1000,506,nz.co.ashnet.astrologersworkbench,0,0,0,5,NULL]
+10-27 19:36:21.763   506   561 I ActivityManager: Killing 2223:com.android.nfc/1027 (adj 915): change com.android.nfc
+10-27 19:36:22.414  1009  1009 D CarrierSvcBindHelper: onPackageAdded: nz.co.ashnet.astrologersworkbench
+10-27 19:36:22.429  1009  1302 D ImsResolver: maybeAddedImsService, packageName: nz.co.ashnet.astrologersworkbench
+10-27 19:36:34.587   506   584 D OomAdjuster: Not killing cached processes
+10-27 19:36:39.717   506   584 D OomAdjuster: Not killing cached processes
+10-27 19:36:46.106   506  2079 D OomAdjuster: Not killing cached processes
+10-27 19:36:51.000  2427  2427 D nativeloader: InitDefaultPublicLibraries for_preload=1: libandroid.so:libaaudio.so:libamidi.so:libbinder_ndk.so:libc.so:libcamera2ndk.so:libdl.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libicu.so:libicui18n.so:libicuuc.so:libjnigraphics.so:liblog.so:libmediandk.so:libm.so:libnativehelper.so:libnativewindow.so:libOpenMAXAL.so:libOpenSLES.so:libRS.so:libstdc++.so:libsync.so:libvulkan.so:libwebviewchromium_plat_support.so:libz.so
+10-27 19:36:51.032  2427  2427 W Monkey  : args: [-p, nz.co.ashnet.astrologersworkbench, -c, android.intent.category.LAUNCHER, 1]
+10-27 19:36:51.034  2427  2427 W Monkey  :  arg: "nz.co.ashnet.astrologersworkbench"
+10-27 19:36:51.034  2427  2427 W Monkey  : data="nz.co.ashnet.astrologersworkbench"
+10-27 19:36:51.056   506  1886 I wm_create_activity: [0,64841099,8,nz.co.ashnet.astrologersworkbench/.MainActivity,android.intent.action.MAIN,NULL,NULL,270532608]
+10-27 19:36:51.057   506  1886 I ActivityTaskManager: START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=nz.co.ashnet.astrologersworkbench/.MainActivity} with LAUNCH_SINGLE_TASK from uid 2000 (BAL_ALLOW_PERMISSION) result code=0
+10-27 19:36:51.065   805   838 V WindowManagerShell: Transition requested: android.os.BinderProxy@64c0594 TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=8 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=nz.co.ashnet.astrologersworkbench/.MainActivity } baseActivity=ComponentInfo{nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity} topActivity=ComponentInfo{nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity} origActivity=null realActivity=ComponentInfo{nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity} numActivities=1 lastActiveTime=67955 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{android.window.IWindowContainerToken$Stub$Proxy@c89a83d} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 128 - 0, 0) topActivityInfo=ActivityInfo{40d6832 nz.co.ashnet.astrologersworkbench.MainActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=false isVisibleRequested=false isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+10-27 19:36:51.085   506   538 I am_proc_start: [0,2441,10141,nz.co.ashnet.astrologersworkbench,next-top-activity,{nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity}]
+10-27 19:36:51.085   506   538 I ActivityManager: Start proc 2441:nz.co.ashnet.astrologersworkbench/u0a141 for next-top-activity {nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity}
+10-27 19:36:51.111   506  2079 D CoreBackPreview: Window{47e6229 u0 Splash Screen nz.co.ashnet.astrologersworkbench}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@2b1034f, mPriority=0, mIsAnimationCallback=false}
+10-27 19:36:51.338   506  1886 I am_proc_bound: [0,2441,nz.co.ashnet.astrologersworkbench]
+10-27 19:36:51.339   506  1886 I wm_restart_activity: [0,64841099,8,nz.co.ashnet.astrologersworkbench/.MainActivity]
+10-27 19:36:51.339   506  1886 I wm_set_resumed_activity: [0,nz.co.ashnet.astrologersworkbench/.MainActivity,minimalResumeActivityLocked - onActivityStateChanged]
+10-27 19:36:51.385   506   523 V WindowManager: Sent Transition #8 createdAt=10-27 19:36:51.049 via request=TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=8 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=nz.co.ashnet.astrologersworkbench/.MainActivity } baseActivity=ComponentInfo{nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity} topActivity=ComponentInfo{nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity} origActivity=null realActivity=ComponentInfo{nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity} numActivities=1 lastActiveTime=67955 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{e703e9d Task{eb6c668 #8 type=standard A=10141:nz.co.ashnet.astrologersworkbench}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 128 - 0, 0) topActivityInfo=ActivityInfo{34caf12 nz.co.ashnet.astrologersworkbench.MainActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=false isVisibleRequested=false isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+10-27 19:36:51.385   506   523 V WindowManager:     info={id=8 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{e703e9d Task{eb6c668 #8 type=standard A=10141:nz.co.ashnet.astrologersworkbench}}} m=OPEN f=NONE leash=Surface(name=Task=8)/@0x4040d47 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0},{WCT{RemoteToken{eea36e3 Task{d9968fc #1 type=home}}} m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0x6a4eff5 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0}]}
+10-27 19:36:51.405  2441  2441 D nativeloader: Configuring clns-6 for other apk /data/app/~~KePHmmw2PoUBpcgS-WEF4Q==/nz.co.ashnet.astrologersworkbench-I3001qvid0hAGXBeXwC6EA==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~KePHmmw2PoUBpcgS-WEF4Q==/nz.co.ashnet.astrologersworkbench-I3001qvid0hAGXBeXwC6EA==/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/nz.co.ashnet.astrologersworkbench
+10-27 19:36:51.420  2441  2441 V GraphicsEnvironment: ANGLE GameManagerService for nz.co.ashnet.astrologersworkbench: false
+10-27 19:36:51.421  2441  2441 V GraphicsEnvironment: nz.co.ashnet.astrologersworkbench is not listed in per-application setting
+10-27 19:36:51.580  2441  2466 I cr_VariationsUtils: Failed reading seed file "/data/user/0/nz.co.ashnet.astrologersworkbench/app_webview/variations_seed_new"
+10-27 19:36:51.580  2441  2466 I cr_VariationsUtils: Failed reading seed file "/data/user/0/nz.co.ashnet.astrologersworkbench/app_webview/variations_seed"
+10-27 19:36:51.595   506   538 I am_proc_start: [0,2475,10102,com.android.webview:webview_service,service,{com.android.webview/org.chromium.android_webview.services.VariationsSeedServer}]
+10-27 19:36:51.598   506   538 I ActivityManager: Start proc 2475:com.android.webview:webview_service/u0a102 for service {com.android.webview/org.chromium.android_webview.services.VariationsSeedServer}
+10-27 19:36:51.617  2441  2472 W chromium: [WARNING:dns_config_service_android.cc(115)] Failed to read DnsConfig.
+10-27 19:36:51.621   506   538 I am_proc_start: [0,2484,99000,com.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0,,{nz.co.ashnet.astrologersworkbench/org.chromium.content.app.SandboxedProcessService0:0}]
+10-27 19:36:51.621   506   538 I ActivityManager: Start proc 2484:com.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0/u0ai9000 for  {nz.co.ashnet.astrologersworkbench/org.chromium.content.app.SandboxedProcessService0:0}
+10-27 19:36:51.633   506   578 I am_proc_bound: [0,2484,com.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0]
+10-27 19:36:51.655  2484  2484 I cr_WebViewApkApp: Launched version=113.0.5672.136 minSdkVersion=1 isBundle=false processName=com.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0
+10-27 19:36:51.670   506   860 D OomAdjuster: Not killing cached processes
+10-27 19:36:51.678  2441  2441 D Capacitor: Starting BridgeActivity
+10-27 19:36:51.689   506   538 I am_proc_start: [0,2521,10102,com.android.webview:webview_apk,service,{com.android.webview/org.chromium.android_webview.nonembedded.AwComponentUpdateService}]
+10-27 19:36:51.689   506   538 I ActivityManager: Start proc 2521:com.android.webview:webview_apk/u0a102 for service {com.android.webview/org.chromium.android_webview.nonembedded.AwComponentUpdateService}
+10-27 19:36:51.709  2441  2441 I wm_on_create_called: [64841099,nz.co.ashnet.astrologersworkbench.MainActivity,performCreate,205]
+10-27 19:36:51.717  2441  2441 I wm_on_start_called: [64841099,nz.co.ashnet.astrologersworkbench.MainActivity,handleStartActivity,0]
+10-27 19:36:51.718  2441  2441 I wm_on_resume_called: [64841099,nz.co.ashnet.astrologersworkbench.MainActivity,RESUME_ACTIVITY,1]
+10-27 19:36:51.794  2441  2441 I wm_on_top_resumed_gained_called: [64841099,nz.co.ashnet.astrologersworkbench.MainActivity,topStateChangedWhenResumed]
+10-27 19:36:51.812   506  1049 D CoreBackPreview: Window{eab0db7 u0 nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@18e18bc, mPriority=0, mIsAnimationCallback=false}
+10-27 19:36:51.822   506   527 I input_focus: [Focus request eab0db7 nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity,reason=UpdateInputWindows]
+10-27 19:36:51.937  2441  2508 W chromium: [WARNING:display_webview.cc(32)] WebView overlays are enabled!
+10-27 19:36:52.034   506   523 I sysui_multi_action: [319,338,321,336,322,981,325,67,757,761,758,7,759,1,806,nz.co.ashnet.astrologersworkbench,871,nz.co.ashnet.astrologersworkbench.MainActivity,904,com.android.shell,905,0,945,291,1320,4,1321,4]
+10-27 19:36:52.035   506   523 I wm_activity_launch_time: [0,64841099,nz.co.ashnet.astrologersworkbench/.MainActivity,981]
+10-27 19:36:52.035   506   523 I ActivityTaskManager: Displayed nz.co.ashnet.astrologersworkbench/.MainActivity for user 0: +981ms
+10-27 19:36:52.046   506   602 I input_focus: [Focus entering eab0db7 nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity (server),reason=Window became focusable. Previous reason: NOT_VISIBLE]
+10-27 19:36:52.066   506   578 D CoreBackPreview: Window{47e6229 u0 Splash Screen nz.co.ashnet.astrologersworkbench}: Setting back callback null
+10-27 19:36:52.067   506   860 W InputManager-JNI: Input channel object '47e6229 Splash Screen nz.co.ashnet.astrologersworkbench (client)' was disposed without first being removed with the input manager!
+10-27 19:36:52.111   506  1049 I ImeTracker: nz.co.ashnet.astrologersworkbench:1673b3ea: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
+10-27 19:36:52.111   506  1049 I ImeTracker: nz.co.ashnet.astrologersworkbench:1673b3ea: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-27 19:36:56.954  2441  2583 D ProfileInstaller: Installing profile for nz.co.ashnet.astrologersworkbench
+10-27 19:37:08.736   506   786 D OomAdjuster: Not killing cached processes
+10-27 19:37:11.662  2590  2590 D nativeloader: InitDefaultPublicLibraries for_preload=1: libandroid.so:libaaudio.so:libamidi.so:libbinder_ndk.so:libc.so:libcamera2ndk.so:libdl.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libicu.so:libicui18n.so:libicuuc.so:libjnigraphics.so:liblog.so:libmediandk.so:libm.so:libnativehelper.so:libnativewindow.so:libOpenMAXAL.so:libOpenSLES.so:libRS.so:libstdc++.so:libsync.so:libvulkan.so:libwebviewchromium_plat_support.so:libz.so
+10-27 19:37:18.795   506   786 D OomAdjuster: Not killing cached processes
+10-27 19:38:14.011   506   602 I input_interaction: Interaction with: eab0db7 nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity (server), PointerEventDispatcher0 (server), 
+10-27 19:38:14.021   506   860 I wm_finish_activity: [0,64841099,8,nz.co.ashnet.astrologersworkbench/.MainActivity,app-request]
+10-27 19:38:14.021  2441  2441 I wm_on_top_resumed_lost_called: [64841099,nz.co.ashnet.astrologersworkbench.MainActivity,topStateChangedWhenResumed]
+10-27 19:38:14.022   805   838 V WindowManagerShell: Transition requested: android.os.BinderProxy@53c0c68 TransitionRequestInfo { type = CLOSE, triggerTask = TaskInfo{userId=0 taskId=8 displayId=0 isRunning=false baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=nz.co.ashnet.astrologersworkbench/.MainActivity } baseActivity=null topActivity=null origActivity=null realActivity=ComponentInfo{nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity} numActivities=0 lastActiveTime=68238 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{android.window.IWindowContainerToken$Stub$Proxy@6c92881} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 128 - 0, 0) topActivityInfo=null launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=true isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+10-27 19:38:14.023   506   860 I wm_pause_activity: [0,64841099,nz.co.ashnet.astrologersworkbench/.MainActivity,userLeaving=false,finish]
+10-27 19:38:14.025  2441  2441 I wm_on_paused_called: [64841099,nz.co.ashnet.astrologersworkbench.MainActivity,performPause,1]
+10-27 19:38:14.025   506  2079 I wm_add_to_stopping: [0,64841099,nz.co.ashnet.astrologersworkbench/.MainActivity,completeFinishing]
+10-27 19:38:14.028   506   526 D OomAdjuster: Not killing cached processes
+10-27 19:38:14.039   506   602 I input_focus: [Focus leaving eab0db7 nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity (server),reason=Waiting for window because NO_WINDOW]
+10-27 19:38:14.157   506   523 V WindowManager: Sent Transition #9 createdAt=10-27 19:38:14.022 via request=TransitionRequestInfo { type = CLOSE, triggerTask = TaskInfo{userId=0 taskId=8 displayId=0 isRunning=false baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=nz.co.ashnet.astrologersworkbench/.MainActivity } baseActivity=null topActivity=null origActivity=null realActivity=ComponentInfo{nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity} numActivities=0 lastActiveTime=68238 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{e703e9d Task{eb6c668 #8 type=standard A=10141:nz.co.ashnet.astrologersworkbench}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 128 - 0, 0) topActivityInfo=null launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=true isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+10-27 19:38:14.158   506   523 V WindowManager:     info={id=9 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{eea36e3 Task{d9968fc #1 type=home}}} m=TO_FRONT f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0x6a4eff5 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0},{WCT{RemoteToken{e703e9d Task{eb6c668 #8 type=standard A=10141:nz.co.ashnet.astrologersworkbench}}} m=CLOSE f=NONE leash=Surface(name=Task=8)/@0x4040d47 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0},{null m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{1994f18 token=android.os.Binder@4e9c8a})/@0xf21221e sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0}]}
+10-27 19:38:14.623   506   526 I wm_destroy_activity: [0,64841099,8,nz.co.ashnet.astrologersworkbench/.MainActivity,finish-imm:idle]
+10-27 19:38:14.678  2441  2441 I wm_on_stop_called: [64841099,nz.co.ashnet.astrologersworkbench.MainActivity,LIFECYCLER_STOP_ACTIVITY,0]
+10-27 19:38:14.682  2441  2441 I wm_on_destroy_called: [64841099,nz.co.ashnet.astrologersworkbench.MainActivity,performDestroy,3]
+10-27 19:38:14.683   506   860 D CoreBackPreview: Window{eab0db7 u0 nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity}: Setting back callback null
+10-27 19:38:14.685   506   860 W InputManager-JNI: Input channel object 'eab0db7 nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity (client)' was disposed without first being removed with the input manager!
+10-27 19:38:14.687   506  1633 I wm_task_removed: [8,8,0,removeChild, last child = ActivityRecord{3dd658b u0 nz.co.ashnet.astrologersworkbench/.MainActivity t-1 f}} in Task{eb6c668 #8 type=standard A=10141:nz.co.ashnet.astrologersworkbench}]
+10-27 19:38:14.766   506   860 I ActivityManager: Killing 2484:com.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0/u0a141i0 (adj 0): isolated not needed
+10-27 19:38:14.766   506   860 I am_kill : [0,2484,com.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0,0,isolated not needed]
+10-27 19:38:15.058   506   860 I am_proc_died: [0,2484,com.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0,0,10]
+10-27 19:38:17.163  2622  2622 D nativeloader: InitDefaultPublicLibraries for_preload=1: libandroid.so:libaaudio.so:libamidi.so:libbinder_ndk.so:libc.so:libcamera2ndk.so:libdl.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libicu.so:libicui18n.so:libicuuc.so:libjnigraphics.so:liblog.so:libmediandk.so:libm.so:libnativehelper.so:libnativewindow.so:libOpenMAXAL.so:libOpenSLES.so:libRS.so:libstdc++.so:libsync.so:libvulkan.so:libwebviewchromium_plat_support.so:libz.so
+10-27 19:38:24.674   506   591 D ActivityManager: freezing 2441 nz.co.ashnet.astrologersworkbench
+10-27 19:38:24.674   506   591 I am_freeze: [2441,nz.co.ashnet.astrologersworkbench]
+10-27 19:38:24.711   506   591 I am_compact: [2441,nz.co.ashnet.astrologersworkbench,ANON,225280,155716,68508,0,-22544,0,-22544,22544,37,SOME,0,900,18,32652,-3832]
+10-27 19:38:50.103  2645  2645 D nativeloader: InitDefaultPublicLibraries for_preload=1: libandroid.so:libaaudio.so:libamidi.so:libbinder_ndk.so:libc.so:libcamera2ndk.so:libdl.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libicu.so:libicui18n.so:libicuuc.so:libjnigraphics.so:liblog.so:libmediandk.so:libm.so:libnativehelper.so:libnativewindow.so:libOpenMAXAL.so:libOpenSLES.so:libRS.so:libstdc++.so:libsync.so:libvulkan.so:libwebviewchromium_plat_support.so:libz.so
+10-27 19:39:02.114  2675  2675 D nativeloader: InitDefaultPublicLibraries for_preload=1: libandroid.so:libaaudio.so:libamidi.so:libbinder_ndk.so:libc.so:libcamera2ndk.so:libdl.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libicu.so:libicui18n.so:libicuuc.so:libjnigraphics.so:liblog.so:libmediandk.so:libm.so:libnativehelper.so:libnativewindow.so:libOpenMAXAL.so:libOpenSLES.so:libRS.so:libstdc++.so:libsync.so:libvulkan.so:libwebviewchromium_plat_support.so:libz.so
