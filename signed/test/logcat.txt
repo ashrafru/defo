@@ -1,200 +1,200 @@
-10-27 19:14:19.629   519   571 I ActivityManager: Killing 3816:com.android.intentresolver/u0a92 (adj 0): change com.android.intentresolver
-10-27 19:14:20.230   519   571 I ActivityManager: Killing 3923:com.android.nfc/1027 (adj 0): change com.android.nfc
-10-27 19:14:20.393  3076  3977 D ProfileInstaller: Installing profile for nz.co.ashnet.astrologersworkbench
-10-27 19:14:20.428  1691  1691 I AiAiEcho: AppFetcherImplV2 updateApps package:[nz.co.ashnet.astrologersworkbench], userId:[0], reason:[package is added.].
-10-27 19:14:21.012  3221  3888 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:21.144  3221  3889 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:21.980   519   571 I ActivityManager: Killing 2351:com.google.android.gm/u0a143 (adj 0): change com.google.android.gm
-10-27 19:14:22.738  1481  3367 I BlockstoreStorage: Clearing Blockstore Data for package nz.co.ashnet.astrologersworkbench [CONTEXT service_id=258 ]
-10-27 19:14:23.188  1430  3952 I FontLog : Package nz.co.ashnet.astrologersworkbench has no metadata [CONTEXT service_id=132 ]
-10-27 19:14:23.376   519   534 D OomAdjuster: Not killing cached processes
-10-27 19:14:23.832   519   571 I ActivityManager: Killing 4180:com.google.android.settings.intelligence/u0a118 (adj 0): change com.google.android.settings.intelligence
-10-27 19:14:25.662   519   547 I am_pss  : [3076,10192,nz.co.ashnet.astrologersworkbench,66551808,44769280,319488,205905920,0,2,4]
-10-27 19:14:28.374   519  1972 D OomAdjuster: Not killing cached processes
-10-27 19:14:28.623  4693  4693 D nativeloader: InitDefaultPublicLibraries for_preload=1: libandroid.so:libaaudio.so:libamidi.so:libbinder_ndk.so:libc.so:libcamera2ndk.so:libdl.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libicu.so:libicui18n.so:libicuuc.so:libjnigraphics.so:liblog.so:libmediandk.so:libm.so:libnativehelper.so:libnativewindow.so:libOpenMAXAL.so:libOpenSLES.so:libRS.so:libstdc++.so:libsync.so:libvulkan.so:libwebviewchromium_plat_support.so:libz.so
-10-27 19:14:31.455   519   620 I input_interaction: Interaction with: d2f852e nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity (server), [Gesture Monitor] swipe-up (server), [Gesture Monitor] edge-swipe (server), PointerEventDispatcher0 (server), 
-10-27 19:14:32.358   519   547 I am_pss  : [3076,10192,nz.co.ashnet.astrologersworkbench,71147520,47947776,4250624,198991872,0,2,5]
-10-27 19:14:33.379   519   908 D OomAdjuster: Not killing cached processes
-10-27 19:14:36.137   519   547 I am_pss  : [3303,99000,com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0,85425152,64606208,5190656,176746496,0,3,5]
-10-27 19:14:38.388   519   603 D OomAdjuster: Not killing cached processes
-10-27 19:14:41.035  3221  3885 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:41.037  3221  3885 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:41.095  4532  4674 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:41.096  4532  4659 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:41.100  4532  4659 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:41.100  4532  4659 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:41.117  4532  4659 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:41.147  1569  1696 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:41.315  4532  4659 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:41.347  1569  1696 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:42.099  4532  4679 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:42.248  4532  4676 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:42.330  4532  4676 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:42.363  4532  4659 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:42.367  3221  3891 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:42.426  1569  1696 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:42.544   519   571 I ActivityManager: Killing 4313:com.google.android.settings.intelligence/u0a118 (adj 0): change com.google.android.settings.intelligence
-10-27 19:14:42.784  4532  4698 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:42.786  4532  4698 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:42.839  3221  3889 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:43.388   519  2178 D OomAdjuster: Not killing cached processes
-10-27 19:14:43.435  3221  3886 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:43.466  1732  2095 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:45.346  3221  3888 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:45.454  3221  3886 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:45.484  3221  3888 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:45.620  3221  3886 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:45.886  3221  3886 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:46.182  4532  5232 I cr_CronetUrlRequestContext: destroyNativeStreamLocked org.chromium.net.impl.CronetBidirectionalStream@747ff4f
-10-27 19:14:46.338  3221  3885 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:46.347  3221  3888 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:46.529  3221  3888 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:46.900  2661  3103 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:46.990  2661  3086 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:47.240  3221  3891 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:47.315  2661  2925 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:47.571  2661  3104 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:47.573  2661  2925 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:47.953  3221  3889 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:48.100  3221  3888 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:48.456   519  1994 D OomAdjuster: Not killing cached processes
-10-27 19:14:49.113  3221  3889 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:49.260  3221  3891 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:49.435  1732  2079 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:49.511  1569  2852 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:49.684  1569  1696 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:49.766  1569  2852 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:49.790  1732  2095 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:49.852  1569  1696 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:50.207  4532  4674 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:50.584  4532  4679 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:50.591  3221  3888 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:50.685  3221  3885 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:50.855  4532  4674 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:50.965  4532  4695 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:50.991  4532  4674 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:51.025  1732  2079 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:51.045  2661  3104 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:51.119  4532  4695 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:51.427  3221  3887 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:51.441  3221  3891 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:51.459  2661  3103 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:51.618  1732  2095 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:52.132  2661  3103 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:52.157  3221  3891 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:52.211  3221  3889 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:52.353  2661  2925 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:52.464  3221  3891 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:52.489  3221  3885 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:52.513  2661  2925 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:52.595  4532  4695 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:52.678  2661  2925 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:52.687  2661  3103 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:52.764  1569  1696 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:52.880  3221  3891 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:53.041  1569  2852 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:53.102  4532  4659 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:53.145  4532  4695 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:53.193  2661  3104 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:53.195  1569  2852 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:53.217  2661  3104 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:53.304  4532  5201 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:53.316  2661  3103 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:53.393  2661  3104 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:53.468   519  2177 D OomAdjuster: Not killing cached processes
-10-27 19:14:53.665  3221  3888 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:53.687  4532  4660 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:53.723  3221  3885 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:53.742  4532  4675 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:53.870  3221  3888 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:54.067     0     0 I init    : processing action (persist.device_config.lmkd_native.thrashing_limit_critical=*) from (/system/etc/init/lmkd.rc:44)
-10-27 19:14:54.069     0     0 I init    : processing action (lmkd.reinit=1) from (/system/etc/init/lmkd.rc:10)
-10-27 19:14:54.071     0     0 I init    : starting service 'exec 23 (/system/bin/lmkd --reinit)'...
-10-27 19:14:54.073     0     0 I init    : ... started service 'exec 23 (/system/bin/lmkd --reinit)' has pid 5447
-10-27 19:14:53.904   133   133 I lowmemorykiller: lmkd data connection established
-10-27 19:14:53.935   133   133 I lowmemorykiller: Using psi monitors for memory pressure detection
-10-27 19:14:53.935   133   133 I lowmemorykiller: Properties reinitilized
-10-27 19:14:53.935  5447  5447 I lowmemorykiller: lmkd updated properties successfully
-10-27 19:14:53.935   133   133 I lowmemorykiller: lmkd data connection dropped
-10-27 19:14:53.935   133   133 I lowmemorykiller: closing lmkd data connection
-10-27 19:14:54.122     0     0 I init    : Service 'exec 23 (/system/bin/lmkd --reinit)' (pid 5447) exited with status 0 oneshot service took 0.048000 seconds in background
-10-27 19:14:54.124     0     0 I init    : Sending signal 9 to service 'exec 23 (/system/bin/lmkd --reinit)' (pid 5447) process group...
-10-27 19:14:54.093  3221  3888 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:54.100  3221  3889 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:54.434  3221  3885 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:54.513  3221  3885 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:54.650  3221  3891 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:54.696  3221  3889 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:54.697  3221  3889 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:14:58.545   519   811 D OomAdjuster: Not killing cached processes
-10-27 19:15:00.091  1569  1696 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:15:00.122  4532  4675 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:15:00.133  4532  4674 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:15:00.144  4532  4674 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:15:00.188  3221  3888 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:15:00.291  3221  3889 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:15:00.354  2661  2925 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:15:00.490  2661  3104 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:15:00.495  3221  3888 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:15:00.532  2661  2925 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:15:00.580  2661  3104 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:15:00.664  3221  3889 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:15:02.031   519   620 I input_interaction: Interaction with: d2f852e nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity (server), PointerEventDispatcher0 (server), 
-10-27 19:15:03.564   519  2180 D OomAdjuster: Not killing cached processes
-10-27 19:15:05.099  1569  2852 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:15:05.184  1569  2852 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:15:05.302  5564  5564 D nativeloader: InitDefaultPublicLibraries for_preload=1: libandroid.so:libaaudio.so:libamidi.so:libbinder_ndk.so:libc.so:libcamera2ndk.so:libdl.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libicu.so:libicui18n.so:libicuuc.so:libjnigraphics.so:liblog.so:libmediandk.so:libm.so:libnativehelper.so:libnativewindow.so:libOpenMAXAL.so:libOpenSLES.so:libRS.so:libstdc++.so:libsync.so:libvulkan.so:libwebviewchromium_plat_support.so:libz.so
-10-27 19:15:05.384  4532  5201 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:15:05.398  3221  3889 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:15:05.401  3221  3889 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:15:05.561  4532  4674 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:15:05.566  2661  2925 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:15:05.649  2661  3104 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:15:05.767  2661  3103 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:15:05.813  3221  3889 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:15:05.857  3221  3888 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:15:05.858  3221  3888 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:15:05.979  1732  2079 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:15:06.660   519  2098 I ActivityManager: Killing 3076:nz.co.ashnet.astrologersworkbench/u0a192 (adj 0): depends on provider com.google.android.gms/.fonts.provider.FontsProvider in dying proc com.google.android.gms.persistent (adj -10000)
-10-27 19:15:06.660   519  2098 I am_kill : [0,3076,nz.co.ashnet.astrologersworkbench,0,depends on provider com.google.android.gms/.fonts.provider.FontsProvider in dying proc com.google.android.gms.persistent (adj -10000)]
-10-27 19:15:06.708   519  2098 I am_proc_died: [0,3076,nz.co.ashnet.astrologersworkbench,0,2]
-10-27 19:15:06.709   519  2172 I ImeTracker: nz.co.ashnet.astrologersworkbench:3129dcc6: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_REMOVE_CLIENT
-10-27 19:15:06.709   519   535 I WindowManager: WIN DEATH: Window{d2f852e u0 nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity}
-10-27 19:15:06.710   519  2172 I ImeTracker: nz.co.ashnet.astrologersworkbench:3129dcc6: onCancelled at PHASE_SERVER_SHOULD_HIDE
-10-27 19:15:06.711   519   535 W InputManager-JNI: Input channel object 'd2f852e nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity (client)' was disposed without first being removed with the input manager!
-10-27 19:15:06.713   519  2098 I ActivityManager: Killing 3303:com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0/u0a192i0 (adj 0): isolated not needed
-10-27 19:15:06.713   519  2098 I am_kill : [0,3303,com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0,0,isolated not needed]
-10-27 19:15:06.739   519  2098 W ActivityTaskManager: Force removing ActivityRecord{d2bd1af u0 nz.co.ashnet.astrologersworkbench/.MainActivity t8}: app died, no saved state
-10-27 19:15:06.739   519  2098 I wm_finish_activity: [0,220975535,8,nz.co.ashnet.astrologersworkbench/.MainActivity,proc died without state saved]
-10-27 19:15:06.741   519  2098 I wm_task_removed: [8,8,0,removeChild, last child = ActivityRecord{d2bd1af u0 nz.co.ashnet.astrologersworkbench/.MainActivity t-1 f}} in Task{e0d19ec #8 type=standard A=10192:nz.co.ashnet.astrologersworkbench}]
-10-27 19:15:06.745   828   862 V WindowManagerShell: Transition requested: android.os.BinderProxy@e74902c TransitionRequestInfo { type = CLOSE, triggerTask = TaskInfo{userId=0 taskId=8 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=nz.co.ashnet.astrologersworkbench/.MainActivity } baseActivity=ComponentInfo{nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity} topActivity=ComponentInfo{nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity} origActivity=null realActivity=ComponentInfo{nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity} numActivities=1 lastActiveTime=40293 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{android.window.IWindowContainerToken$Stub$Proxy@996faf5} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 128 - 0, 0) topActivityInfo=ActivityInfo{43db08a nz.co.ashnet.astrologersworkbench.MainActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
-10-27 19:15:06.770   519  1742 I am_proc_died: [0,3303,com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0,0,10]
-10-27 19:15:07.791   519   538 V WindowManager: Sent Transition #8 createdAt=10-27 19:15:06.739 via request=TransitionRequestInfo { type = CLOSE, triggerTask = TaskInfo{userId=0 taskId=8 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=nz.co.ashnet.astrologersworkbench/.MainActivity } baseActivity=ComponentInfo{nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity} topActivity=ComponentInfo{nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity} origActivity=null realActivity=ComponentInfo{nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity} numActivities=1 lastActiveTime=40293 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{79bc8eb Task{e0d19ec #8 type=standard A=10192:nz.co.ashnet.astrologersworkbench}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 128 - 0, 0) topActivityInfo=ActivityInfo{54e5648 nz.co.ashnet.astrologersworkbench.MainActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
-10-27 19:15:08.600   519  2016 D OomAdjuster: Not killing cached processes
-10-27 19:15:13.791   519   547 D OomAdjuster: Not killing cached processes
-10-27 19:15:18.847   519   547 D OomAdjuster: Not killing cached processes
-10-27 19:15:23.889   519   519 D OomAdjuster: Not killing cached processes
-10-27 19:15:25.223  1569  1696 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:15:25.224  4532  4695 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:15:25.246  4532  4698 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:15:25.288  3221  3821 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:15:25.310  2661  3103 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:15:25.333  3221  3485 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:15:25.393  3221  3821 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:15:25.425  2661  3104 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:15:25.505  3221  3821 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:15:25.514  2661  3103 W TimedProcessReaper: Scheduling killing of process to refresh configuration
-10-27 19:15:28.988   519  1994 D OomAdjuster: Not killing cached processes
-10-27 19:15:34.479   519  2173 D OomAdjuster: Not killing cached processes
-10-27 19:15:39.593   519  2181 D OomAdjuster: Not killing cached processes
-10-27 19:15:46.498   519  2098 D OomAdjuster: Not killing cached processes
-10-27 19:15:51.439  6152  6152 D nativeloader: InitDefaultPublicLibraries for_preload=1: libandroid.so:libaaudio.so:libamidi.so:libbinder_ndk.so:libc.so:libcamera2ndk.so:libdl.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libicu.so:libicui18n.so:libicuuc.so:libjnigraphics.so:liblog.so:libmediandk.so:libm.so:libnativehelper.so:libnativewindow.so:libOpenMAXAL.so:libOpenSLES.so:libRS.so:libstdc++.so:libsync.so:libvulkan.so:libwebviewchromium_plat_support.so:libz.so
-10-27 19:15:51.779   519  2166 D OomAdjuster: Not killing cached processes
-10-27 19:15:58.086   519   548 D OomAdjuster: Not killing cached processes
-10-27 19:16:03.112   519  2166 D OomAdjuster: Not killing cached processes
-10-27 19:16:08.455   519  2179 D OomAdjuster: Not killing cached processes
-10-27 19:16:13.598   519  2100 D OomAdjuster: Not killing cached processes
-10-27 19:16:19.174   519  2100 D OomAdjuster: Not killing cached processes
-10-27 19:16:24.250   519  2047 D OomAdjuster: Not killing cached processes
-10-27 19:16:30.138   519   547 D OomAdjuster: Not killing cached processes
-10-27 19:16:35.358   519  1777 D OomAdjuster: Not killing cached processes
+10-27 19:24:01.529   521  2463 D CoreBackPreview: Window{87f6910 u0 nz.co.ashnet.astrologersworkbench/nz.co.ashnet.astrologersworkbench.MainActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@4df4a28, mPriority=0, mIsAnimationCallback=false}
+10-27 19:24:01.826   521   538 I sysui_multi_action: [319,479,321,473,322,2362,325,60,757,761,758,7,759,1,806,nz.co.ashnet.astrologersworkbench,871,nz.co.ashnet.astrologersworkbench.MainActivity,904,com.android.shell,905,0,945,509,1320,4,1321,4]
+10-27 19:24:01.828   521   538 I wm_activity_launch_time: [0,215403033,nz.co.ashnet.astrologersworkbench/.MainActivity,2362]
+10-27 19:24:01.829   521   538 I ActivityTaskManager: Displayed nz.co.ashnet.astrologersworkbench/.MainActivity for user 0: +2s362ms
+10-27 19:24:01.871   521   549 I am_proc_start: [0,4101,10133,com.google.android.webview:webview_apk,service,{com.google.android.webview/org.chromium.android_webview.nonembedded.AwComponentUpdateService}]
+10-27 19:24:01.871   521   549 I ActivityManager: Start proc 4101:com.google.android.webview:webview_apk/u0a133 for service {com.google.android.webview/org.chromium.android_webview.nonembedded.AwComponentUpdateService}
+10-27 19:24:02.018   521  2462 W InputManager-JNI: Input channel object '95b8a00 Splash Screen nz.co.ashnet.astrologersworkbench (client)' was disposed without first being removed with the input manager!
+10-27 19:24:03.170   841   841 I SafetyLabelChangedBroadcastReceiver: received broadcast packageName: nz.co.ashnet.astrologersworkbench, current user: UserHandle{0}, packageChangeEvent: NEW_INSTALL, intent user: UserHandle{0}
+10-27 19:24:03.213  4101  4220 W cr_AWNetworkFetcherTask: 	at org.chromium.android_webview.nonembedded.NetworkFetcherTask.download(chromium-TrichromeWebViewGoogle6432.apk-stable-567263637:48)
+10-27 19:24:05.436   521   574 I ActivityManager: Killing 4282:com.google.android.settings.intelligence/u0a118 (adj 0): change com.google.android.settings.intelligence
+10-27 19:24:05.669   521   574 I ActivityManager: Killing 0:com.google.android.settings.intelligence/u0a118 (adj -10000): change com.google.android.settings.intelligence
+10-27 19:24:05.743   521   549 W ActivityManager: ProcessRecord{12b13e1 0:com.google.android.settings.intelligence/u0a118} start not valid, killing pid=4405, killedByAm=true;No entry in mProcessNames;pendingStart=false;
+10-27 19:24:06.189   521   919 D OomAdjuster: Not killing cached processes
+10-27 19:24:07.302  3930  4483 D ProfileInstaller: Installing profile for nz.co.ashnet.astrologersworkbench
+10-27 19:24:09.844  1473  4501 I BlockstoreStorage: Clearing Blockstore Data for package nz.co.ashnet.astrologersworkbench [CONTEXT service_id=258 ]
+10-27 19:24:09.863  1416  4245 I FontLog : Package nz.co.ashnet.astrologersworkbench has no metadata [CONTEXT service_id=132 ]
+10-27 19:24:10.316  1626  1626 I AiAiEcho: AppFetcherImplV2 updateApps package:[nz.co.ashnet.astrologersworkbench], userId:[0], reason:[package is added.].
+10-27 19:24:11.137  1626  1626 I AiAiEcho: AppFetcherImpl onPackageChanged nz.co.ashnet.astrologersworkbench.
+10-27 19:24:11.137  1626  2718 I AiAiEcho: AppIndexer Package:[nz.co.ashnet.astrologersworkbench] UserProfile:[0] Enabled:[true].
+10-27 19:24:11.138  1626  2718 I AiAiEcho: AppFetcherImplV2 updateApps package:[nz.co.ashnet.astrologersworkbench], userId:[0], reason:[package is updated.].
+10-27 19:24:11.207   521  1283 D OomAdjuster: Not killing cached processes
+10-27 19:24:12.553   521   547 I am_pss  : [3930,10192,nz.co.ashnet.astrologersworkbench,54794240,40919040,342016,183676928,0,2,2]
+10-27 19:24:16.071  4813  4813 D nativeloader: InitDefaultPublicLibraries for_preload=1: libandroid.so:libaaudio.so:libamidi.so:libbinder_ndk.so:libc.so:libcamera2ndk.so:libdl.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libicu.so:libicui18n.so:libicuuc.so:libjnigraphics.so:liblog.so:libmediandk.so:libm.so:libnativehelper.so:libnativewindow.so:libOpenMAXAL.so:libOpenSLES.so:libRS.so:libstdc++.so:libsync.so:libvulkan.so:libwebviewchromium_plat_support.so:libz.so
+10-27 19:24:16.227   521   547 D OomAdjuster: Not killing cached processes
+10-27 19:24:20.029   521   547 I am_pss  : [3930,10192,nz.co.ashnet.astrologersworkbench,45287424,35291136,318464,165003264,0,2,2]
+10-27 19:24:21.365   521   918 D OomAdjuster: Not killing cached processes
+10-27 19:24:21.390   521   547 I am_pss  : [4015,99000,com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0,20827136,14594048,589824,103866368,0,3,2]
+10-27 19:24:23.333  1775  2742 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:23.334  1775  2804 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:26.179  4528  5010 I cr_CronetUrlRequestContext: destroyNativeStreamLocked org.chromium.net.impl.CronetBidirectionalStream@a55dc22
+10-27 19:24:26.428   521   604 D OomAdjuster: Not killing cached processes
+10-27 19:24:27.514  4528  4635 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:27.536  4528  4624 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:27.545  4528  4632 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:27.561  4528  4632 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:27.573  4528  4632 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:27.637  1568  1678 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:27.651  1775  2477 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:27.671  1775  2711 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:27.819  4528  4632 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:28.026  1568  1678 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:28.185  1775  2711 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:28.685  1775  2804 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:28.726  4528  4635 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:28.865  1775  2804 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:28.975  1641  2939 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:28.990  4528  4651 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:29.083  4528  5048 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:29.211  4528  5048 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:29.459  4528  4623 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:29.467  1568  1678 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:29.489  4528  4623 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:29.797   521   574 I ActivityManager: Killing 4413:com.google.android.settings.intelligence/u0a118 (adj 0): change com.google.android.settings.intelligence
+10-27 19:24:30.073  1775  2804 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:30.679  1775  2477 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:30.709  1775  2804 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:30.739  1775  2477 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:30.812  1775  2477 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:31.176  1775  2700 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:31.436   521   786 D OomAdjuster: Not killing cached processes
+10-27 19:24:31.509  1775  2742 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:31.785  1775  2742 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:31.785  1775  2742 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:31.841  2634  2925 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:32.239  1775  2742 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:32.330  2634  2925 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:32.539  2634  2925 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:32.555  2634  2977 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:32.569  1775  2711 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:32.624  2634  2973 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:32.829  1775  2804 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:33.035  1775  2700 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:33.537  1568  1678 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:33.955  1775  2700 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:33.962  1568  2162 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:34.443  1775  2804 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:34.583  1568  1678 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:34.697  1568  1678 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:35.448  1775  2804 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:35.618  4528  4623 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:35.672  4528  4623 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:35.678  1775  2804 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:35.695  4528  4651 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:36.081  1775  2804 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:36.146  1775  2804 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:36.174  1775  2742 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:36.176  4528  4634 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:36.481  2634  2977 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:36.483   521  1001 D OomAdjuster: Not killing cached processes
+10-27 19:24:37.177  1641  2939 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:37.180  1641  2008 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:37.182  1641  2939 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:37.292  2634  2977 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:37.397  2634  2974 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:37.400  2634  2974 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:37.400  2634  2973 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:37.849  2634  2974 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:37.904  4528  4634 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:37.975  2634  2974 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:38.005  4528  5048 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:38.011  4528  4634 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:38.040  2634  2973 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:38.161  2634  2974 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:38.180  1775  2742 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:38.336  1775  2477 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:38.428  1775  2477 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:38.519  2634  2974 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:38.561  2634  2974 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:38.599  1775  2700 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:38.784  1775  2804 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:38.841  1568  2162 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:38.849  1775  2804 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:38.947  4528  5050 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:38.955  4528  4634 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:38.958  4528  5050 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:38.981  1775  2742 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:39.033  2634  2974 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:39.658     0     0 I init    : processing action (persist.device_config.lmkd_native.thrashing_limit_critical=*) from (/system/etc/init/lmkd.rc:44)
+10-27 19:24:39.661     0     0 I init    : processing action (lmkd.reinit=1) from (/system/etc/init/lmkd.rc:10)
+10-27 19:24:39.663     0     0 I init    : starting service 'exec 23 (/system/bin/lmkd --reinit)'...
+10-27 19:24:39.665     0     0 I init    : ... started service 'exec 23 (/system/bin/lmkd --reinit)' has pid 5345
+10-27 19:24:39.500   133   133 I lowmemorykiller: lmkd data connection established
+10-27 19:24:39.539   133   133 I lowmemorykiller: Using psi monitors for memory pressure detection
+10-27 19:24:39.539   133   133 I lowmemorykiller: Properties reinitilized
+10-27 19:24:39.540  5345  5345 I lowmemorykiller: lmkd updated properties successfully
+10-27 19:24:39.540   133   133 I lowmemorykiller: lmkd data connection dropped
+10-27 19:24:39.540   133   133 I lowmemorykiller: closing lmkd data connection
+10-27 19:24:39.736     0     0 I init    : Service 'exec 23 (/system/bin/lmkd --reinit)' (pid 5345) exited with status 0 oneshot service took 0.071000 seconds in background
+10-27 19:24:39.739     0     0 I init    : Sending signal 9 to service 'exec 23 (/system/bin/lmkd --reinit)' (pid 5345) process group...
+10-27 19:24:41.486   521   918 D OomAdjuster: Not killing cached processes
+10-27 19:24:42.181  4528  4651 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:42.182  1568  1678 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:42.184  4528  4651 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:42.230  1775  2700 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:42.266  1568  1678 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:42.332  4528  4624 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:42.372  1775  2742 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:42.412  2634  2973 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:42.446  1775  2700 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:42.467  2634  2974 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:42.471  1775  2742 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:42.514  1775  2711 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:42.516  1775  2711 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:42.558  2634  2973 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:42.647  1641  2008 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:43.722   521   547 I am_pss  : [4015,99000,com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0,20303872,3923968,11074560,92172288,0,3,2]
+10-27 19:24:46.781   521  1844 D OomAdjuster: Not killing cached processes
+10-27 19:24:51.781   521  2533 D OomAdjuster: Not killing cached processes
+10-27 19:24:56.787  1568  2162 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:56.817   521   548 D OomAdjuster: Not killing cached processes
+10-27 19:24:56.857  1568  2590 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:57.008  4528  4632 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:57.019  1775  2804 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:57.183  4528  4651 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:57.231  1775  2742 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:57.239  4528  4632 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:57.396  2634  2974 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:57.445  1775  2477 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:57.514  1775  2738 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:57.612  2634  2974 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:57.625  1775  2738 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:57.666  2634  2977 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:57.722  1775  2477 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:57.926  1775  2742 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:24:58.004  1641  2939 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:25:00.991  1568  2162 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:25:01.037  4528  4651 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:25:01.077  1775  2700 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:25:01.083  4528  4634 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:25:01.137  4528  4634 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:25:01.179  1775  2477 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:25:01.262  2634  2977 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:25:01.276  1775  2477 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:25:01.354  1775  2700 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:25:01.359  1775  2477 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:25:01.478  2634  2977 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:25:01.516  2634  2974 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:25:01.516  2634  2974 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-27 19:25:01.822   521  2281 D OomAdjuster: Not killing cached processes
+10-27 19:25:06.890   521   920 D OomAdjuster: Not killing cached processes
+10-27 19:25:12.029   521  1197 D OomAdjuster: Not killing cached processes
+10-27 19:25:17.076   521   594 D OomAdjuster: Not killing cached processes
+10-27 19:25:22.276  6010  6010 D nativeloader: InitDefaultPublicLibraries for_preload=1: libandroid.so:libaaudio.so:libamidi.so:libbinder_ndk.so:libc.so:libcamera2ndk.so:libdl.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libicu.so:libicui18n.so:libicuuc.so:libjnigraphics.so:liblog.so:libmediandk.so:libm.so:libnativehelper.so:libnativewindow.so:libOpenMAXAL.so:libOpenSLES.so:libRS.so:libstdc++.so:libsync.so:libvulkan.so:libwebviewchromium_plat_support.so:libz.so
+10-27 19:25:22.414   521   824 D OomAdjuster: Not killing cached processes
+10-27 19:25:28.434   521   547 D OomAdjuster: Not killing cached processes
+10-27 19:25:34.393   521   918 D OomAdjuster: Not killing cached processes
+10-27 19:25:41.643   521   918 D OomAdjuster: Not killing cached processes
+10-27 19:25:46.661   521  2521 D OomAdjuster: Not killing cached processes
+10-27 19:25:52.292   521   547 D OomAdjuster: Not killing cached processes
+10-27 19:25:54.663  6122  6122 D nativeloader: InitDefaultPublicLibraries for_preload=1: libandroid.so:libaaudio.so:libamidi.so:libbinder_ndk.so:libc.so:libcamera2ndk.so:libdl.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libicu.so:libicui18n.so:libicuuc.so:libjnigraphics.so:liblog.so:libmediandk.so:libm.so:libnativehelper.so:libnativewindow.so:libOpenMAXAL.so:libOpenSLES.so:libRS.so:libstdc++.so:libsync.so:libvulkan.so:libwebviewchromium_plat_support.so:libz.so
+10-27 19:25:57.294   521  2145 D OomAdjuster: Not killing cached processes
+10-27 19:26:02.509   521  2203 D OomAdjuster: Not killing cached processes
+10-27 19:26:06.041  6185  6185 D nativeloader: InitDefaultPublicLibraries for_preload=1: libandroid.so:libaaudio.so:libamidi.so:libbinder_ndk.so:libc.so:libcamera2ndk.so:libdl.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libicu.so:libicui18n.so:libicuuc.so:libjnigraphics.so:liblog.so:libmediandk.so:libm.so:libnativehelper.so:libnativewindow.so:libOpenMAXAL.so:libOpenSLES.so:libRS.so:libstdc++.so:libsync.so:libvulkan.so:libwebviewchromium_plat_support.so:libz.so
+10-27 19:26:08.249   521   547 D OomAdjuster: Not killing cached processes
+10-27 19:26:14.287   521  2203 D OomAdjuster: Not killing cached processes
+10-27 19:26:22.162   521  2203 D OomAdjuster: Not killing cached processes
+10-27 19:26:31.474   521  2203 D OomAdjuster: Not killing cached processes
+10-27 19:26:36.727   521  1197 D OomAdjuster: Not killing cached processes
+10-27 19:26:46.567   521  1197 D OomAdjuster: Not killing cached processes
+10-27 19:26:53.574   521  2145 D OomAdjuster: Not killing cached processes

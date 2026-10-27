@@ -1,5 +1,5 @@
 MemTotal:        2534552 kB
-MemFree:          192716 kB
-MemAvailable:    1300964 kB
+MemFree:          196756 kB
+MemAvailable:    1065728 kB
     versionName=113.0.5672.136
     versionName=113.0.5672.136
