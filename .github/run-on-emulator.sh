@@ -43,3 +43,4 @@ adb logcat -d -b crash > /tmp/emu/crash.txt; adb logcat -d -b all > /tmp/emu/all
 grep -iE "astrologers|lowmemory|lmkd|Killing|FATAL|RenderProcess|Capacitor|chromium"  /tmp/emu/all.txt | grep -v simple_ | tail -200 > /tmp/emu/logcat.txt
 rm /tmp/emu/all.txt
 exit 0
+# rerun
