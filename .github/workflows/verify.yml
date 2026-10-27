@@ -1,0 +1,23 @@
+name: Verify signed APK
+on:
+  push:
+    branches: [apk-builds]
+    paths: ['signed/*.apk']
+permissions:
+  contents: write
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify with the official apksigner
+        run: |
+          BT=$ANDROID_HOME/build-tools/$(ls $ANDROID_HOME/build-tools | sort -V | tail -1)
+          for f in signed/*.apk; do
+            echo "== $f" ; $BT/apksigner verify --verbose --print-certs "$f"
+            $BT/zipalign -c -P 16 -v 4 "$f" | tail -1
+            $BT/aapt2 dump badging "$f" | head -3
+          done > signed/verification.txt 2>&1 || echo "VERIFY FAILED" >> signed/verification.txt
+          cat signed/verification.txt
+          git config user.name "workbench-build"; git config user.email "actions@users.noreply.github.com"
+          git add signed/verification.txt && git commit -m "Verification of signed APK" && git push
