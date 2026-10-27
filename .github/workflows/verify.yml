@@ -2,7 +2,7 @@ name: Verify signed APK
 on:
   push:
     branches: [apk-builds]
-    paths: ['signed/*.apk']
+    paths: ['signed/*.apk', '.github/run-on-emulator.sh']
 permissions:
   contents: write
 jobs:
