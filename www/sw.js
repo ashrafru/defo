@@ -2,7 +2,7 @@
    Keeps the app shell offline and serves modules/<id>.html rebuilt from stored parts. */
 const VERSION = 'aw-mobile-2.0.1-1';
 const SHELL = ['./', 'index.html', 'app.css', 'app.js', 'loader.js', 'fflate.min.js', 'catalog.json',
-  'manifest.webmanifest', 'img/logo.webp', 'img/icon-192.png', 'img/icon-512.png', 'img/apple-touch-icon.png', 'licences.html', 'native.js'];
+  'manifest.webmanifest', 'img/logo.webp', 'img/icon-192.png', 'img/icon-512.png', 'img/apple-touch-icon.png', 'licences.html', 'native.js', 'capacitor-bundle.js'];
 importScripts('loader.js');
 
 self.addEventListener('install', e => {
