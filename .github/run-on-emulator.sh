@@ -30,17 +30,16 @@ PY
 check () { P=$(adb shell pidof nz.co.ashnet.astrologersworkbench); echo "$1: pid=$P" >> /tmp/emu/steps.txt; adb exec-out screencap -p > /tmp/emu/$1.png; }
 adb logcat -c
 launch; check 1-launch
-tap "Polaris2" a; sleep 60; check 2-polaris2
+adb shell input tap 171 495; echo "a: tap Polaris2 chip" >> /tmp/emu/steps.txt; sleep 60; check 2-polaris2
 adb shell input keyevent KEYCODE_BACK; sleep 3
-tap "The Sieve" b; sleep 30; check 3-sieve
-tap "Download project" c; sleep 6; check 4-export
+adb shell input tap 300 930; echo "b: tap The Sieve" >> /tmp/emu/steps.txt; sleep 30; check 3-sieve
+adb shell input tap 498 909; echo "c: tap Download project" >> /tmp/emu/steps.txt; sleep 6; check 4-export
 adb shell ls -la "/sdcard/Documents/Astrologers Workbench/" >> /tmp/emu/steps.txt 2>&1
 adb shell input keyevent KEYCODE_BACK; sleep 3
-tap "Central Scrutinizer" d; sleep 45; check 5-scrutinizer
+adb shell input tap 525 495; echo "d: tap Central Scrutinizer chip" >> /tmp/emu/steps.txt; sleep 45; check 5-scrutinizer
 adb shell input keyevent KEYCODE_BACK; sleep 3; adb shell input keyevent KEYCODE_BACK; sleep 3; check 6-leave
 adb shell run-as nz.co.ashnet.astrologersworkbench ls -la files/tools >> /tmp/emu/steps.txt 2>&1
 adb logcat -d -b crash > /tmp/emu/crash.txt; adb logcat -d -b all > /tmp/emu/all.txt
 grep -iE "astrologers|lowmemory|lmkd|Killing|FATAL|RenderProcess|Capacitor|chromium"  /tmp/emu/all.txt | grep -v simple_ | tail -200 > /tmp/emu/logcat.txt
 rm /tmp/emu/all.txt
 exit 0
-# rerun
