@@ -1,0 +1,47 @@
+// Drives the debug build's WebView over the Chrome DevTools Protocol (Node 22 WebSocket).
+const fs = require('fs');
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+const out = { steps: [] }; const log = (k, v) => { out.steps.push([k, v]); console.log(k, JSON.stringify(v)); };
+(async () => {
+  let pg;
+  for (let i = 0; i < 30 && !pg; i++) { try { const l = await (await fetch('http://127.0.0.1:9222/json')).json(); pg = l.find(p => p.type === 'page' && /^https:\/\/localhost/.test(p.url)); } catch (e) {} if (!pg) await sleep(2000); }
+  if (!pg) throw Error('no WebView page');
+  const ws = new WebSocket(pg.webSocketDebuggerUrl); await new Promise(r => ws.onopen = r);
+  let id = 0; const pend = {}; ws.onmessage = e => { const m = JSON.parse(e.data); if (m.id && pend[m.id]) { pend[m.id](m); delete pend[m.id]; } };
+  const send = (method, params = {}) => new Promise(r => { const i = ++id; pend[i] = r; ws.send(JSON.stringify({ id: i, method, params })); });
+  const ev = async expr => { const r = await send('Runtime.evaluate', { expression: expr, awaitPromise: true, returnByValue: true }); if (r.result?.exceptionDetails) throw Error(r.result.exceptionDetails.exception?.description || 'eval error'); return r.result?.result?.value; };
+  const wait = async (expr, ms, what) => { const t = Date.now(); while (Date.now() - t < ms) { try { if (await ev(expr)) return Date.now() - t; } catch (e) {} await sleep(1000); } throw Error('timeout: ' + what); };
+  const shot = async name => { const r = await send('Page.captureScreenshot', { format: 'png' }); fs.writeFileSync('/tmp/emu/' + name + '.png', Buffer.from(r.result.data, 'base64')); };
+  const S = `document.querySelector('#stage iframe').contentWindow`;
+  await wait(`document.querySelectorAll('.card').length > 30`, 60000, 'library');
+  log('library first group', await ev(`document.querySelector('.cards-group').innerText + ' / ' + document.querySelector('.card h3').innerText`));
+  await ev(`openTool('SimpleRectification'); true`);
+  log('engine ready ms', await wait(`${S}.document.getElementById('engine').classList.contains('ready')`, 240000, 'engine'));
+  log('engine text', await ev(`${S}.document.getElementById('engineText').textContent`));
+  await shot('simple-1-start');
+  await ev(`${S}.document.getElementById('sampleBtn').click(); ${S}.document.getElementById('runBtn').click(); true`);
+  log('scan ms', await wait(`!${S}.document.getElementById('results').hidden`, 300000, 'results'));
+  log('status', await ev(`${S}.document.getElementById('status').textContent`));
+  const tpd = await ev(`[...${S}.document.querySelectorAll('.cand')].map(e => e.innerText.replace(/\\n/g, ' '))`); log('simple TPD', tpd);
+  await ev(`${S}.document.getElementById('results').scrollIntoView(); true`); await sleep(800); await shot('simple-2-results');
+  await ev(`${S}.document.querySelector('[data-order=combined]').click(); true`); await sleep(500);
+  log('simple Combined', await ev(`[...${S}.document.querySelectorAll('.cand')].map(e => e.innerText.replace(/\\n/g, ' '))`));
+  log('checks', await ev(`[...${S}.document.querySelectorAll('.chk')].map(e => e.innerText.replace(/\\n/g, ' | ').slice(0, 120))`));
+  await ev(`${S}.document.getElementById('checks').scrollIntoView(); true`); await sleep(800); await shot('simple-3-checks');
+  await ev(`${S}.document.getElementById('exportCsv').click(); true`); await sleep(4000);
+  log('saved bar', await ev(`document.getElementById('saved').hidden ? 'hidden' : document.getElementById('savedText').textContent`));
+  await shot('simple-4-export');
+  await ev(`${S}.document.querySelector('[data-order=tpd]').click(); ${S}.document.getElementById('openFull').click(); true`);
+  const F = `document.querySelectorAll('#stage iframe')[1].contentWindow`;
+  log('full opened ms', await wait(`${F}.RectificationTest && ${F}.RectificationTest.getState().events.length === 5`, 240000, 'full Polaris2'));
+  await ev(`${F}.document.getElementById('scan').click(); true`);
+  log('full scan ms', await wait(`${F}.RectificationTest.getState().snapshot?.state === 'complete'`, 300000, 'full scan'));
+  await sleep(800);
+  const full = await ev(`[...${F}.document.querySelectorAll('#rankBody tr .candidate-time')].slice(0, 5).map(e => e.textContent)`);
+  const simpleTimes = tpd.map(t => t.split(' ')[1]);
+  log('full TPD', full); log('MATCH', JSON.stringify(full) === JSON.stringify(simpleTimes));
+  log('expected (desktop sample)', JSON.stringify(simpleTimes) === JSON.stringify(['06:16:56', '06:19:32', '06:12:28', '06:10:48', '06:14:36']));
+  await shot('simple-5-full');
+  fs.writeFileSync('/tmp/emu/simple-result.json', JSON.stringify(out, null, 1));
+  process.exit(0);
+})().catch(e => { console.log('FAILED', e.message); out.error = e.message; fs.writeFileSync('/tmp/emu/simple-result.json', JSON.stringify(out, null, 1)); process.exit(0); });
