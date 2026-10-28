@@ -6,7 +6,7 @@
   ],
   [
    "engine ready ms",
-   6474
+   6451
   ],
   [
    "engine text",
@@ -18,11 +18,11 @@
   ],
   [
    "scan ms",
-   27211
+   29567
   ],
   [
    "status",
-   "Complete: 5,401 candidates, 27,005 TPD evaluations; 20 Secondary / AH / Tertiary candidates; 20 PSSR candidates. · 0:26 elapsed"
+   "Complete: 5,401 candidates, 27,005 TPD evaluations; 20 Secondary / AH / Tertiary candidates; 20 PSSR candidates. · 0:28 elapsed"
   ],
   [
    "simple TPD",
@@ -60,11 +60,11 @@
   ],
   [
    "full opened ms",
-   1035
+   2262
   ],
   [
    "full scan ms",
-   26314
+   28171
   ],
   [
    "full TPD",
