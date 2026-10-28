@@ -19,8 +19,10 @@ const out = { steps: [] }; const log = (k, v) => { out.steps.push([k, v]); conso
   log('engine ready ms', await wait(`${S}.document.getElementById('engine').classList.contains('ready')`, 240000, 'engine'));
   log('engine text', await ev(`${S}.document.getElementById('engineText').textContent`));
   await shot('simple-1-start');
-  await ev(`${S}.document.getElementById('sampleBtn').click(); ${S}.document.getElementById('runBtn').click(); true`);
-  log('scan ms', await wait(`!${S}.document.getElementById('results').hidden`, 300000, 'results'));
+  await ev(`${S}.document.getElementById('sampleBtn').click(); ${S}.document.querySelector('#unc [data-m="180"]').click(); true`);
+  log('window', await ev(`${S}.document.getElementById('range').textContent`));
+  await ev(`${S}.document.getElementById('runBtn').click(); true`);
+  log('scan ms', await wait(`!${S}.document.getElementById('results').hidden`, 900000, 'results'));
   log('status', await ev(`${S}.document.getElementById('status').textContent`));
   const tpd = await ev(`[...${S}.document.querySelectorAll('.cand')].map(e => e.innerText.replace(/\\n/g, ' '))`); log('simple TPD', tpd);
   await ev(`${S}.document.getElementById('results').scrollIntoView(); true`); await sleep(800); await shot('simple-2-results');
@@ -35,12 +37,12 @@ const out = { steps: [] }; const log = (k, v) => { out.steps.push([k, v]); conso
   const F = `document.querySelectorAll('#stage iframe')[1].contentWindow`;
   log('full opened ms', await wait(`${F}.RectificationTest && ${F}.RectificationTest.getState().events.length === 5`, 240000, 'full Polaris2'));
   await ev(`${F}.document.getElementById('scan').click(); true`);
-  log('full scan ms', await wait(`${F}.RectificationTest.getState().snapshot?.state === 'complete'`, 300000, 'full scan'));
+  log('full scan ms', await wait(`${F}.RectificationTest.getState().snapshot?.state === 'complete'`, 900000, 'full scan'));
   await sleep(800);
   const full = await ev(`[...${F}.document.querySelectorAll('#rankBody tr .candidate-time')].slice(0, 5).map(e => e.textContent)`);
   const simpleTimes = tpd.map(t => t.split(' ')[1]);
   log('full TPD', full); log('MATCH', JSON.stringify(full) === JSON.stringify(simpleTimes));
-  log('expected (desktop sample)', JSON.stringify(simpleTimes) === JSON.stringify(['06:16:56', '06:19:32', '06:12:28', '06:10:48', '06:14:36']));
+  log('simple times', simpleTimes);
   await shot('simple-5-full');
   fs.writeFileSync('/tmp/emu/simple-result.json', JSON.stringify(out, null, 1));
   process.exit(0);

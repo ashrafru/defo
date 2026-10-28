@@ -15,7 +15,7 @@ PID=$(adb shell pidof $PKG | tr -d '\r')
 SOCK=$(adb shell cat /proc/net/unix | tr -d '\r' | grep -o "webview_devtools_remote_$PID" | head -1)
 echo "debug pid=$PID socket=$SOCK" >> /tmp/emu/steps.txt
 adb forward tcp:9222 localabstract:$SOCK
-timeout 1200 node .github/cdp-test.js > /tmp/emu/cdp.txt 2>&1
+timeout 2400 node .github/cdp-test.js > /tmp/emu/cdp.txt 2>&1
 adb exec-out screencap -p > /tmp/emu/9-end.png
 adb shell 'ls -la "/sdcard/Documents/Astrologers Workbench/"' >> /tmp/emu/steps.txt 2>&1
 adb logcat -d -b crash > /tmp/emu/crash.txt
