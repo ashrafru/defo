@@ -1,0 +1,84 @@
+{
+ "steps": [
+  [
+   "library first group",
+   "01\nSTART HERE / Simple Rectification\nNEW"
+  ],
+  [
+   "engine ready ms",
+   8864
+  ],
+  [
+   "engine text",
+   "Polaris2 engine ready · Swiss Ephemeris 2.10.03 · offline ready · calculations unchanged"
+  ],
+  [
+   "scan ms",
+   2016
+  ],
+  [
+   "status",
+   "Complete: 151 candidates, 755 TPD evaluations; 8 Secondary / AH / Tertiary candidates; 8 PSSR candidates."
+  ],
+  [
+   "simple TPD",
+   [
+    "#1 06:16:56 Asc 18° 33′ Can · MC 1° 27′ Ari Score 176 · explains 4 of 5",
+    "#2 06:19:32 Asc 19° 06′ Can · MC 2° 09′ Ari Score 140 · explains 5 of 5",
+    "#3 06:12:28 Asc 17° 37′ Can · MC 0° 13′ Ari Score 108 · explains 4 of 5",
+    "#4 06:10:48 Asc 17° 16′ Can · MC 29° 46′ Pis Score 107 · explains 4 of 5",
+    "#5 06:14:36 Asc 18° 04′ Can · MC 0° 48′ Ari Score 105 · explains 4 of 5"
+   ]
+  ],
+  [
+   "simple Combined",
+   [
+    "#1 06:19:32 Asc 19° 06′ Can · MC 2° 09′ Ari Score 223.5 · explains 5 of 5",
+    "#2 06:16:56 Asc 18° 33′ Can · MC 1° 27′ Ari Score 221 · explains 5 of 5",
+    "#3 06:13:28 Asc 17° 50′ Can · MC 0° 30′ Ari Score 180 · explains 5 of 5",
+    "#4 06:18:12 Asc 18° 49′ Can · MC 1° 47′ Ari Score 167.75 · explains 5 of 5",
+    "#5 06:12:28 Asc 17° 37′ Can · MC 0° 13′ Ari Score 155.5 · explains 5 of 5"
+   ]
+  ],
+  [
+   "checks",
+   [
+    "✓ | 1967-08-15Birth of Sister | Sister Jamie born · 2 directions · 40 points | Converse · 3rd → Uranus · Conjunction · 0",
+    "✓ | 1968-02-17Birth of Brother | Brother David born · 2 directions · 40 points | Direct · Mars → IC · Trine · 0°4.624′ |",
+    "✓ | 1970-07-04Birth of Brother | Brother Darin born · 3 directions · 36 points | Converse · Pluto → 3rd · Conjunction · ",
+    "✓ | 1989-09-19Birth of Son | Son born · 1 direction · 8 points | Direct · Mars → 11th · Semisquare · 0°3.679′ | Directio",
+    "✓ | 2000-12-03Marriage/Engagement/Affair (M) | Marriage · 1 direction · 16 points | Direct · Asc → Mercury · Sextile · 0"
+   ]
+  ],
+  [
+   "saved bar",
+   "Saved James_Alexander_·_sample_Best_Birth_Times.csv to Documents › Astrologers Workbench"
+  ],
+  [
+   "full opened ms",
+   2233
+  ],
+  [
+   "full scan ms",
+   2171
+  ],
+  [
+   "full TPD",
+   [
+    "06:16:56",
+    "06:19:32",
+    "06:12:28",
+    "06:10:48",
+    "06:14:36"
+   ]
+  ],
+  [
+   "MATCH",
+   true
+  ],
+  [
+   "expected (desktop sample)",
+   true
+  ]
+ ]
+}

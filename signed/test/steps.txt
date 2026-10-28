@@ -1,13 +1,5 @@
-1-launch: pid=2372
-a: tap Polaris2 chip
-2-polaris2: pid=2372
-b: tap The Sieve
-3-sieve: pid=2372
-c: tap Download project
-4-export: pid=2372
-ls: /sdcard/Documents/Astrologers: No such file or directory
-ls: Workbench/: No such file or directory
-d: tap Central Scrutinizer chip
-5-scrutinizer: pid=2372
-6-leave: pid=2372
-run-as: package not debuggable: nz.co.ashnet.astrologersworkbench
+release launch pid=2433
+Success
+debug pid=2639 socket=webview_devtools_remote_2639
+total 8
+-rw-rw---- 1 u0_a127 media_rw 1327 2026-10-28 07:35 James_Alexander_·_sample_Best_Birth_Times.csv
