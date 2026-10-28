@@ -19,6 +19,14 @@ Android (Chrome): open the address, then More > Install app (or browser menu >
 Install app / Add to Home screen).
 iPhone / iPad (Safari): open the address, tap Share > Add to Home Screen.
 
+SIMPLE RECTIFICATION (Start here)
+Three steps: the person (offline city search, suggested time zone), the
+approximate birth time and how sure you are, and dated life events. Results:
+the five best distinct birth times and which events each explains. It hands a
+standard Polaris2 project to the unchanged Polaris2 engine and reads its
+results. Save case writes a Polaris2 project; Open in full Polaris2 carries
+the case over for every detail.
+
 USING IT
 Library: tap a tool to open it. Star tools to pin them at the top.
 Open: switch between running tools. Each keeps its inputs and results.

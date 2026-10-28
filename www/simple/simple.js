@@ -5,7 +5,12 @@
 'use strict';
 const $ = id => document.getElementById(id);
 const DRAFT = 'aw.simple.draft.v1';
-const UNCERTAINTY = [5, 15, 30, 60, 120, 180]; // minutes either side
+// Search windows: minutes either side of the best guess, or the whole birth date.
+const WINDOWS = [
+  { m: 5, label: '± 5 min' }, { m: 15, label: '± 15 min' }, { m: 30, label: '± 30 min' },
+  { m: 60, label: '± 1 h' }, { m: 120, label: '± 2 h' },
+  { m: 180, label: '6 hours' }, { m: 360, label: '12 hours' }, { m: 'day', label: '24 hours' }
+];
 const GROUPS = [
   ['Family births', [1, 2, 3, 4, 5, 6]],
   ['Love and marriage', [7, 8, 9, 10]],
@@ -103,17 +108,30 @@ function placeBox() {
 
 /* ---------- Step 2: time range ---------- */
 function rangeSeconds() {
+  const hms = t => pad(Math.floor(t / 3600)) + ':' + pad(Math.floor(t % 3600 / 60)) + ':' + pad(t % 60);
+  const step = Number((base || defaults || {}).step || 4);
+  const count = span => Math.floor(span / step) + 1 + (span % step ? 1 : 0); // as the engine builds its list
+  if (state.unc === 'day') return { start: '00:00:00', end: '23:59:59', startDay: '0', endDay: '0', count: count(86399), step, day: true };
   const [h, m] = (state.time || '12:00').split(':').map(Number), c = h * 3600 + m * 60, u = state.unc * 60;
   let s = c - u, e = c + u, sd = 0, ed = 0;
   if (s < 0) { s += 86400; sd = -1; } if (e >= 86400) { e -= 86400; ed = 1; }
-  const hms = t => pad(Math.floor(t / 3600)) + ':' + pad(Math.floor(t % 3600 / 60)) + ':' + pad(t % 60);
-  const step = Number((base || defaults || {}).step || 4);
-  return { start: hms(s), end: hms(e), startDay: String(sd), endDay: String(ed), count: Math.floor(2 * u / step) + 1, step };
+  return { start: hms(s), end: hms(e), startDay: String(sd), endDay: String(ed), count: count(2 * u), step };
+}
+function durationText(r) {
+  // Measured on a desktop: about 2 ms per candidate time per event; phones are slower.
+  const sec = r.count * Math.max(1, state.events.length) * 0.002;
+  if (sec < 45) return '';
+  const lo = Math.max(1, Math.round(sec / 60)), hi = Math.max(lo + 1, Math.round(sec * 3 / 60));
+  return ` Expect about ${lo}–${hi} minutes (longer on older phones). Keep the screen on until it finishes.`;
 }
 function renderRange() {
-  $('unc').innerHTML = UNCERTAINTY.concat(UNCERTAINTY.includes(state.unc) ? [] : [state.unc]).map(m => `<button type="button" data-m="${m}" aria-pressed="${m === state.unc}">± ${m < 60 ? m + ' min' : m / 60 + ' h'}</button>`).join('');
+  const list = WINDOWS.some(w => w.m === state.unc) ? WINDOWS : [...WINDOWS, { m: state.unc, label: '± ' + (state.unc < 60 ? state.unc + ' min' : +(state.unc / 60).toFixed(2) + ' h') }];
+  $('unc').innerHTML = list.map(w => `<button type="button" data-m="${w.m}" aria-pressed="${w.m === state.unc}">${w.label}</button>`).join('');
   const r = rangeSeconds();
-  $('range').innerHTML = `Search from <b>${r.start}</b>${r.startDay === '-1' ? ' (day before)' : ''} to <b>${r.end}</b>${r.endDay === '1' ? ' (day after)' : ''} · ${r.count.toLocaleString()} candidate times, every ${r.step} seconds.`;
+  $('time').disabled = !!r.day;
+  $('range').innerHTML = (r.day ? `Search the whole birth date, <b>00:00:00</b> to <b>23:59:59</b>. The best guess is not used.`
+    : `Search from <b>${r.start}</b>${r.startDay === '-1' ? ' (day before)' : ''} to <b>${r.end}</b>${r.endDay === '1' ? ' (day after)' : ''}.`)
+    + ` ${r.count.toLocaleString()} candidate times, every ${r.step} seconds.` + durationText(r);
 }
 
 /* ---------- Step 3: events ---------- */
@@ -122,7 +140,7 @@ function buildCategories() {
   sel.innerHTML = '<option value="">Choose…</option>' + GROUPS.map(([g, ids]) => `<optgroup label="${esc(g)}">${ids.filter(id => enabled.has(id)).map(id => `<option value="${id}">${esc(ruleName(id))}</option>`).join('')}</optgroup>`).join('');
 }
 function renderEvents() {
-  const list = $('events');
+  const list = $('events'); renderRange();
   $('evCount').textContent = state.events.length + ' event' + (state.events.length === 1 ? '' : 's');
   if (!state.events.length) { list.innerHTML = '<p class="empty">No events yet. Add births, marriages, deaths, moves and other dated turning points.</p>'; return; }
   list.innerHTML = state.events.map((e, i) => `<div class="event"><span class="d">${esc(e.monthOnly ? e.date.slice(0, 7) : e.date)}</span><span class="c">${esc(ruleName(e.category))}${e.description ? `<small>${esc(e.description)}</small>` : ''}</span><button class="x" type="button" data-del="${i}" aria-label="Remove event ${esc(e.date)}">×</button></div>`).join('');
@@ -170,13 +188,23 @@ function run() {
     return fail(doc.getElementById('status').textContent || 'The engine could not start the scan.');
   }
   running = true; selected = null; updateButtons(); $('results').hidden = true; $('meter').hidden = false;
+  keepAwake(true);
+  const t0 = Date.now();
   clearInterval(poll);
   poll = setInterval(() => {
-    $('meter').firstElementChild.style.width = (Number(doc.getElementById('progress').value) * 100) + '%';
-    $('status').textContent = doc.getElementById('status').textContent;
+    const p = Number(doc.getElementById('progress').value), el = (Date.now() - t0) / 1000;
+    $('meter').firstElementChild.style.width = (p * 100) + '%';
+    $('status').textContent = doc.getElementById('status').textContent + (el >= 10 ? ` · ${Math.floor(el / 60)}:${pad(Math.floor(el % 60))} elapsed` : '');
     const snap = RT.getState().snapshot;
-    if (snap && snap.state) { clearInterval(poll); running = false; updateButtons(); $('meter').hidden = true; finished(snap); }
-  }, 300);
+    if (snap && snap.state) { clearInterval(poll); running = false; keepAwake(false); updateButtons(); $('meter').hidden = true; finished(snap); }
+  }, 500);
+}
+let wakeLock = null;
+async function keepAwake(on) {
+  try {
+    if (on && navigator.wakeLock) wakeLock = await navigator.wakeLock.request('screen');
+    else if (!on && wakeLock) { await wakeLock.release(); wakeLock = null; }
+  } catch (e) { wakeLock = null; }
 }
 function finished(snap) {
   if (snap.state === 'error') return fail('The scan stopped: ' + (snap.stopMessage || E.document.getElementById('status').textContent));
@@ -250,11 +278,11 @@ function adoptEngineCase() {
   const lat = coord(d.lat, true), lonE = coord(d.lon, false); // the engine returns east-positive degrees
   const toSec = (t, day) => { const [h, m, s] = t.split(':').map(Number); return h * 3600 + m * 60 + (s || 0) + Number(day || 0) * 86400; };
   const a = toSec(d.start, d.startDay), b = toSec(d.end, d.endDay), mid = Math.round((a + b) / 2), half = Math.max(1, Math.round((b - a) / 120));
-  const t = ((mid % 86400) + 86400) % 86400;
+  const t = ((mid % 86400) + 86400) % 86400, wholeDay = a === 0 && b >= 86396 && b < 86400;
   rules = JSON.parse(JSON.stringify(st.rules));
   base = { ...d };
   state = { ...blank(), name: d.name, birthDate: d.birthDate, place: d.place, lat: String(+Math.abs(lat).toFixed(5)), latH: lat < 0 ? 'S' : 'N', lon: String(+Math.abs(lonE).toFixed(5)), lonH: lonE < 0 ? 'W' : 'E',
-    basis: d.basis, offset: d.offset, time: pad(Math.floor(t / 3600)) + ':' + pad(Math.floor(t % 3600 / 60)), unc: half,
+    basis: d.basis, offset: d.offset, time: pad(Math.floor(t / 3600)) + ':' + pad(Math.floor(t % 3600 / 60)), unc: wholeDay ? 'day' : half,
     events: st.events.filter(e => e.use && e.mode === 'score').map(e => ({ date: e.monthOnly ? e.date.slice(0, 7) : e.date, monthOnly: !!e.monthOnly, category: e.category, description: e.description || '' })) };
   const skipped = st.events.filter(e => !(e.use && e.mode === 'score')).length;
   buildCategories(); fill(); renderEvents(); save(); updateButtons(); $('results').hidden = true;
@@ -280,7 +308,7 @@ for (const k of ['name', 'birthDate', 'lat', 'latH', 'lon', 'lonH', 'basis', 'of
 }
 $('place').addEventListener('input', () => { state.place = $('place').value; save(); clearTimeout(cityTimer); cityTimer = setTimeout(citySearch, 200); });
 document.addEventListener('click', e => { if (!e.target.closest('.city')) $('cityList').hidden = true; });
-$('unc').addEventListener('click', e => { const b = e.target.closest('[data-m]'); if (!b) return; state.unc = Number(b.dataset.m); renderRange(); save(); });
+$('unc').addEventListener('click', e => { const b = e.target.closest('[data-m]'); if (!b) return; state.unc = b.dataset.m === 'day' ? 'day' : Number(b.dataset.m); renderRange(); save(); });
 $('evAdd').onclick = addEvent;
 $('events').addEventListener('click', e => { const b = e.target.closest('[data-del]'); if (!b) return; state.events.splice(+b.dataset.del, 1); renderEvents(); save(); });
 $('evImportBtn').onclick = () => { $('importBox').hidden = !$('importBox').hidden; };
