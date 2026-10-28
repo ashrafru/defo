@@ -2,7 +2,7 @@
    AGPL-3.0-or-later. The 36 HTML tools are served unchanged. */
 'use strict';
 const $ = s => document.querySelector(s);
-const defaultFavorites = ['Polaris2', 'CentralScrutinizer', 'PSSR_Aspects', 'Timeline'];
+const defaultFavorites = ['SimpleRectification', 'Polaris2','CentralScrutinizer', 'PSSR_Aspects', 'Timeline'];
 const LIVE = new Set(['AgeHarmonicsLive', 'AscensionalTransits_LIVE']);
 let catalog = [], favorites = [], tabs = [], active = null, secondary = null, split = false, library = true, sequence = 0, ratio = 50;
 let stored = {}, useSW = false, installEvent = null;
@@ -68,6 +68,7 @@ function renderLibrary() {
       const h3 = el('h3', '', m.name);
       if (stored[m.id]) { const dot = el('i', 'stored'); dot.title = 'Saved on this device'; h3.append(dot); }
       if (LIVE.has(m.id)) h3.append(el('span', 'badge live', 'Live'));
+      if (m.builtIn) h3.append(el('span', 'badge new', 'New'));
       open.append(h3, el('p', '', m.description));
       card.append(open, star(m)); grid.append(card);
     });
@@ -85,7 +86,9 @@ async function loadInto(tab) {
   const cover = el('div', 'loading'); const label = el('div', '', 'Preparing ' + module.short + '…'); const meter = el('div', 'meter'); const bar = el('i'); meter.append(bar); cover.append(label, meter); host.append(cover);
   try {
     const progress = (done, total) => { bar.style.width = Math.min(100, done / total * 100) + '%'; label.textContent = done < total ? 'Downloading ' + module.short + ' · ' + mb(done) + ' of ' + mb(total) : 'Opening ' + module.short + '…'; };
-    if (NATIVE) {
+    if (module.builtIn) {
+      frame.src = module.builtIn;
+    } else if (NATIVE) {
       const unpack = (done, total) => { bar.style.width = Math.min(100, done / total * 100) + '%'; label.textContent = done < total ? 'Preparing ' + module.short + ' for first use · ' + Math.round(done / total * 100) + '%' : 'Opening ' + module.short + '…'; };
       frame.src = await AWStore.installNative(module.id, unpack);
     } else if (useSW) {
@@ -96,7 +99,7 @@ async function loadInto(tab) {
       tab.blobUrl = URL.createObjectURL(blob); frame.src = tab.blobUrl;
     }
     frame.addEventListener('load', () => { cover.remove(); applyZoom(tab); window.AWNative && AWNative.hookFrame(frame); try { frame.contentWindow.addEventListener('keydown', shortcuts); } catch {} }, { once: true });
-    if (!stored[module.id]) { stored[module.id] = true; renderLibrary(); requestPersistence(); }
+    if (!module.builtIn && !stored[module.id]) { stored[module.id] = true; renderLibrary(); requestPersistence(); }
   } catch (err) {
     cover.classList.add('error'); label.textContent = err.message || String(err); meter.remove();
     cover.append(button('Try again', () => { cover.remove(); loadInto(tab); }));
@@ -128,7 +131,26 @@ function openTool(id, forceNew = false) {
   if (split && secondary === null && active !== null && active !== tab.key) secondary = tab.key;
   else if (tab.key !== secondary) active = tab.key;
   render();
+  return tab;
 }
+
+/* Used by Simple Rectification: a URL for an unchanged engine module, and a hand-over to the full tool. */
+window.AWEngineURL = async (id, onProgress) => {
+  if (NATIVE) return AWStore.installNative(id, onProgress);
+  if (useSW) { await AWStore.prefetch(id, onProgress); return new URL('modules/' + id + '.html', location.href).href; }
+  return URL.createObjectURL(await AWStore.build(id, onProgress));
+};
+window.AWOpenWithProject = (id, text) => {
+  const tab = openTool(id, true);
+  const t0 = Date.now();
+  const tryOpen = () => {
+    let w = null; try { w = tab.frame.contentWindow; } catch {}
+    if (w && w.RectificationTest && /ready/i.test(w.document.getElementById('engineState')?.textContent || '')) {
+      try { w.RectificationTest.openProject(text); toast('Case opened in ' + label(tab) + '. Press Scan there to see every detail.'); } catch (e) { toast('Could not open the case: ' + e.message); }
+    } else if (Date.now() - t0 < 120000) setTimeout(tryOpen, 400);
+  };
+  tryOpen();
+};
 
 function toolMenu(tab, anchor) {
   const menu = $('#menu'); menu.replaceChildren();

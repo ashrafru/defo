@@ -1,5 +1,14 @@
 [
   {
+    "id": "SimpleRectification",
+    "name": "Simple Rectification",
+    "short": "Simple Rectification",
+    "group": "Start here",
+    "description": "Enter birth details and dated life events, get the five best birth times and which events each explains. Runs the Polaris2 engine unchanged.",
+    "keywords": "rectify rectification easy simple quick beginner polaris2 birth time",
+    "builtIn": "simple/index.html"
+  },
+  {
     "id": "PSSR_Sieve",
     "name": "PSSR Sieve",
     "short": "PSSR Sieve",

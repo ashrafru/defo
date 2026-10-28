@@ -19,16 +19,21 @@ jobs:
       - name: Build release APK (unsigned)
         working-directory: android
         run: ./gradlew assembleRelease --no-daemon --stacktrace
+      - name: Build debug APK for automated testing
+        working-directory: android
+        run: ./gradlew assembleDebug --no-daemon
       - name: Publish unsigned APK to the apk-builds branch
         run: |
           APK=android/app/build/outputs/apk/release/app-release-unsigned.apk
           ls -la $APK
           cp $APK /tmp/unsigned.apk
+          cp android/app/build/outputs/apk/debug/app-debug.apk /tmp/debug.apk
           git config user.name "workbench-build"; git config user.email "actions@users.noreply.github.com"
           git fetch origin apk-builds --depth 1
           git checkout -B apk-builds FETCH_HEAD
           mkdir -p unsigned && cp /tmp/unsigned.apk unsigned/AstrologersWorkbench-2.0.1-unsigned.apk
           echo "${GITHUB_SHA}" > unsigned/source-commit.txt
-          git add unsigned && git commit -m "Unsigned build from ${GITHUB_SHA}" && git push origin apk-builds
+          mkdir -p test && cp /tmp/debug.apk test/app-debug.apk
+          git add unsigned test && git commit -m "Unsigned build from ${GITHUB_SHA}" && git push origin apk-builds
       - uses: actions/upload-artifact@v4
         with: { name: unsigned-apk, path: android/app/build/outputs/apk/release/app-release-unsigned.apk }

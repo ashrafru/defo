@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Simple Rectification</title>
+<meta name="color-scheme" content="dark">
+<style>
+/* Simple Rectification: a plain front end for the unchanged Polaris2 engine.
+   Layout: one column of three input steps, then results; palette follows the workbench. */
+:root{
+  --bg:#101f2c;--panel:#152d3a;--card:#182f40;--card-hi:#1d3b50;--line:#304b5e;--line-soft:#24394a;
+  --fg:#d9e7ef;--fg-strong:#edf5fb;--muted:#8ea9ba;--faint:#688ba1;--blue:#70b9ef;--blue-soft:#244d69;
+  --gold:#dbc38e;--good:#7fd1a8;--good-bg:#173f33;--miss:#b88a84;--danger:#e0897f;
+  --gl:max(16px,env(safe-area-inset-left,0px));--gr:max(16px,env(safe-area-inset-right,0px));
+  font-family:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif;font-size:15px;color:var(--fg);background:var(--bg);color-scheme:dark;-webkit-text-size-adjust:100%;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);padding:14px var(--gr) 40px var(--gl)}
+main{max-width:760px;margin:0 auto;display:grid;gap:16px}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none}
+button:disabled{opacity:.45;cursor:default}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+[hidden]{display:none!important}
+h1{margin:0;font-size:22px;font-weight:500;color:var(--fg-strong);letter-spacing:-.2px}
+.lead{margin:4px 0 0;color:var(--muted);font-size:13.5px;line-height:1.55;max-width:62ch}
+.engine{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);margin-top:8px}
+.engine i{width:8px;height:8px;border-radius:50%;background:var(--faint);flex-shrink:0}
+.engine.ready i{background:var(--good)}.engine.error i{background:var(--danger)}
+.step{background:var(--panel);border:1px solid var(--line-soft);border-radius:14px;padding:16px;display:grid;gap:14px;min-width:0}
+.step-head{display:flex;align-items:baseline;gap:10px}
+.step-head b{font-size:11px;letter-spacing:1.4px;color:var(--gold);font-weight:600}
+.step-head h2{margin:0;font-size:17px;font-weight:500;color:var(--fg-strong)}
+.step-head span{margin-left:auto;font-size:12px;color:var(--faint)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:520px){.grid{grid-template-columns:1fr}}
+label{display:grid;gap:5px;font-size:12.5px;color:var(--muted);min-width:0}
+input,select,textarea{width:100%;min-width:0;min-height:44px;background:var(--card);border:1px solid var(--line);border-radius:9px;padding:9px 11px;font-size:16px;color:var(--fg-strong)}
+textarea{min-height:90px;font-size:14px;font-family:ui-monospace,Menlo,Consolas,monospace}
+input:focus,select:focus,textarea:focus{border-color:var(--blue);outline:none}
+small.hint{font-size:12px;color:var(--faint);line-height:1.45}
+.inline{display:flex;gap:8px}.inline>*{flex:1;min-width:0}.inline>select{flex:0 0 76px}
+.check{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--fg)}
+.check input{width:20px;height:20px;min-height:0;flex:0 0 auto}
+.city{position:relative}
+.city-list{position:absolute;z-index:5;left:0;right:0;top:100%;margin-top:4px;background:var(--panel);border:1px solid var(--line);border-radius:10px;max-height:280px;overflow:auto;box-shadow:0 12px 30px #0009}
+.city-list button{display:block;width:100%;text-align:left;padding:10px 12px;font-size:14px;color:var(--fg-strong);border-bottom:1px solid var(--line-soft)}
+.city-list button small{display:block;color:var(--faint);font-size:11.5px}
+.city-list button:hover,.city-list button:focus{background:var(--card-hi)}
+.placebox{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;color:var(--muted);background:#0d1a24;border-radius:9px;padding:10px 12px}
+.placebox b{color:var(--fg-strong);font-weight:500}
+details.adjust summary{cursor:pointer;font-size:13px;color:var(--blue);padding:4px 0}
+details.adjust[open] summary{margin-bottom:10px}
+.unc{display:flex;flex-wrap:wrap;gap:6px}
+.unc button{min-height:40px;padding:0 14px;border-radius:20px;background:var(--card);border:1px solid var(--line);font-size:14px}
+.unc button[aria-pressed="true"]{background:var(--blue-soft);border-color:var(--blue);color:#d7efff}
+.range{font-size:13px;color:var(--muted)}
+.range b{color:var(--fg-strong);font-weight:500;font-variant-numeric:tabular-nums}
+.events{display:grid;gap:6px}
+.event{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 6px 8px 12px}
+.event .d{font-variant-numeric:tabular-nums;font-size:13.5px;color:var(--fg-strong);white-space:nowrap}
+.event .c{min-width:0;font-size:13.5px;color:var(--fg)}
+.event .c small{display:block;color:var(--faint);font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.event .x{width:40px;height:40px;border-radius:8px;color:var(--muted);font-size:20px}
+.empty{font-size:13.5px;color:var(--faint);padding:6px 2px}
+.addform{display:grid;gap:10px;background:#0d1a24;border-radius:12px;padding:12px}
+.row{display:flex;flex-wrap:wrap;gap:8px}
+.btn{min-height:44px;padding:0 16px;border-radius:9px;background:var(--card);border:1px solid var(--line);font-size:14.5px}
+.btn.primary{background:var(--blue);border-color:var(--blue);color:#0b1d2a;font-weight:600}
+.btn.big{min-height:52px;font-size:16px;flex:1}
+.btn.ghost{background:none}
+.err{color:var(--danger);font-size:13.5px;line-height:1.5}
+.run{display:grid;gap:10px}
+.meter{height:8px;border-radius:4px;background:#0d1a24;overflow:hidden}.meter i{display:block;height:100%;width:0;background:var(--blue);transition:width .25s}
+.status{font-size:13px;color:var(--muted);line-height:1.5}
+/* Results */
+.results{display:grid;gap:12px}
+.order{display:flex;gap:4px;background:#0d1a24;border-radius:10px;padding:4px}
+.order button{flex:1;min-height:40px;border-radius:7px;font-size:13.5px;color:var(--muted)}
+.order button[aria-pressed="true"]{background:var(--card-hi);color:var(--fg-strong)}
+.cands{display:grid;gap:8px}
+.cand{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;text-align:left;width:100%;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.cand[aria-pressed="true"]{border-color:var(--blue);background:var(--card-hi)}
+.cand .rk{grid-row:span 3;align-self:start;font-size:12px;color:var(--gold);font-weight:600;padding-top:6px}
+.cand .t{font-size:22px;font-weight:500;color:var(--fg-strong);font-variant-numeric:tabular-nums;letter-spacing:.3px}
+.cand .t small{font-size:12px;color:var(--gold);margin-left:6px}
+.cand .ang{font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.cand .sc{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--fg)}
+.cand .bar{flex:1;height:6px;border-radius:3px;background:#0d1a24;overflow:hidden;max-width:180px}.cand .bar i{display:block;height:100%;background:var(--blue)}
+.checks{display:grid;gap:6px}
+.chk{display:grid;grid-template-columns:28px 1fr;gap:2px 8px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.chk>*:not(.m){grid-column:2;min-width:0}
+.chk .m{grid-column:1;grid-row:1 / span 4;font-size:18px;line-height:1.3;text-align:center}
+.chk.yes .m{color:var(--good)}.chk.no .m{color:var(--miss)}
+.chk .h{font-size:14px;color:var(--fg-strong)}.chk .h span{color:var(--faint);font-variant-numeric:tabular-nums;margin-right:8px;white-space:nowrap}
+.chk .s{font-size:12.5px;color:var(--muted)}
+.chk .hits{font-size:12px;color:var(--faint);font-family:ui-monospace,Menlo,Consolas,monospace;overflow-wrap:anywhere}
+.sys{display:flex;flex-wrap:wrap;gap:5px;margin-top:3px}
+.sys span{font-size:11px;white-space:nowrap;padding:2px 7px;border-radius:10px;background:#0d1a24;color:var(--faint)}
+.sys span.on{background:var(--good-bg);color:var(--good)}
+.note{font-size:12px;color:var(--faint);line-height:1.55}
+.toast{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#183f4b;color:#fff;padding:11px 16px;border-radius:9px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s;max-width:calc(100vw - 32px);z-index:20}
+.toast.on{opacity:1}
+#engineFrame{position:absolute;left:-12000px;top:0;width:1100px;height:900px;border:0;visibility:hidden}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Simple Rectification</h1>
+    <p class="lead">Enter the birth details, roughly when you think the birth happened, and a few dated life events. The workbench finds the birth times that best explain those events.</p>
+    <div class="engine" id="engine"><i></i><span id="engineText">Starting the Polaris2 engine…</span></div>
+  </header>
+
+  <section class="step" aria-labelledby="s1">
+    <div class="step-head"><b>STEP 1</b><h2 id="s1">The person</h2></div>
+    <div class="grid">
+      <label>Name<input id="name" autocomplete="off" placeholder="e.g. Maria Lopez"></label>
+      <label>Birth date<input id="birthDate" type="date" min="1200-01-08" max="2399-12-31"></label>
+    </div>
+    <label class="city">Birthplace
+      <input id="place" autocomplete="off" placeholder="Type a city, e.g. Amman" aria-autocomplete="list" aria-controls="cityList">
+      <div id="cityList" class="city-list" role="listbox" hidden></div>
+    </label>
+    <div id="placeBox" class="placebox" hidden></div>
+    <details class="adjust" id="adjust">
+      <summary>Adjust coordinates and time zone</summary>
+      <div class="grid">
+        <label>Latitude<div class="inline"><input id="lat" inputmode="decimal" placeholder="31.95"><select id="latH" aria-label="North or south"><option>N</option><option>S</option></select></div></label>
+        <label>Longitude<div class="inline"><input id="lon" inputmode="decimal" placeholder="35.93"><select id="lonH" aria-label="East or west"><option>E</option><option>W</option></select></div></label>
+        <label>Clock time at birth<select id="basis"><option value="offset">Standard / daylight time (UTC offset)</option><option value="lmt">Local mean time</option></select></label>
+        <label>UTC offset at birth<input id="offset" placeholder="+02:00" autocomplete="off"><small class="hint" id="offsetHint">Include daylight saving if it applied.</small></label>
+      </div>
+    </details>
+  </section>
+
+  <section class="step" aria-labelledby="s2">
+    <div class="step-head"><b>STEP 2</b><h2 id="s2">Approximate birth time</h2></div>
+    <div class="grid">
+      <label>Best guess<input id="time" type="time" step="60" value="12:00"></label>
+      <div><label>How sure are you?</label><div class="unc" id="unc" role="group" aria-label="Uncertainty"></div></div>
+    </div>
+    <p class="range" id="range"></p>
+  </section>
+
+  <section class="step" aria-labelledby="s3">
+    <div class="step-head"><b>STEP 3</b><h2 id="s3">Life events</h2><span id="evCount">0 events</span></div>
+    <div class="events" id="events"></div>
+    <div class="addform" id="addForm">
+      <div class="grid">
+        <label>Date<input id="evDate" type="date"><span class="check"><input type="checkbox" id="evMonth"><span>I only know the month</span></span></label>
+        <label>What happened<select id="evCat"></select></label>
+      </div>
+      <label>Note (optional)<input id="evNote" placeholder="e.g. Son Omar born" autocomplete="off"></label>
+      <div class="row"><button class="btn primary" id="evAdd" type="button">Add event</button><button class="btn ghost" id="evImportBtn" type="button">Paste a list…</button></div>
+      <div id="importBox" hidden>
+        <label>Paste rows: date, category, note (CSV or tab-separated, the Polaris2 event format)<textarea id="importText" placeholder="Date,Category,Description&#10;1989-09-19,Birth of Son,Son born&#10;2000-12,Marriage/Engagement/Affair (M),Wedding"></textarea></label>
+        <div class="row"><button class="btn" id="importGo" type="button">Add these events</button></div>
+      </div>
+      <small class="hint">Five or more accurately dated events give the most reliable result. Month-only dates use the 15th.</small>
+    </div>
+  </section>
+
+  <section class="run">
+    <div class="row">
+      <button class="btn primary big" id="runBtn" type="button">Find the birth time</button>
+      <button class="btn" id="cancelBtn" type="button" hidden>Stop</button>
+    </div>
+    <div class="row">
+      <button class="btn ghost" id="sampleBtn" type="button">Load an example</button>
+      <label class="btn ghost" style="display:flex;align-items:center;cursor:pointer">Open a saved case<input id="openFile" type="file" accept=".json,application/json" hidden></label>
+      <button class="btn ghost" id="clearBtn" type="button">Start over</button>
+    </div>
+    <div class="meter" id="meter" hidden><i></i></div>
+    <div class="status" id="status" role="status" aria-live="polite"></div>
+    <div class="err" id="error" role="alert" hidden></div>
+  </section>
+
+  <section class="step results" id="results" hidden aria-labelledby="r1">
+    <div class="step-head"><b>RESULT</b><h2 id="r1">Best birth times</h2><span id="resMeta"></span></div>
+    <div class="order" role="group" aria-label="Rank by">
+      <button type="button" data-order="tpd" aria-pressed="true">Primary directions</button>
+      <button type="button" data-order="combined" aria-pressed="false">Directions + progressions + returns</button>
+    </div>
+    <div class="cands" id="cands"></div>
+    <div class="step-head" style="margin-top:6px"><h2 id="checkTitle">Which events this time explains</h2></div>
+    <div class="checks" id="checks"></div>
+    <div class="row">
+      <button class="btn" id="saveCase" type="button">Save case</button>
+      <button class="btn" id="exportCsv" type="button">Export results (CSV)</button>
+      <button class="btn" id="openFull" type="button">Open in full Polaris2</button>
+    </div>
+    <p class="note" id="engineNote"></p>
+  </section>
+</main>
+<div class="toast" id="toast" role="status"></div>
+<iframe id="engineFrame" title="Polaris2 calculation engine" aria-hidden="true" tabindex="-1"></iframe>
+<script src="simple.js"></script>
+</body>
+</html>
