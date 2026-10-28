@@ -1,6 +1,7 @@
 /* Astrologers' Workbench Mobile — launcher. Adapted from the Polaris Launcher controller 1.5.2 frontend.
    AGPL-3.0-or-later. The 36 HTML tools are served unchanged. */
 'use strict';
+const BUILD = '2.0.1-3'; // changes with every release so updated files are never served from an old cache
 const $ = s => document.querySelector(s);
 const defaultFavorites = ['SimpleRectification', 'Polaris2','CentralScrutinizer', 'PSSR_Aspects', 'Timeline'];
 const LIVE = new Set(['AgeHarmonicsLive', 'AscensionalTransits_LIVE']);
@@ -87,7 +88,7 @@ async function loadInto(tab) {
   try {
     const progress = (done, total) => { bar.style.width = Math.min(100, done / total * 100) + '%'; label.textContent = done < total ? 'Downloading ' + module.short + ' · ' + mb(done) + ' of ' + mb(total) : 'Opening ' + module.short + '…'; };
     if (module.builtIn) {
-      frame.src = module.builtIn;
+      frame.src = module.builtIn + '?v=' + BUILD;
     } else if (NATIVE) {
       const unpack = (done, total) => { bar.style.width = Math.min(100, done / total * 100) + '%'; label.textContent = done < total ? 'Preparing ' + module.short + ' for first use · ' + Math.round(done / total * 100) + '%' : 'Opening ' + module.short + '…'; };
       frame.src = await AWStore.installNative(module.id, unpack);
@@ -308,7 +309,7 @@ async function start() {
     } catch { useSW = false; }
   }
   try {
-    catalog = await (await fetch('catalog.json')).json();
+    catalog = await (await fetch('catalog.json?v=' + BUILD)).json();
   } catch { $('#cards').textContent = 'The tool list could not load. Connect to the internet and reopen the app.'; return; }
   const saved = store.get('favorites', null);
   favorites = Array.isArray(saved) ? saved.filter(id => catalog.some(m => m.id === id)) : [...defaultFavorites];
