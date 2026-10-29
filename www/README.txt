@@ -27,6 +27,14 @@ standard Polaris2 project to the unchanged Polaris2 engine and reads its
 results. Save case writes a Polaris2 project; Open in full Polaris2 carries
 the case over for every detail.
 
+WIDE SEARCHES AND CONFIDENCE (build 5)
+Windows over 3 hours run as 3-hour blocks on the same 4-second grid, so a
+whole-day search no longer runs out of memory; the directions ranking is the
+same as one long scan. Each result carries a confidence note (close race,
+few events, wide search). Time clues (night, morning, afternoon, evening) set
+a 6-hour window. City search warns about missing or duplicate place names
+and has a country filter. 'Describe it' suggests the event category.
+
 SAVED CHARTS (Simple Rectification > Saved charts)
 The built-in database (2,432 charts) loads through Polaris2's own chart
 loader. My charts: charts saved here or imported from a Central Scrutinizer

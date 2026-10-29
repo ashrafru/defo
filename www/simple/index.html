@@ -118,6 +118,19 @@ details.adjust[open] summary{margin-bottom:10px}
 .chart .tag.mine{background:#3c3418;color:var(--gold)}
 .chart .del{width:40px;height:40px;border-radius:8px;color:var(--muted);font-size:20px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.placegrid{display:grid;grid-template-columns:1fr 170px;gap:12px}
+@media(max-width:520px){.placegrid{grid-template-columns:1fr}}
+.warn{margin:0;font-size:13px;line-height:1.5;color:#f0d79a;background:#3a3016;border:1px solid #5d4a1f;border-radius:9px;padding:9px 12px}
+.clue{display:grid;gap:6px;font-size:12.5px;color:var(--muted)}
+.sugg{display:flex;flex-wrap:wrap;gap:6px}.sugg:empty{display:none}
+.sugg button{min-height:36px;padding:0 12px;border-radius:18px;background:var(--blue-soft);border:1px solid #2f6286;color:#d7efff;font-size:13px}
+.sugg small{width:100%;font-size:12px;color:var(--faint)}
+.confidence{border-radius:12px;padding:12px 14px;font-size:13.5px;line-height:1.55}
+.confidence b{display:block;font-size:14.5px;margin-bottom:4px}
+.confidence ul{margin:6px 0 0;padding-left:18px}
+.confidence.low{background:#3a2420;border:1px solid #6b3a33;color:#f3d2cc}
+.confidence.mid{background:#3a3016;border:1px solid #5d4a1f;color:#f0e2bd}
+.confidence.high{background:#173f33;border:1px solid #2d6b58;color:#cdeedf}
 .toast{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#183f4b;color:#fff;padding:11px 16px;border-radius:9px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s;max-width:calc(100vw - 32px);z-index:20}
 .toast.on{opacity:1}
 #engineFrame{position:absolute;left:-12000px;top:0;width:1100px;height:900px;border:0;visibility:hidden}
@@ -158,10 +171,14 @@ details.adjust[open] summary{margin-bottom:10px}
       <label>Name<input id="name" autocomplete="off" placeholder="e.g. Maria Lopez"></label>
       <label>Birth date<input id="birthDate" type="date" min="1200-01-08" max="2399-12-31"></label>
     </div>
-    <label class="city">Birthplace
-      <input id="place" autocomplete="off" placeholder="Type a city, e.g. Amman" aria-autocomplete="list" aria-controls="cityList">
-      <div id="cityList" class="city-list" role="listbox" hidden></div>
-    </label>
+    <div class="placegrid">
+      <label class="city">Birthplace
+        <input id="place" autocomplete="off" placeholder="Type a city, e.g. Amman" aria-autocomplete="list" aria-controls="cityList">
+        <div id="cityList" class="city-list" role="listbox" hidden></div>
+      </label>
+      <label>Country<select id="placeCountry"><option value="">Any country</option></select></label>
+    </div>
+    <p class="warn" id="placeWarn" hidden></p>
     <div id="placeBox" class="placebox" hidden></div>
     <details class="adjust" id="adjust">
       <summary>Adjust coordinates and time zone</summary>
@@ -178,9 +195,15 @@ details.adjust[open] summary{margin-bottom:10px}
     <div class="step-head"><b>STEP 2</b><h2 id="s2">Approximate birth time</h2></div>
     <div class="grid">
       <label>Best guess<input id="time" type="time" step="60" value="12:00"></label>
-      <div><label>Search window</label><div class="unc" id="unc" role="group" aria-label="Search window"></div><small class="hint">± around your best guess, or 6, 12 or 24 hours. Narrower windows finish much faster.</small></div>
+      <div><label>Search window</label><div class="unc" id="unc" role="group" aria-label="Search window"></div><small class="hint">± around your best guess, or 6, 12 or 24 hours.</small></div>
+    </div>
+    <div class="clue"><span>No exact time? Any clue helps more than extra events:</span>
+      <div class="unc" id="clues" role="group" aria-label="Time clue">
+        <button type="button" data-clue="3">Night 00–06</button><button type="button" data-clue="9">Morning 06–12</button><button type="button" data-clue="15">Afternoon 12–18</button><button type="button" data-clue="21">Evening 18–24</button>
+      </div>
     </div>
     <p class="range" id="range"></p>
+    <p class="warn" id="rangeWarn" hidden></p>
   </section>
 
   <section class="step" aria-labelledby="s3">
@@ -191,13 +214,15 @@ details.adjust[open] summary{margin-bottom:10px}
         <label>Date<input id="evDate" type="date"><span class="check"><input type="checkbox" id="evMonth"><span>I only know the month</span></span></label>
         <label>What happened<select id="evCat"></select></label>
       </div>
+      <label>Not sure which to choose? Describe it<input id="evFind" placeholder="e.g. immigration, wedding, new job, surgery" autocomplete="off"></label>
+      <div class="sugg" id="evSugg"></div>
       <label>Note (optional)<input id="evNote" placeholder="e.g. Son Omar born" autocomplete="off"></label>
       <div class="row"><button class="btn primary" id="evAdd" type="button">Add event</button><button class="btn ghost" id="evImportBtn" type="button">Paste a list…</button></div>
       <div id="importBox" hidden>
         <label>Paste rows: date, category, note (CSV or tab-separated, the Polaris2 event format)<textarea id="importText" placeholder="Date,Category,Description&#10;1989-09-19,Birth of Son,Son born&#10;2000-12,Marriage/Engagement/Affair (M),Wedding"></textarea></label>
         <div class="row"><button class="btn" id="importGo" type="button">Add these events</button></div>
       </div>
-      <small class="hint">Five or more accurately dated events give the most reliable result. Month-only dates use the 15th.</small>
+      <small class="hint">Aim for 10–15 accurately dated events: births of siblings and children, marriages, deaths in the family, moves, jobs, graduations, hospital stays. Month-only dates use the 15th.</small>
     </div>
   </section>
 
@@ -219,6 +244,7 @@ details.adjust[open] summary{margin-bottom:10px}
 
   <section class="step results" id="results" hidden aria-labelledby="r1">
     <div class="step-head"><b>RESULT</b><h2 id="r1">Best birth times</h2><span id="resMeta"></span></div>
+    <div class="confidence" id="confidence" role="note"></div>
     <div class="order" role="group" aria-label="Rank by">
       <button type="button" data-order="tpd" aria-pressed="true">Primary directions</button>
       <button type="button" data-order="combined" aria-pressed="false">Directions + progressions + returns</button>
@@ -236,6 +262,6 @@ details.adjust[open] summary{margin-bottom:10px}
 </main>
 <div class="toast" id="toast" role="status"></div>
 <iframe id="engineFrame" title="Polaris2 calculation engine" aria-hidden="true" tabindex="-1"></iframe>
-<script src="simple.js?v=2.0.1-4"></script>
+<script src="simple.js?v=2.0.1-5"></script>
 </body>
 </html>

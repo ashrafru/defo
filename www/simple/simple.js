@@ -62,6 +62,7 @@ async function startEngine() {
     $('engineText').textContent = 'Polaris2 engine ready · ' + E.document.getElementById('engineState').textContent.trim() + ' · calculations unchanged';
     buildCategories(); renderEvents(); updateButtons();
     $('chartsBtn').disabled = false; try { renderCharts(); } catch (e) {}
+    try { $('placeCountry').innerHTML = [...E.document.getElementById('cityCountry').options].map(o => `<option value="${esc(o.value)}">${esc(o.value ? o.textContent : 'Any country')}</option>`).join(''); } catch (e) {}
   } catch (err) {
     $('engine').className = 'engine error'; $('engineText').textContent = err.message || String(err);
   }
@@ -91,20 +92,29 @@ function suggestOffset() {
 }
 let cityTimer = null;
 function citySearch() {
-  const q = $('place').value.trim(), list = $('cityList');
-  if (!E?.OfflineCities || q.length < 2) { list.hidden = true; return; }
-  const found = E.OfflineCities.search(q).slice(0, 12);
-  list.innerHTML = found.length ? found.map((c, i) => `<button type="button" role="option" data-i="${i}">${esc(c.label)}<small>${Math.abs(c.latitude)}° ${c.latitude < 0 ? 'S' : 'N'} · ${Math.abs(c.longitudeWest)}° ${c.longitudeWest > 0 ? 'W' : 'E'} · ${esc(c.timezone || 'time zone unknown')}</small></button>`).join('') : '<button type="button" disabled>No match in the offline city list. Type the coordinates under “Adjust”.</button>';
-  list.hidden = false;
+  const q = $('place').value.trim(), list = $('cityList'), cc = $('placeCountry').value, warn = $('placeWarn');
+  if (!E?.OfflineCities || q.length < 2) { list.hidden = true; warn.hidden = true; return; }
+  const found = E.OfflineCities.search(q, cc).slice(0, 12);
+  const key = x => String(x || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/['’`]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
+  const wanted = key(q.split(',')[0]), exactOnes = found.filter(c => key(c.label.split(',')[0]) === wanted), exact = exactOnes.length > 0;
+  const countryOf = c => c.label.split(', ').pop(), countries = [...new Set((exact ? exactOnes : found).map(countryOf))];
+  const where = cc ? ' in ' + $('placeCountry').selectedOptions[0].textContent : '';
+  warn.hidden = exact && countries.length < 2;
+  warn.textContent = exact ? `Places matching “${q.split(',')[0]}” exist in ${countries.length} countries (${countries.slice(0, 4).join(', ')}${countries.length > 4 ? '…' : ''}). Check the country before choosing, or set the Country filter. If the birthplace is not listed, pick the nearest town or type the coordinates under “Adjust coordinates and time zone”.`
+    : found.length
+    ? `No place called “${q.split(',')[0]}”${where} in the offline list. The places below only have similar names: check the country before choosing, pick the nearest town instead, or type the coordinates under “Adjust coordinates and time zone”.`
+    : `No match for “${q}”${where} in the offline list. Try the nearest larger town, change the country, or type the coordinates under “Adjust coordinates and time zone”.`;
+  list.innerHTML = found.length ? found.map((c, i) => { const parts = c.label.split(', '), country = parts.length > 1 ? parts.pop() : ''; return `<button type="button" role="option" data-i="${i}">${esc(parts.join(', '))}${country ? ` · <b>${esc(country)}</b>` : ''}<small>${Math.abs(c.latitude)}° ${c.latitude < 0 ? 'S' : 'N'} · ${Math.abs(c.longitudeWest)}° ${c.longitudeWest > 0 ? 'W' : 'E'} · ${esc(c.timezone || 'time zone unknown')}</small></button>`; }).join('') : '';
+  list.hidden = !found.length;
   list.onclick = e => { const b = e.target.closest('[data-i]'); if (!b) return; const c = found[+b.dataset.i];
     Object.assign(state, { place: c.label, lat: String(Math.abs(c.latitude)), latH: c.latitude < 0 ? 'S' : 'N', lon: String(Math.abs(c.longitudeWest)), lonH: c.longitudeWest > 0 ? 'W' : 'E', tz: c.timezone || '' });
-    list.hidden = true; fill(); suggestOffset(); save(); };
+    list.hidden = true; warn.hidden = true; fill(); suggestOffset(); save(); };
 }
 function placeBox() {
   const b = $('placeBox');
   if (!state.lat || !state.lon) { b.hidden = true; return; }
   b.hidden = false;
-  b.innerHTML = `<span><b>${esc(state.lat)}° ${state.latH}</b>, <b>${esc(state.lon)}° ${state.lonH}</b></span><span>${state.tz ? esc(state.tz) + ' · ' : ''}${state.basis === 'lmt' ? '<b>Local mean time</b>' : 'UTC offset <b>' + esc(state.offset || '?') + '</b>'}</span>`;
+  b.innerHTML = `${state.place ? `<span><b>${esc(state.place)}</b></span>` : ''}<span><b>${esc(state.lat)}° ${state.latH}</b>, <b>${esc(state.lon)}° ${state.lonH}</b></span><span>${state.tz ? esc(state.tz) + ' · ' : ''}${state.basis === 'lmt' ? '<b>Local mean time</b>' : 'UTC offset <b>' + esc(state.offset || '?') + '</b>'}</span>`;
 }
 
 /* ---------- Step 2: time range ---------- */
@@ -120,7 +130,7 @@ function rangeSeconds() {
 }
 function durationText(r) {
   // Measured on a desktop: about 2 ms per candidate time per event; phones are slower.
-  const sec = r.count * Math.max(1, state.events.length) * 0.002;
+  const sec = r.count * Math.max(1, state.events.length) * 0.0006;
   if (sec < 45) return '';
   const lo = Math.max(1, Math.round(sec / 60)), hi = Math.max(lo + 1, Math.round(sec * 3 / 60));
   return ` Expect about ${lo}–${hi} minutes (longer on older phones). Keep the screen on until it finishes.`;
@@ -133,6 +143,11 @@ function renderRange() {
   $('range').innerHTML = (r.day ? `Search the whole birth date, <b>00:00:00</b> to <b>23:59:59</b>. The best guess is not used.`
     : `Search from <b>${r.start}</b>${r.startDay === '-1' ? ' (day before)' : ''} to <b>${r.end}</b>${r.endDay === '1' ? ' (day after)' : ''}.`)
     + ` ${r.count.toLocaleString()} candidate times, every ${r.step} seconds.` + durationText(r);
+  const n = state.events.length, span = r.day ? 86399 : state.unc * 120, w = $('rangeWarn');
+  const blocks = blocksFor(0, span, r.step).length;
+  w.hidden = !(span >= 6 * 3600 - 4 && n < 15);
+  w.textContent = `A ${r.day ? 'whole-day' : Math.round(span / 3600) + '-hour'} search with ${n} event${n === 1 ? '' : 's'} usually cannot single out one time: in tests, unrelated times across the day fitted the same events, and the top answer changed when events were added. If you know anything about the time (morning or evening, a family memory, a hospital note), tap a time clue above instead. More dated events also help.`;
+  if (blocks > 1) $('range').innerHTML += ` Runs as ${blocks} blocks of 3 hours to keep memory low.`;
 }
 
 /* ---------- Step 3: events ---------- */
@@ -153,7 +168,7 @@ function addEvent() {
   if (!cat) return fail('Choose what happened.');
   state.events.push({ date: month ? d.slice(0, 7) : d, monthOnly: month, category: cat, description: $('evNote').value.trim() });
   state.events.sort((a, b) => a.date.localeCompare(b.date));
-  $('evNote').value = ''; $('evDate').value = ''; $('evMonth').checked = false; $('evCat').value = '';
+  $('evNote').value = ''; $('evDate').value = ''; $('evMonth').checked = false; $('evCat').value = ''; $('evFind').value = ''; $('evSugg').innerHTML = '';
   renderEvents(); save(); updateButtons(); $('evDate').focus();
 }
 
@@ -175,30 +190,91 @@ function check() {
   return '';
 }
 
-/* ---------- Run ---------- */
+/* ---------- Run ----------
+   Windows wider than 3 hours run as consecutive 3-hour blocks on the same 4-second grid.
+   Each candidate time's TPD score is computed independently of the other times, so the merged
+   TPD ranking equals one long scan; blocks only keep the engine's memory use small. */
+let OUT = null, cancelReq = false;
+const hmsS = t => { t = ((t % 86400) + 86400) % 86400; return pad(Math.floor(t / 3600)) + ':' + pad(Math.floor(t % 3600 / 60)) + ':' + pad(t % 60); };
+const DISTINCT = 23; // Polaris2 groups times closer than this many seconds
 function updateButtons() { $('runBtn').disabled = !RT || running; $('sampleBtn').disabled = !RT || running; $('cancelBtn').hidden = !running; }
-function run() {
+function spanOf() {
+  const r = rangeSeconds(), toS = (t, d) => { const [h, m, x] = t.split(':').map(Number); return h * 3600 + m * 60 + x + Number(d) * 86400; };
+  return { s: toS(r.start, r.startDay), e: toS(r.end, r.endDay), step: r.step };
+}
+function blocksFor(s, e, step) {
+  const size = step * Math.round(10800 / step), out = [];
+  if (e - s <= size) return [[s, e]];
+  for (let b = s; b <= e; b += size) out.push([b, Math.min(b + size - step, e)]);
+  out[out.length - 1][1] = e;                                   // the last block always ends exactly where a single scan would
+  if (out.length > 1 && out[out.length - 1][0] >= e) { out.pop(); out[out.length - 1][1] = e; } // no one-time tail block
+  return out;
+}
+function projectRange(s, e) { const p = project(); Object.assign(p.data, { start: hmsS(s), end: hmsS(e), startDay: String(Math.floor(s / 86400)), endDay: String(Math.floor(e / 86400)) }); return p; }
+function scanOnce(proj, onProgress) {
+  return new Promise((resolve, reject) => {
+    try { RT.openProject(JSON.stringify(proj)); RT.startScan(); } catch (err) { reject(err); return; }
+    const doc = E.document;
+    if (!doc.getElementById('scan').disabled) { reject(Error(doc.getElementById('status').textContent || 'The engine could not start the scan.')); return; }
+    const iv = setInterval(() => {
+      onProgress(Number(doc.getElementById('progress').value), doc.getElementById('status').textContent);
+      const snap = RT.getState().snapshot;
+      if (snap && snap.state) { clearInterval(iv); resolve(snap); }
+    }, 500);
+  });
+}
+function norm1(r, snap) {
+  const ids = snap.events.map(e => e.id), hit = engineFn('hitText');
+  const ev = layer => layer && layer.evidence ? ids.map(id => +(layer.evidence.find(x => x.id === id)?.points || 0)) : null;
+  return { seconds: r.seconds, points: r.points, witnessed: r.witnessed, hits: r.hits, multi: r.multi, asc: r.ascendant, mc: r.midheaven, partility: r.partility && Number.isFinite(r.partility.mean) ? { mean: r.partility.mean } : undefined,
+    tpd: ids.map(id => { const x = r.evidence.find(v => v.id === id); return x ? { points: x.points, n: x.groups.length, hits: x.groups.slice(0, 3).map(g => hit(g.hit)) } : { points: 0, n: 0, hits: [] }; }),
+    sec: ev(r.secondary), pssr: ev(r.pssr), shortlisted: !!(r.secondary || r.pssr),
+    comb: r.combined ? { points: r.combined.points, witnessed: r.combined.witnessed, ev: ev(r.combined) } : null };
+}
+const tpdCompare = (a, b) => b.points - a.points || b.witnessed - a.witnessed || b.hits - a.hits || b.multi - a.multi || a.seconds - b.seconds; // Polaris2's ScoreEngine.compare
+function distinctOf(list) { // Polaris2's own distinct grouping (it uses each time's projected partility time)
+  const dc = engineFn('distinctCandidates'); if (dc) return dc(list);
+  const out = []; for (const c of list) if (out.every(o => Math.abs(o.seconds - c.seconds) > DISTINCT)) out.push(c); return out;
+}
+async function run() {
   fail(''); const problem = check(); if (problem) return fail(problem);
+  const { s, e, step } = spanOf(), blocks = blocksFor(s, e, step);
+  lastProject = projectRange(s, e);
+  running = true; cancelReq = false; selected = null; OUT = null; updateButtons(); $('results').hidden = true; $('meter').hidden = false; keepAwake(true);
+  const t0 = Date.now(), light = [], detail = new Map(); let first = null, endState = 'complete', msg = '';
   try {
-    lastProject = project();
-    RT.openProject(JSON.stringify(lastProject));
-    RT.startScan();
-  } catch (err) { return fail(err.message || String(err)); }
-  const doc = E.document;
-  if (!doc.getElementById('scan').disabled) { // the engine refused the input
-    return fail(doc.getElementById('status').textContent || 'The engine could not start the scan.');
+    for (let i = 0; i < blocks.length; i++) {
+      const [bs, be] = blocks[i];
+      const snap = await scanOnce(blocks.length === 1 ? lastProject : projectRange(bs, be), (p, text) => {
+        const el = (Date.now() - t0) / 1000;
+        $('meter').firstElementChild.style.width = ((i + p) / blocks.length * 100) + '%';
+        $('status').textContent = (blocks.length > 1 ? `Block ${i + 1} of ${blocks.length} (${hmsS(bs)}–${hmsS(be)}) · ` : '') + text + (el >= 10 ? ` · ${Math.floor(el / 60)}:${pad(Math.floor(el % 60))} elapsed` : '');
+      });
+      if (snap.state === 'error') { endState = 'error'; msg = snap.stopMessage || ''; break; }
+      const g = RT.getState(), dc = engineFn('displayCandidates');
+      E.document.getElementById('candidateDisplay').value = 'distinct';
+      if (!first) first = { data: { ...snap.data }, events: snap.events.map(x => ({ date: x.date, monthOnly: !!x.monthOnly, category: x.category, description: x.description })), totalScoring: snap.totalScoring };
+      const tpdList = dc('tpd'), combList = dc('combined').filter(r => r.combined).sort((a, b) => a.combined.rank - b.combined.rank);
+      for (const r of [...tpdList.slice(0, blocks.length === 1 ? 60 : 15), ...g.results.filter(x => x.combined)]) if (!detail.has(r.seconds)) detail.set(r.seconds, norm1(r, snap));
+      for (const r of g.results) light.push({ seconds: r.seconds, points: r.points, witnessed: r.witnessed, hits: r.hits, multi: r.multi, asc: r.ascendant, mc: r.midheaven, partility: r.partility && Number.isFinite(r.partility.mean) ? { mean: r.partility.mean } : undefined });
+      if (blocks.length === 1) { first.tpdOrder = tpdList.map(r => r.seconds); first.tpdScores = tpdList.map(r => r.points); first.combOrder = combList.map(r => r.seconds); }
+      if (snap.state === 'cancelled' || cancelReq) { endState = 'cancelled'; break; }
+    }
+  } catch (err) { fail(err.message || String(err)); endState = 'failed'; }
+  running = false; keepAwake(false); updateButtons(); $('meter').hidden = true;
+  if (endState === 'failed' || !first) return;
+  if (endState === 'error') return fail('The scan stopped: ' + (msg || E.document.getElementById('status').textContent));
+  let tpdOrder = first.tpdOrder, tpdScores = first.tpdScores, combOrder = first.combOrder;
+  if (blocks.length > 1) {
+    const d = distinctOf(light.slice().sort(tpdCompare));
+    tpdOrder = d.map(c => c.seconds); tpdScores = d.map(c => c.points);
+    combOrder = distinctOf([...detail.values()].filter(c => c.comb).sort((a, b) => b.comb.points - a.comb.points || b.comb.witnessed - a.comb.witnessed || tpdCompare(a, b))).map(c => c.seconds);
   }
-  running = true; selected = null; updateButtons(); $('results').hidden = true; $('meter').hidden = false;
-  keepAwake(true);
-  const t0 = Date.now();
-  clearInterval(poll);
-  poll = setInterval(() => {
-    const p = Number(doc.getElementById('progress').value), el = (Date.now() - t0) / 1000;
-    $('meter').firstElementChild.style.width = (p * 100) + '%';
-    $('status').textContent = doc.getElementById('status').textContent + (el >= 10 ? ` · ${Math.floor(el / 60)}:${pad(Math.floor(el % 60))} elapsed` : '');
-    const snap = RT.getState().snapshot;
-    if (snap && snap.state) { clearInterval(poll); running = false; keepAwake(false); updateButtons(); $('meter').hidden = true; finished(snap); }
-  }, 500);
+  const lightBy = new Map(light.map(c => [c.seconds, c]));
+  OUT = { ...first, scanned: light.length, blocks: blocks.length, detail, lightBy, tpdOrder, tpdScores, combOrder, span: e - s, state: endState };
+  $('status').textContent = (endState === 'cancelled' ? 'Stopped early: ' : 'Complete: ') + light.length.toLocaleString() + ' candidate times' + (blocks.length > 1 ? ` in ${blocks.length} blocks of 3 hours` : '') + ` · ${first.totalScoring} events · ${Math.round((Date.now() - t0) / 1000)} s.`;
+  if (endState === 'cancelled') toast('Stopped. Results cover only the part of the range already scanned.');
+  showResults(); $('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 let wakeLock = null;
 async function keepAwake(on) {
@@ -207,47 +283,56 @@ async function keepAwake(on) {
     else if (!on && wakeLock) { await wakeLock.release(); wakeLock = null; }
   } catch (e) { wakeLock = null; }
 }
-function finished(snap) {
-  if (snap.state === 'error') return fail('The scan stopped: ' + (snap.stopMessage || E.document.getElementById('status').textContent));
-  if (snap.state === 'cancelled') toast('Stopped. Results cover only the part of the range already scanned.');
-  showResults(); $('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
 
 /* ---------- Results ---------- */
-function candidates() {
-  E.document.getElementById('candidateDisplay').value = 'distinct'; // the engine's own grouping of near-identical times
-  const list = engineFn('displayCandidates')(order === 'combined' ? 'combined' : 'tpd');
-  if (order === 'combined') list.sort((a, b) => a.combined.rank - b.combined.rank); // the engine's own Combined rank
-  return list.slice(0, 5);
+function cand(sec) { return OUT.detail.get(sec) || { ...OUT.lightBy.get(sec), missing: true }; }
+function candidates() { return (order === 'combined' ? OUT.combOrder : OUT.tpdOrder).slice(0, 5).map(cand); }
+function score(r) { return order === 'combined' ? r.comb : r; }
+function confidence() {
+  const scores = order === 'combined' ? OUT.combOrder.slice(0, 50).map(s => cand(s).comb?.points || 0) : OUT.tpdScores.slice(0, 50);
+  const n = OUT.totalScoring, s1 = scores[0] || 0, s2 = scores[1] || 0, gap = s1 ? (s1 - s2) / s1 : 0;
+  const near = scores.filter(x => x >= 0.95 * s1).length, wide = OUT.span >= 6 * 3600 - 4, pts = [];
+  pts.push(gap < 0.05 ? `#1 is only ${Math.round(gap * 100)}% ahead of #2.` : `#1 is ${Math.round(gap * 100)}% ahead of #2.`);
+  if (near >= 3) pts.push(`${near} different times score within 5% of the best.`);
+  if (n < 6) pts.push(`Only ${n} events: too few to tell times apart reliably. Aim for 10–15 dated events.`);
+  else if (n < 10) pts.push(`${n} events: more dated events would make this firmer.`);
+  if (wide) pts.push(n < 15 ? 'Wide search: over many hours, unrelated times can fit the same events. A rough time clue narrows it more than extra events do.'
+    : 'Wide search: over many hours the leading time can change when events are added or removed. Confirm it with a narrower search around it.');
+  pts.push('Treat these as candidates to check against what you know, not a proven birth time.');
+  const level = (n < 6 || gap < 0.05 || near >= 3 || (wide && n < 10)) ? 'low' : (gap < 0.12 || n < 10 || wide) ? 'mid' : 'high';
+  const title = { low: 'Low confidence: several times fit almost equally well', mid: 'Moderate confidence', high: 'Clearer leader' }[level];
+  $('confidence').className = 'confidence ' + level;
+  $('confidence').innerHTML = `<b>${title}</b><ul>${pts.map(p => '<li>' + esc(p) + '</li>').join('')}</ul>`;
 }
-function score(r) { return order === 'combined' ? r.combined : r; }
 function showResults() {
-  const st = RT.getState(), snap = st.snapshot; if (!snap) return;
+  if (!OUT) return;
   const top = candidates(), zod = engineFn('truncatedZodiac');
   $('results').hidden = false;
-  $('resMeta').textContent = snap.totalScoring + ' events · ' + st.results.length.toLocaleString() + ' times scanned';
+  $('resMeta').textContent = OUT.totalScoring + ' events · ' + OUT.scanned.toLocaleString() + ' times scanned' + (OUT.blocks > 1 ? ' in ' + OUT.blocks + ' blocks' : '');
   document.querySelectorAll('[data-order]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.order === order)));
-  if (!top.length) { $('cands').innerHTML = '<p class="empty">No candidate has a score in this order. Try Primary directions.</p>'; $('checks').innerHTML = ''; return; }
+  if (!top.length) { $('confidence').className = 'confidence'; $('confidence').innerHTML = ''; $('cands').innerHTML = '<p class="empty">No candidate has a score in this order. Try Primary directions.</p>'; $('checks').innerHTML = ''; return; }
+  confidence();
   if (selected === null || !top.some(r => r.seconds === selected)) selected = top[0].seconds;
   const best = score(top[0]).points || 1;
-  $('cands').innerHTML = top.map((r, i) => { const s = score(r), c = clock(r.seconds);
-    return `<button class="cand" type="button" data-sec="${r.seconds}" aria-pressed="${r.seconds === selected}"><span class="rk">#${i + 1}</span><span class="t">${c.time}${c.day ? `<small>${c.day}</small>` : ''}</span><span class="ang">Asc ${esc(zod(r.ascendant))} · MC ${esc(zod(r.midheaven))}</span><span class="sc">Score ${s.points} · explains ${s.witnessed} of ${snap.totalScoring}<span class="bar" aria-hidden="true"><i style="width:${Math.max(4, s.points / best * 100)}%"></i></span></span></button>`; }).join('');
-  showChecks(st.results.find(r => r.seconds === selected), snap);
-  const d = snap.data;
-  $('engineNote').textContent = `Calculated by the unchanged Polaris2 engine (${d.scoringMode === 'binary' ? 'equal-hit' : 'Polaris weighted'} scoring, TPD orbs ${d.tpdConjOppOrb}′ / ${d.tpdOtherOrb}′, ${d.step}-second steps). Times closer than ${engineFn('DISTINCT_SECONDS') || 23} seconds are grouped, as in Polaris2’s distinct list. “Directions + progressions + returns” adds ${Number(d.combinedSecondaryPercent)}% of the Secondaries score and ${Number(d.combinedPssrPercent)}% of the PSSR score to the TPD score, for Polaris2’s shortlisted times only.`;
+  $('cands').innerHTML = top.map((r, i) => { const sc = score(r), c = clock(r.seconds);
+    return `<button class="cand" type="button" data-sec="${r.seconds}" aria-pressed="${r.seconds === selected}"><span class="rk">#${i + 1}</span><span class="t">${c.time}${c.day ? `<small>${c.day}</small>` : ''}</span><span class="ang">Asc ${esc(zod(r.asc))} · MC ${esc(zod(r.mc))}</span><span class="sc">Score ${sc.points} · explains ${sc.witnessed} of ${OUT.totalScoring}<span class="bar" aria-hidden="true"><i style="width:${Math.max(4, sc.points / best * 100)}%"></i></span></span></button>`; }).join('');
+  showChecks(cand(selected));
+  const d = OUT.data;
+  $('engineNote').textContent = `Calculated by the unchanged Polaris2 engine (${d.scoringMode === 'binary' ? 'equal-hit' : 'Polaris weighted'} scoring, TPD orbs ${d.tpdConjOppOrb}′ / ${d.tpdOtherOrb}′, ${d.step}-second steps). Times closer than ${DISTINCT} seconds are grouped, as in Polaris2’s distinct list. “Directions + progressions + returns” adds ${Number(d.combinedSecondaryPercent)}% of the Secondaries score and ${Number(d.combinedPssrPercent)}% of the PSSR score to the TPD score, for Polaris2’s shortlisted times only.` +
+    (OUT.blocks > 1 ? ` This wide search ran as ${OUT.blocks} blocks of 3 hours to keep memory low on phones. Each time’s directions score does not depend on other times, so that ranking is the same as one long scan; the combined score is compared across each block’s shortlist.` : '');
 }
-function showChecks(r, snap) {
+function showChecks(r) {
   if (!r) return;
-  const hit = engineFn('hitText'), c = clock(r.seconds);
+  const c = clock(r.seconds);
   $('checkTitle').textContent = 'Which events ' + c.time + ' explains';
-  const evOf = (layer, id) => layer?.evidence?.find(x => x.id === id);
-  $('checks').innerHTML = snap.events.map((ev, i) => {
-    const tpd = evOf(r, ev.id), sec = evOf(r.secondary, ev.id), pssr = evOf(r.pssr, ev.id), comb = evOf(r.combined, ev.id);
-    const yes = order === 'combined' ? (comb?.points || 0) > 0 : (tpd?.points || 0) > 0;
-    const n = tpd?.groups?.length || 0, local = state.events[i];
+  if (r.missing) { $('checks').innerHTML = '<p class="empty">Event details were not kept for this time. Use “Open in full Polaris2” to see them.</p>'; return; }
+  $('checks').innerHTML = OUT.events.map((ev, i) => {
+    const tpd = r.tpd[i] || { points: 0, n: 0, hits: [] }, sec = r.sec?.[i] || 0, pssr = r.pssr?.[i] || 0, comb = r.comb?.ev?.[i] || 0;
+    const yes = order === 'combined' ? comb > 0 : tpd.points > 0;
+    const local = state.events[i], note = local?.description || ev.description || '';
     const date = ev.monthOnly ? ev.date.slice(0, 7) : ev.date;
-    const sys = r.secondary || r.pssr ? `<div class="sys"><span class="${(tpd?.points || 0) > 0 ? 'on' : ''}">Directions${(tpd?.points || 0) > 0 ? ' ✓' : ''}</span><span class="${(sec?.points || 0) > 0 ? 'on' : ''}">Secondaries${(sec?.points || 0) > 0 ? ' ✓' : ''}</span><span class="${(pssr?.points || 0) > 0 ? 'on' : ''}">Solar returns${(pssr?.points || 0) > 0 ? ' ✓' : ''}</span></div>` : '';
-    return `<div class="chk ${yes ? 'yes' : 'no'}"><span class="m" aria-label="${yes ? 'Explained' : 'Not explained'}">${yes ? '✓' : '✗'}</span><span class="h"><span>${esc(date)}</span>${esc(ruleName(ev.category))}</span><span class="s">${esc(local?.description || ev.description || '')}${n ? (local?.description || ev.description ? ' · ' : '') + n + ' direction' + (n === 1 ? '' : 's') + ' · ' + (tpd.points) + ' points' : (yes ? '' : ' No qualifying direction')}</span>${n ? `<span class="hits">${tpd.groups.slice(0, 3).map(g => esc(hit(g.hit))).join('<br>')}${n > 3 ? '<br>+ ' + (n - 3) + ' more' : ''}</span>` : ''}${sys}</div>`;
+    const sys = r.shortlisted ? `<div class="sys"><span class="${tpd.points > 0 ? 'on' : ''}">Directions${tpd.points > 0 ? ' ✓' : ''}</span><span class="${sec > 0 ? 'on' : ''}">Secondaries${sec > 0 ? ' ✓' : ''}</span><span class="${pssr > 0 ? 'on' : ''}">Solar returns${pssr > 0 ? ' ✓' : ''}</span></div>` : '';
+    return `<div class="chk ${yes ? 'yes' : 'no'}"><span class="m" aria-label="${yes ? 'Explained' : 'Not explained'}">${yes ? '✓' : '✗'}</span><span class="h"><span>${esc(date)}</span>${esc(ruleName(ev.category))}</span><span class="s">${esc(note)}${tpd.n ? (note ? ' · ' : '') + tpd.n + ' direction' + (tpd.n === 1 ? '' : 's') + ' · ' + tpd.points + ' points' : (yes ? '' : ' No qualifying direction')}</span>${tpd.n ? `<span class="hits">${tpd.hits.map(esc).join('<br>')}${tpd.n > 3 ? '<br>+ ' + (tpd.n - 3) + ' more' : ''}</span>` : ''}${sys}</div>`;
   }).join('');
 }
 
@@ -262,13 +347,13 @@ function saveCase() {
   download(JSON.stringify(project(), null, 2), 'application/json', fileBase() + '_Rectification_Project.json');
 }
 function exportCsv() {
-  const snap = RT.getState().snapshot; if (!snap) return;
+  if (!OUT) return;
   const top = candidates(), zod = engineFn('truncatedZodiac'), q = v => '"' + String(v ?? '').replace(/"/g, '""') + '"';
-  const head = ['Rank', 'Birth time', 'Day', 'Ascendant', 'MC', 'Score', 'Events explained', ...snap.events.map((e, i) => (e.monthOnly ? e.date.slice(0, 7) : e.date) + ' ' + ruleName(e.category) + (state.events[i]?.description ? ' (' + state.events[i].description + ')' : ''))];
-  const rows = top.map((r, i) => { const s = score(r), c = clock(r.seconds);
-    return [i + 1, c.time, c.day || 'birth date', zod(r.ascendant), zod(r.midheaven), s.points, s.witnessed + ' of ' + snap.totalScoring,
-      ...snap.events.map(ev => { const x = (order === 'combined' ? r.combined : r).evidence.find(v => v.id === ev.id); return x && x.points > 0 ? 'yes · ' + x.points + ' pts' : 'no'; })]; });
-  const meta = [['Ranked by', order === 'combined' ? 'Directions + progressions + returns (Polaris2 Combined)' : 'Primary directions (Polaris2 TPD rank)'], ['Name', state.name], ['Birth date', state.birthDate], ['Place', state.place], ['Search', snap.data.start + ' to ' + snap.data.end]];
+  const head = ['Rank', 'Birth time', 'Day', 'Ascendant', 'MC', 'Score', 'Events explained', ...OUT.events.map((e, i) => (e.monthOnly ? e.date.slice(0, 7) : e.date) + ' ' + ruleName(e.category) + (state.events[i]?.description ? ' (' + state.events[i].description + ')' : ''))];
+  const rows = top.map((r, i) => { const sc = score(r), c = clock(r.seconds);
+    return [i + 1, c.time, c.day || 'birth date', zod(r.asc), zod(r.mc), sc.points, sc.witnessed + ' of ' + OUT.totalScoring,
+      ...OUT.events.map((ev, k) => { if (r.missing) return ''; const v = order === 'combined' ? (r.comb?.ev?.[k] || 0) : (r.tpd[k]?.points || 0); return v > 0 ? 'yes · ' + v + ' pts' : 'no'; })]; });
+  const meta = [['Ranked by', order === 'combined' ? 'Directions + progressions + returns (Polaris2 Combined)' : 'Primary directions (Polaris2 TPD rank)'], ['Name', state.name], ['Birth date', state.birthDate], ['Place', state.place], ['Search', lastProject ? lastProject.data.start + ' to ' + lastProject.data.end : ''], ['Confidence', $('confidence').querySelector('b')?.textContent || '']];
   const text = '﻿' + [...meta, [], head, ...rows].map(r => r.map(q).join(',')).join('\r\n');
   download(text, 'text/csv;charset=utf-8', fileBase() + '_Best_Birth_Times.csv');
 }
@@ -311,6 +396,45 @@ $('place').addEventListener('input', () => { state.place = $('place').value; sav
 document.addEventListener('click', e => { if (!e.target.closest('.city')) $('cityList').hidden = true; });
 $('unc').addEventListener('click', e => { const b = e.target.closest('[data-m]'); if (!b) return; state.unc = b.dataset.m === 'day' ? 'day' : Number(b.dataset.m); renderRange(); save(); });
 $('evAdd').onclick = addEvent;
+// Everyday words -> the engine's 50 event categories. Specific phrases first.
+const EVENT_WORDS = [
+  [/(father|dad|grandfather|grandpa)\b.*(died|death|passed)|death of (father|dad|grandfather)/i, [11]],
+  [/(mother|mum|mom|grandmother|grandma)\b.*(died|death|passed)|death of (mother|mum|mom|grandmother)/i, [12]],
+  [/son\b.*(died|death)|death of (a )?son/i, [13]], [/daughter\b.*(died|death)|death of (a )?daughter/i, [14]],
+  [/wife\b.*(died|death)/i, [15]], [/husband\b.*(died|death)/i, [16]], [/brother\b.*(died|death)/i, [17]], [/sister\b.*(died|death)/i, [18]],
+  [/grandson/i, [5]], [/granddaughter/i, [6]],
+  [/(son|daughter|child)\b.*married|child.*wedding/i, [9]],
+  [/brother\b.*born|birth of (a )?brother|baby brother/i, [1]], [/sister\b.*born|birth of (a )?sister|baby sister/i, [2]],
+  [/son\b.*born|birth of (a )?son|baby boy|boy born/i, [3]], [/daughter\b.*born|birth of (a )?daughter|baby girl|girl born/i, [4]],
+  [/immigra|emigra|moved abroad|moved to another country|relocat|new country|refugee/i, [39, 25], 'Immigration is usually entered as Move Home. Use Travel Overseas (positive) for a good journey abroad.'],
+  [/divorc|separat|split up|broke up/i, [10]],
+  [/wedding|married|marriage|engag|nikah|affair|relationship began/i, [7, 8], 'Choose (M) for a man’s chart and (F) for a woman’s chart.'],
+  [/retire|resign|quit|left (the |my )?job/i, [24]],
+  [/fired|dismiss|sacked|failure|failed|demoted/i, [23]],
+  [/new job|job|hired|employ|career|promot|business/i, [22, 40]],
+  [/graduat|degree|diploma|exam|publish|book/i, [38]],
+  [/success|award|won|elected|prize|honou?r/i, [21]],
+  [/hospital|surgery|operation|ill|sick|disease|cancer|diagnos/i, [32]],
+  [/accident|crash|injur|fell|fracture/i, [31]],
+  [/attack|assault|violen|war|shot|robbed/i, [33]],
+  [/arrest|jail|prison|police|court/i, [30]],
+  [/army|military|conscri|mobiliz|enlist/i, [28, 40]], [/discharg|demobil|released/i, [29]],
+  [/moved|move house|new home|new house|flat|apartment|bought a house/i, [39]],
+  [/travel|trip|journey|holiday|vacation|hajj|umrah|pilgrim/i, [25, 26, 27]],
+  [/lost money|loss|theft|stolen|bankrupt|debt/i, [35]], [/lottery|gambl|casino/i, [37, 36]],
+  [/scandal|betray|intrigue|conspir|cheated/i, [34]]
+];
+$('evFind').addEventListener('input', () => {
+  const t = $('evFind').value.trim(), box = $('evSugg');
+  if (t.length < 3) { box.innerHTML = ''; return; }
+  const ids = [], notes = [];
+  for (const [re, list, note] of EVENT_WORDS) if (re.test(t)) { for (const id of list) if (!ids.includes(id) && rules.find(r => r.id === id)?.enabled) ids.push(id); if (note && !notes.includes(note)) notes.push(note); }
+  box.innerHTML = ids.length ? ids.slice(0, 4).map(id => `<button type="button" data-cat="${id}">${esc(ruleName(id))}</button>`).join('') + notes.map(n => `<small>${esc(n)}</small>`).join('')
+    : '<small>No suggestion. Pick the closest item in “What happened”.</small>';
+});
+$('evSugg').addEventListener('click', e => { const b = e.target.closest('[data-cat]'); if (!b) return; $('evCat').value = b.dataset.cat; $('evSugg').innerHTML = `<small>Selected: ${esc(ruleName(+b.dataset.cat))}</small>`; if (!$('evNote').value) $('evNote').value = $('evFind').value; $('evFind').value = ''; });
+$('clues').addEventListener('click', e => { const b = e.target.closest('[data-clue]'); if (!b) return; state.time = pad(+b.dataset.clue) + ':00'; state.unc = 180; fill(); save(); toast('Searching ' + b.textContent + ' (a 6-hour window).'); });
+$('placeCountry').addEventListener('change', () => { if ($('place').value.trim().length >= 2) citySearch(); });
 $('events').addEventListener('click', e => { const b = e.target.closest('[data-del]'); if (!b) return; state.events.splice(+b.dataset.del, 1); renderEvents(); save(); });
 $('evImportBtn').onclick = () => { $('importBox').hidden = !$('importBox').hidden; };
 $('importGo').onclick = () => {
@@ -331,9 +455,9 @@ $('importGo').onclick = () => {
   } catch (err) { fail(err.message || String(err)); }
 };
 $('runBtn').onclick = run;
-$('cancelBtn').onclick = () => { try { E.document.getElementById('cancel').click(); } catch (e) {} };
+$('cancelBtn').onclick = () => { cancelReq = true; try { E.document.getElementById('cancel').click(); } catch (e) {} };
 $('sampleBtn').onclick = () => { fail(''); RT.sample(); adoptEngineCase(); base = null; save(); toast('Example loaded: the Polaris2 sample case.'); };
-$('clearBtn').onclick = () => { state = blank(); base = null; if (RT) { rules = JSON.parse(JSON.stringify(RT.getState().rules)); try { RT.openProject(JSON.stringify({ format: 'topocentric-rectification-project', version: 2, data: defaults, events: [], rules })); } catch (e) {} } $('results').hidden = true; fail(''); fill(); renderEvents(); save(); };
+$('clearBtn').onclick = () => { state = blank(); base = null; if (RT) { rules = JSON.parse(JSON.stringify(RT.getState().rules)); try { RT.openProject(JSON.stringify({ format: 'topocentric-rectification-project', version: 2, data: defaults, events: [], rules })); } catch (e) {} } OUT = null; $('results').hidden = true; fail(''); fill(); renderEvents(); save(); };
 $('openFile').onchange = e => { if (e.target.files[0]) openCase(e.target.files[0]); e.target.value = ''; };
 document.querySelector('.order').addEventListener('click', e => { const b = e.target.closest('[data-order]'); if (!b) return; order = b.dataset.order; selected = null; showResults(); });
 $('cands').addEventListener('click', e => { const b = e.target.closest('[data-sec]'); if (!b) return; selected = Number(b.dataset.sec); showResults(); });
