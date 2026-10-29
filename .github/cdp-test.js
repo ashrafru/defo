@@ -19,6 +19,26 @@ const out = { steps: [] }; const log = (k, v) => { out.steps.push([k, v]); conso
   log('engine ready ms', await wait(`${S}.document.getElementById('engine').classList.contains('ready')`, 240000, 'engine'));
   log('engine text', await ev(`${S}.document.getElementById('engineText').textContent`));
   await shot('simple-1-start');
+  log('charts button', await ev(`${S}.document.getElementById('chartsBtn').textContent`));
+  await ev(`${S}.document.getElementById('chartsBtn').click(); ${S}.document.getElementById('chartSearch').value = 'hussein'; ${S}.document.getElementById('chartSearch').dispatchEvent(new Event('input')); true`);
+  await sleep(800); log('search hussein', await ev(`[...${S}.document.querySelectorAll('.chart .open')].map(e => e.innerText.replace(/\n/g, ' '))`));
+  await shot('charts-1-search');
+  // import the 230-chart backup the way a file picker would hand it over
+  const txt = require('fs').readFileSync('test/charts-test.awbdb', 'utf8');
+  await ev(`(async () => { const f = new File([${JSON.stringify(txt)}], 'CentralScrutinizer_Database_test.awbdb', { type: 'application/json' }); const dt = new DataTransfer(); dt.items.add(f); const inp = ${S}.document.getElementById('importDb'); inp.files = dt.files; inp.dispatchEvent(new Event('change')); return true; })()`);
+  await sleep(1500); log('after import', await ev(`${S}.document.getElementById('chartsBtn').textContent + ' | ' + ${S}.document.getElementById('toast').textContent`));
+  await shot('charts-2-imported');
+  await ev(`[...${S}.document.querySelectorAll('.chart .open')][0].click(); true`); await sleep(1500);
+  log('opened my chart', await ev(`['name','birthDate','lat','latH','lon','lonH','offset','time'].map(k => ${S}.document.getElementById(k).value).join(' | ') + ' | events ' + ${S}.document.querySelectorAll('.event').length`));
+  await ev(`${S}.document.getElementById('chartsBtn').click(); ${S}.document.getElementById('chartSearch').value = 'hussein'; ${S}.document.querySelector('[data-src=all]').click(); true`); await sleep(800);
+  await ev(`[...${S}.document.querySelectorAll('.chart .open')].find(e => /King Hussein/.test(e.innerText)).click(); true`); await sleep(1500);
+  log('opened King Hussein', await ev(`['name','birthDate','lat','latH','lon','lonH','offset','time'].map(k => ${S}.document.getElementById(k).value).join(' | ') + ' | events ' + ${S}.document.querySelectorAll('.event').length`));
+  await ev(`${S}.document.getElementById('runBtn').click(); true`);
+  log('King Hussein scan ms', await wait(`!${S}.document.getElementById('results').hidden`, 900000, 'KH results'));
+  const kh = await ev(`[...${S}.document.querySelectorAll('.cand .t')].map(e => e.childNodes[0].textContent)`);
+  log('King Hussein top 5', kh); log('KH matches desktop', JSON.stringify(kh) === JSON.stringify(['01:43:20', '01:36:00', '01:39:04', '01:42:16', '01:46:20']));
+  await ev(`${S}.document.getElementById('results').scrollIntoView(); true`); await sleep(800); await shot('charts-3-kh-results');
+  await ev(`${S}.document.getElementById('clearBtn').click(); true`); await sleep(500);
   await ev(`${S}.document.getElementById('sampleBtn').click(); ${S}.document.querySelector('#unc [data-m="180"]').click(); true`);
   log('window', await ev(`${S}.document.getElementById('range').textContent`));
   await ev(`${S}.document.getElementById('runBtn').click(); true`);
