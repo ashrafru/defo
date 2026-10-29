@@ -61,6 +61,7 @@ async function startEngine() {
     $('engine').className = 'engine ready';
     $('engineText').textContent = 'Polaris2 engine ready · ' + E.document.getElementById('engineState').textContent.trim() + ' · calculations unchanged';
     buildCategories(); renderEvents(); updateButtons();
+    $('chartsBtn').disabled = false; try { renderCharts(); } catch (e) {}
   } catch (err) {
     $('engine').className = 'engine error'; $('engineText').textContent = err.message || String(err);
   }
@@ -342,6 +343,141 @@ $('openFull').onclick = () => {
   if (parent !== window && parent.AWOpenWithProject) parent.AWOpenWithProject('Polaris2', JSON.stringify(lastProject || project()));
   else toast('Save the case, then open it in Polaris2 with “Open project”.');
 };
+
+
+/* ---------- Saved charts ----------
+   Built-in: Polaris2's own embedded chart database, loaded with its own RectificationDatabase.loadRecord.
+   Mine: charts saved or imported here, kept in Central Scrutinizer's backup format (.awbdb),
+   plus any people saved in Central Scrutinizer on this device (read only). */
+const MY_KEY = 'aw.simple.charts.v1', CS_KEY = 'astrologers.workbench.central.database.v1';
+let builtin = null, chartSrc = 'all';
+const norm = x => String(x || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+const validDate = d => /^\d{4}-\d{2}-\d{2}$/.test(d || '');
+const validTime = t => /^\d{2}:\d{2}:\d{2}$/.test(t || '');
+function readStore(key) { try { const d = JSON.parse(localStorage.getItem(key) || 'null'); return d && Array.isArray(d.records) ? d.records : []; } catch (e) { return []; } }
+function mine() { return readStore(MY_KEY); }
+function writeMine(records) {
+  try { localStorage.setItem(MY_KEY, JSON.stringify({ format: 'astrologers-workbench-database', version: 1, records })); }
+  catch (e) { throw Error('This device has no room left to store more charts. Export your charts, then remove some.'); }
+}
+function checkCase(c) {
+  if (!c || c.format !== 'astrologers-workbench-case' || !c.person || !c.person.birth || !Array.isArray(c.events)) throw Error('not a chart');
+  const b = c.person.birth;
+  if (!validDate(b.date) || !validTime(b.recordedTime || b.time) || String(b.latitude ?? '') === '' || String(b.longitudeWest ?? '') === '') throw Error('incomplete birth data');
+  return c;
+}
+function loadBuiltin() {
+  if (builtin) return builtin;
+  try {
+    const html = JSON.parse(E.document.getElementById('embeddedDatabaseViewer').textContent);
+    const json = /<script[^>]*id="database"[^>]*>([\s\S]*?)<\/script>/.exec(html)[1];
+    builtin = JSON.parse(json).people;
+  } catch (e) { builtin = []; }
+  return builtin;
+}
+function chartRows() {
+  const rows = [], seen = new Set();
+  for (const r of mine()) { try { checkCase(r.case); } catch (e) { continue; } seen.add(r.id); rows.push({ kind: 'mine', id: r.id, rec: r, name: r.case.person.name, date: r.case.person.birth.date, time: r.case.person.birth.recordedTime || r.case.person.birth.time, place: r.case.person.birth.place, n: r.case.events.length }); }
+  for (const r of readStore(CS_KEY)) { if (seen.has(r.id)) continue; try { checkCase(r.case); } catch (e) { continue; } rows.push({ kind: 'cs', id: r.id, rec: r, name: r.case.person.name, date: r.case.person.birth.date, time: r.case.person.birth.recordedTime || r.case.person.birth.time, place: r.case.person.birth.place, n: r.case.events.length }); }
+  for (const p of loadBuiltin()) rows.push({ kind: 'builtin', id: p.id, rec: p, name: p.name, date: p.date, time: p.time, place: [p.place, p.country].filter(Boolean).join(', '), n: p.events.length });
+  return rows;
+}
+function renderCharts() {
+  const all = chartRows(), myN = all.filter(r => r.kind !== 'builtin').length, biN = all.length - myN;
+  $('mineCount').textContent = myN; $('builtinCount').textContent = biN.toLocaleString();
+  $('chartsCount').textContent = ` · ${myN} yours · ${biN.toLocaleString()} built-in`;
+  document.querySelectorAll('[data-src]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.src === chartSrc)));
+  const words = norm($('chartSearch').value).split(/\s+/).filter(Boolean);
+  const list = all.filter(r => (chartSrc === 'all' || (chartSrc === 'mine' ? r.kind !== 'builtin' : r.kind === 'builtin'))
+    && words.every(w => norm(r.name + ' ' + r.place + ' ' + r.id + ' ' + r.date).includes(w)))
+    .sort((a, b) => (a.kind === 'builtin') - (b.kind === 'builtin') || a.name.localeCompare(b.name));
+  const shown = list.slice(0, 80);
+  $('chartList').innerHTML = shown.length ? shown.map((r, i) => `<div class="chart" role="listitem"><button class="open" type="button" data-chart="${i}"><b>${esc(r.name)}</b><small>${esc(r.date)} · ${esc(r.time || '')}${r.place ? ' · ' + esc(r.place) : ''} <i>· ${r.n} events</i></small><span class="tag ${r.kind === 'builtin' ? '' : 'mine'}">${r.kind === 'builtin' ? 'Database #' + esc(r.id) : r.kind === 'cs' ? 'Central Scrutinizer' : 'My chart'}</span></button>${r.kind === 'mine' ? `<button class="del" type="button" data-del-chart="${esc(r.id)}" aria-label="Delete ${esc(r.name)}">×</button>` : '<span></span>'}</div>`).join('')
+    : `<p class="empty">${chartSrc === 'mine' && !myN ? 'No charts of your own on this phone yet. Import a backup from your computer, or use “Save to my charts”.' : 'No chart matches this search.'}</p>`;
+  $('chartNote').textContent = list.length > shown.length ? `${list.length.toLocaleString()} matches · showing the first ${shown.length}. Type more of a name to narrow the list.` : list.length ? `${list.length.toLocaleString()} chart${list.length === 1 ? '' : 's'}.` : '';
+  $('chartList').onclick = e => {
+    const del = e.target.closest('[data-del-chart]');
+    if (del) { const r = mine().find(x => x.id === del.dataset.delChart); if (r && confirm('Delete ' + r.case.person.name + ' from my charts on this phone?')) { writeMine(mine().filter(x => x.id !== r.id)); renderCharts(); toast('Chart deleted.'); } return; }
+    const b = e.target.closest('[data-chart]'); if (b) openChart(shown[+b.dataset.chart]);
+  };
+}
+function clockPlain(t) { t = ((t % 86400) + 86400) % 86400; return pad(Math.floor(t / 3600)) + ':' + pad(Math.floor(t % 3600 / 60)) + ':' + pad(t % 60); }
+function openChart(r) {
+  fail('');
+  if (running) return toast('Wait for the current search to finish.');
+  try {
+    if (r.kind === 'builtin') {
+      const p = r.rec;
+      E.RectificationDatabase.loadRecord(p, p.events.map(e => e[3] === '1')); // Polaris2's own loader and default event selection
+      adoptEngineCase(); state.chartId = null;
+      toast(`${p.name} · chart #${p.id}. Database birth times are GMT (offset +00:00). 20-minute search around ${p.time}.`);
+    } else {
+      const c = r.rec.case, b = c.person.birth, [h, m, sec] = (b.recordedTime || b.time).split(':').map(Number), mid = h * 3600 + m * 60 + (sec || 0);
+      const lo = mid - 600, hi = mid + 600; // the same 20-minute window Polaris2 uses for database charts
+      const data = { ...defaults, name: c.person.name, birthDate: b.recordedDate && validDate(b.recordedDate) ? b.recordedDate : b.date, place: b.place || '', lat: String(b.latitude), lon: String(b.longitudeWest),
+        basis: b.timeBasis === 'lmt' ? 'lmt' : 'offset', offset: b.offset || '+00:00', start: clockPlain(lo), end: clockPlain(hi), startDay: String(Math.floor(lo / 86400)), endDay: String(Math.floor(hi / 86400)) };
+      const events = c.events.filter(e => validDate(e.date) && rules.some(x => x.id === Number(e.category))).map(e => ({ id: rid(), date: e.date, monthOnly: e.monthOnly === true, category: Number(e.category), description: String(e.description || ''), use: rules.find(x => x.id === Number(e.category)).enabled !== false, mode: 'score' }));
+      RT.openProject(JSON.stringify({ format: 'topocentric-rectification-project', version: 2, data, events, rules }));
+      adoptEngineCase(); state.chartId = r.kind === 'mine' ? r.id : null; save();
+      toast(`${c.person.name} loaded · ${events.length} events. 20-minute search around ${b.recordedTime || b.time}; widen the Search window if needed.`);
+    }
+    $('charts').hidden = true; $('chartsBtn').setAttribute('aria-expanded', 'false'); window.scrollTo({ top: 0, behavior: 'smooth' });
+  } catch (err) { fail('This chart could not be opened: ' + (err.message || err)); }
+}
+function currentCase() {
+  if (!state.name.trim()) throw Error('Enter a name first.');
+  if (!state.birthDate) throw Error('Enter the birth date first.');
+  if (!state.lat || !state.lon) throw Error('Choose the birthplace first.');
+  const t = (state.time || '12:00') + ':00';
+  return { format: 'astrologers-workbench-case', version: 1,
+    person: { name: state.name.trim(), birth: { date: state.birthDate, time: t, recordedTime: t, recordedDate: state.birthDate, place: state.place || '',
+      latitude: (state.latH === 'S' ? '-' : '') + state.lat, longitudeWest: (state.lonH === 'W' ? '' : '-') + state.lon, offset: state.offset || '+00:00', timeBasis: state.basis === 'lmt' ? 'lmt' : 'offset' } },
+    events: state.events.map(e => ({ date: e.monthOnly ? e.date.slice(0, 7) + '-15' : e.date, category: e.category, ...(e.description ? { description: e.description.slice(0, 180) } : {}), ...(e.monthOnly ? { monthOnly: true } : {}) })),
+    settings: { includePP: true, includeFortune: true, ahOrbMinutes: 82 }, workspace: { eventIndex: 0, view: 'all', highlightedOnly: true, sort: 'orb' } };
+}
+function saveChart() {
+  fail('');
+  try {
+    const c = currentCase(), list = mine();
+    let id = state.chartId && list.some(r => r.id === state.chartId) ? state.chartId : null;
+    if (!id) { const same = list.find(r => norm(r.case.person.name) === norm(c.person.name) && r.case.person.birth.date === c.person.birth.date); id = same ? same.id : 'm' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6); }
+    c.databaseId = id;
+    const updated = list.some(r => r.id === id);
+    writeMine(updated ? list.map(r => r.id === id ? { id, case: c } : r) : [...list, { id, case: c }]);
+    state.chartId = id; save(); renderCharts();
+    toast(`${c.person.name} ${updated ? 'updated in' : 'saved to'} my charts · ${mine().length} on this phone.`);
+  } catch (err) { fail(err.message || String(err)); }
+}
+async function importDb(file) {
+  fail('');
+  try {
+    if (file.size > 50e6) throw Error('The file is too large (over 50 MB).');
+    const raw = JSON.parse(await file.text());
+    const incoming = raw.format === 'astrologers-workbench-database' && Array.isArray(raw.records) ? raw.records
+      : raw.format === 'astrologers-workbench-case' ? [{ id: raw.databaseId || 'm' + Date.now().toString(36), case: raw }] : null;
+    if (!incoming) throw Error('Choose a Central Scrutinizer backup (.awbdb) or case (.awb) file.');
+    let bad = 0; const good = [];
+    for (const r of incoming) { try { if (!/^[A-Za-z0-9_-]{1,128}$/.test(r.id)) throw 0; checkCase(r.case); good.push({ id: r.id, case: r.case }); } catch (e) { bad++; } }
+    if (!good.length) throw Error('No usable charts were found in this file.');
+    const list = mine(), ids = new Set(good.map(r => r.id)), updated = list.filter(r => ids.has(r.id)).length;
+    writeMine([...list.filter(r => !ids.has(r.id)), ...good]);
+    chartSrc = 'mine'; $('chartSearch').value = ''; renderCharts();
+    toast(`Imported ${good.length} chart${good.length === 1 ? '' : 's'}${updated ? ` (${updated} updated)` : ''}${bad ? ` · ${bad} skipped (incomplete)` : ''}.`);
+  } catch (err) { fail('Import failed: ' + (err.message || err)); }
+}
+function exportDb() {
+  const rows = chartRows().filter(r => r.kind !== 'builtin');
+  if (!rows.length) return toast('There are no charts of your own to export yet.');
+  download(JSON.stringify({ format: 'astrologers-workbench-database', version: 1, records: rows.map(r => ({ id: r.id, case: r.rec.case })) }, null, 2), 'application/json', 'Workbench_My_Charts_' + new Date().toISOString().slice(0, 10) + '.awbdb');
+}
+$('chartsBtn').onclick = () => { const open = $('charts').hidden; $('charts').hidden = !open; $('chartsBtn').setAttribute('aria-expanded', String(open)); if (open) { renderCharts(); $('charts').scrollIntoView({ behavior: 'smooth', block: 'start' }); } };
+$('chartsClose').onclick = () => { $('charts').hidden = true; $('chartsBtn').setAttribute('aria-expanded', 'false'); };
+document.querySelector('.chart-filter').addEventListener('click', e => { const b = e.target.closest('[data-src]'); if (b) { chartSrc = b.dataset.src; renderCharts(); } });
+let chartTimer = null;
+$('chartSearch').addEventListener('input', () => { clearTimeout(chartTimer); chartTimer = setTimeout(renderCharts, 150); });
+$('importDb').onchange = e => { if (e.target.files[0]) importDb(e.target.files[0]); e.target.value = ''; };
+$('exportDb').onclick = exportDb;
+$('saveChartBtn').onclick = saveChart;
 
 /* ---------- Start ---------- */
 try { const d = JSON.parse(localStorage.getItem(DRAFT) || 'null'); if (d && d.state) { state = { ...blank(), ...d.state }; base = d.base || null; } } catch (e) {}

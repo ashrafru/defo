@@ -1,7 +1,7 @@
 /* Astrologers' Workbench Mobile — launcher. Adapted from the Polaris Launcher controller 1.5.2 frontend.
    AGPL-3.0-or-later. The 36 HTML tools are served unchanged. */
 'use strict';
-const BUILD = '2.0.1-3'; // changes with every release so updated files are never served from an old cache
+const BUILD = '2.0.1-4'; // changes with every release so updated files are never served from an old cache
 const $ = s => document.querySelector(s);
 const defaultFavorites = ['SimpleRectification', 'Polaris2','CentralScrutinizer', 'PSSR_Aspects', 'Timeline'];
 const LIVE = new Set(['AgeHarmonicsLive', 'AscensionalTransits_LIVE']);

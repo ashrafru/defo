@@ -27,6 +27,13 @@ standard Polaris2 project to the unchanged Polaris2 engine and reads its
 results. Save case writes a Polaris2 project; Open in full Polaris2 carries
 the case over for every detail.
 
+SAVED CHARTS (Simple Rectification > Saved charts)
+The built-in database (2,432 charts) loads through Polaris2's own chart
+loader. My charts: charts saved here or imported from a Central Scrutinizer
+backup (.awbdb). On the computer use Central Scrutinizer > Backup, copy the
+file to the phone, then Import backup. Export my charts writes the same
+format for Central Scrutinizer > Restore.
+
 USING IT
 Library: tap a tool to open it. Star tools to pin them at the top.
 Open: switch between running tools. Each keeps its inputs and results.

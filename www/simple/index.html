@@ -101,6 +101,23 @@ details.adjust[open] summary{margin-bottom:10px}
 .sys span{font-size:11px;white-space:nowrap;padding:2px 7px;border-radius:10px;background:#0d1a24;color:var(--faint)}
 .sys span.on{background:var(--good-bg);color:var(--good)}
 .note{font-size:12px;color:var(--faint);line-height:1.55}
+.charts-btn{margin-top:10px;display:inline-flex;align-items:center;gap:8px}
+.charts-btn span{color:var(--muted);font-size:13px}
+.x-small{margin-left:auto;width:40px;height:40px;border-radius:50%;font-size:22px;color:var(--muted)}
+.chart-filter{display:flex;gap:4px;background:#0d1a24;border-radius:10px;padding:4px;flex-wrap:wrap}
+.chart-filter button{flex:1;min-height:40px;border-radius:7px;font-size:13.5px;color:var(--muted);white-space:nowrap;padding:0 8px}
+.chart-filter button[aria-pressed="true"]{background:var(--card-hi);color:var(--fg-strong)}
+.chart-filter span{color:var(--faint);font-size:12px}
+.chart-list{display:grid;gap:6px;max-height:min(60vh,520px);overflow:auto;-webkit-overflow-scrolling:touch}
+.chart{display:grid;grid-template-columns:1fr auto;align-items:center;gap:4px 10px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 6px 10px 12px}
+.chart>button.open{text-align:left;min-width:0;display:grid;gap:2px}
+.chart b{font-weight:500;color:var(--fg-strong);font-size:14.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.chart small{color:var(--muted);font-size:12.5px;font-variant-numeric:tabular-nums}
+.chart small i{font-style:normal;color:var(--faint)}
+.chart .tag{font-size:11px;padding:2px 7px;border-radius:9px;background:#0d1a24;color:var(--faint);justify-self:start}
+.chart .tag.mine{background:#3c3418;color:var(--gold)}
+.chart .del{width:40px;height:40px;border-radius:8px;color:var(--muted);font-size:20px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 .toast{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#183f4b;color:#fff;padding:11px 16px;border-radius:9px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s;max-width:calc(100vw - 32px);z-index:20}
 .toast.on{opacity:1}
 #engineFrame{position:absolute;left:-12000px;top:0;width:1100px;height:900px;border:0;visibility:hidden}
@@ -112,7 +129,28 @@ details.adjust[open] summary{margin-bottom:10px}
     <h1>Simple Rectification</h1>
     <p class="lead">Enter the birth details, roughly when you think the birth happened, and a few dated life events. The workbench finds the birth times that best explain those events.</p>
     <div class="engine" id="engine"><i></i><span id="engineText">Starting the Polaris2 engine…</span></div>
+    <button class="btn charts-btn" id="chartsBtn" type="button" aria-expanded="false" aria-controls="charts" disabled>Saved charts<span id="chartsCount"></span></button>
   </header>
+
+  <section class="step" id="charts" hidden aria-labelledby="c1">
+    <div class="step-head"><b>CHARTS</b><h2 id="c1">Open a saved chart</h2><button class="x-small" id="chartsClose" type="button" aria-label="Close saved charts">×</button></div>
+    <div class="chart-filter" role="group" aria-label="Which charts">
+      <button type="button" data-src="all" aria-pressed="true">All</button>
+      <button type="button" data-src="mine" aria-pressed="false">My charts <span id="mineCount"></span></button>
+      <button type="button" data-src="builtin" aria-pressed="false">Built-in database <span id="builtinCount"></span></button>
+    </div>
+    <label class="sr" for="chartSearch">Search charts</label>
+    <input id="chartSearch" type="search" placeholder="Search by name, place, country or chart number" autocomplete="off">
+    <div class="chart-list" id="chartList" role="list"></div>
+    <p class="note" id="chartNote"></p>
+    <div class="row">
+      <label class="btn" style="display:flex;align-items:center;cursor:pointer">Import backup (.awbdb)<input id="importDb" type="file" accept=".awbdb,.json,application/json" hidden></label>
+      <button class="btn" id="exportDb" type="button">Export my charts</button>
+    </div>
+    <details class="adjust"><summary>How to bring the charts from your computer</summary>
+      <p class="note">On the computer, open the workbench, then <b>Central Scrutinizer › Backup</b>. It downloads a file named like <i>CentralScrutinizer_Database_2026-10-29.awbdb</i>. Copy that file to this phone (email, Drive, WhatsApp or USB), then tap <b>Import backup</b> here and choose it. Your charts are kept on this phone and appear under My charts. <b>Export my charts</b> writes the same kind of file, which Central Scrutinizer › Restore on the computer can read.</p>
+    </details>
+  </section>
 
   <section class="step" aria-labelledby="s1">
     <div class="step-head"><b>STEP 1</b><h2 id="s1">The person</h2></div>
@@ -169,6 +207,7 @@ details.adjust[open] summary{margin-bottom:10px}
       <button class="btn" id="cancelBtn" type="button" hidden>Stop</button>
     </div>
     <div class="row">
+      <button class="btn ghost" id="saveChartBtn" type="button">Save to my charts</button>
       <button class="btn ghost" id="sampleBtn" type="button">Load an example</button>
       <label class="btn ghost" style="display:flex;align-items:center;cursor:pointer">Open a saved case<input id="openFile" type="file" accept=".json,application/json" hidden></label>
       <button class="btn ghost" id="clearBtn" type="button">Start over</button>
@@ -197,6 +236,6 @@ details.adjust[open] summary{margin-bottom:10px}
 </main>
 <div class="toast" id="toast" role="status"></div>
 <iframe id="engineFrame" title="Polaris2 calculation engine" aria-hidden="true" tabindex="-1"></iframe>
-<script src="simple.js?v=2.0.1-3"></script>
+<script src="simple.js?v=2.0.1-4"></script>
 </body>
 </html>
