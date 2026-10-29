@@ -1,4 +1,134 @@
 {
- "steps": [],
- "error": "no WebView page"
+ "steps": [
+  [
+   "library first group",
+   "01\nSTART HERE / Simple Rectification\nNEW"
+  ],
+  [
+   "engine ready ms",
+   7928
+  ],
+  [
+   "engine text",
+   "Polaris2 engine ready · Swiss Ephemeris 2.10.03 · offline ready · calculations unchanged"
+  ],
+  [
+   "charts button",
+   "Saved charts · 0 yours · 2,432 built-in"
+  ],
+  [
+   "search hussein",
+   [
+    "King Hussein 1935-11-14 · 01:43:24 · Aman, Jordan · 63 events Database #3"
+   ]
+  ],
+  [
+   "after import",
+   "Saved charts · 230 yours · 2,432 built-in | Imported 230 charts."
+  ],
+  [
+   "opened my chart",
+   "Client #4 Contest | 1916-03-29 | 40.75 | N | 73.95 | W | +00:00 | 23:41 | events 16"
+  ],
+  [
+   "opened King Hussein",
+   "Client King Hussein | 1935-11-14 | 31.95 | N | 35.93333 | E | +00:00 | 01:43 | events 62"
+  ],
+  [
+   "King Hussein scan ms",
+   12294
+  ],
+  [
+   "King Hussein top 5",
+   [
+    "01:43:20",
+    "01:36:00",
+    "01:39:08",
+    "01:46:36",
+    "01:42:16"
+   ]
+  ],
+  [
+   "KH matches desktop",
+   false
+  ],
+  [
+   "window",
+   "Search from 03:15:00 to 09:15:00. 5,401 candidate times, every 4 seconds. Runs as 2 blocks of 3 hours to keep memory low."
+  ],
+  [
+   "scan ms",
+   84496
+  ],
+  [
+   "status",
+   "Complete: 5,401 candidate times in 2 blocks of 3 hours · 5 events · 84 s."
+  ],
+  [
+   "simple TPD",
+   [
+    "#1 07:32:04 Asc 3° 53′ Leo · MC 21° 49′ Ari Score 222 · explains 5 of 5",
+    "#2 06:04:12 Asc 15° 53′ Can · MC 27° 58′ Pis Score 193 · explains 3 of 5",
+    "#3 07:44:16 Asc 6° 20′ Leo · MC 25° 03′ Ari Score 191 · explains 4 of 5",
+    "#4 05:28:40 Asc 8° 16′ Can · MC 18° 17′ Pis Score 190 · explains 5 of 5",
+    "#5 04:09:40 Asc 19° 58′ Gem · MC 27° 13′ Aqu Score 184 · explains 5 of 5"
+   ]
+  ],
+  [
+   "simple Combined",
+   [
+    "#1 07:32:04 Asc 3° 53′ Leo · MC 21° 49′ Ari Score 276 · explains 5 of 5",
+    "#2 06:04:12 Asc 15° 53′ Can · MC 27° 58′ Pis Score 228 · explains 3 of 5",
+    "#3 07:44:16 Asc 6° 20′ Leo · MC 25° 03′ Ari Score 243 · explains 5 of 5",
+    "#4 05:28:40 Asc 8° 16′ Can · MC 18° 17′ Pis Score 266.875 · explains 5 of 5",
+    "#5 04:09:40 Asc 19° 58′ Gem · MC 27° 13′ Aqu Score 235 · explains 5 of 5"
+   ]
+  ],
+  [
+   "checks",
+   [
+    "✓ | 1967-08-15Birth of Sister | Sister Jamie born · 3 directions · 35 points | Direct · Moon → Asc · Conjunction · 0°3.9",
+    "✓ | 1968-02-17Birth of Brother | Brother David born · 3 directions · 52 points | Converse · Mars → 3rd · Trine · 0°4.408",
+    "✓ | 1970-07-04Birth of Brother | Brother Darin born · 4 directions · 90 points | Converse · Node → Asc · Conjunction · 0",
+    "✓ | 1989-09-19Birth of Son | Son born · 1 direction · 25 points | Direct · Sun → Dsc · Opposition · 0°4.660′ | Direction",
+    "✓ | 2000-12-03Marriage/Engagement/Affair (M) | Marriage · 2 directions · 20 points | Converse · Pluto → Dsc · Opposition"
+   ]
+  ],
+  [
+   "saved bar",
+   "Saved James_Alexander_·_sample_Best_Birth_Times.csv to Documents › Astrologers Workbench"
+  ],
+  [
+   "full opened ms",
+   2515
+  ],
+  [
+   "full scan ms",
+   37251
+  ],
+  [
+   "full TPD",
+   [
+    "07:32:04",
+    "06:04:12",
+    "07:44:16",
+    "05:28:40",
+    "04:09:40"
+   ]
+  ],
+  [
+   "MATCH",
+   true
+  ],
+  [
+   "simple times",
+   [
+    "07:32:04",
+    "06:04:12",
+    "07:44:16",
+    "05:28:40",
+    "04:09:40"
+   ]
+  ]
+ ]
 }
