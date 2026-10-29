@@ -10,7 +10,7 @@ adb exec-out screencap -p > /tmp/emu/1-release-launch.png
 # Debug build: same app, WebView debugging on, driven over DevTools
 adb uninstall $PKG >> /tmp/emu/steps.txt 2>&1
 adb install -r test/app-debug.apk >> /tmp/emu/install.txt 2>&1
-adb shell monkey -p $PKG -c android.intent.category.LAUNCHER 1 >/dev/null 2>&1; sleep 25
+for try in 1 2 3; do adb shell monkey -p $PKG -c android.intent.category.LAUNCHER 1 >/dev/null 2>&1; sleep 30; [ -n "$(adb shell pidof $PKG | tr -d '\r')" ] && break; echo "debug launch retry $try" >> /tmp/emu/steps.txt; done
 PID=$(adb shell pidof $PKG | tr -d '\r')
 SOCK=$(adb shell cat /proc/net/unix | tr -d '\r' | grep -o "webview_devtools_remote_$PID" | head -1)
 echo "debug pid=$PID socket=$SOCK" >> /tmp/emu/steps.txt
