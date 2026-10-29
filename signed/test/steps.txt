@@ -1,4 +1,5 @@
-release launch pid=2387
+release launch pid=2402
 Success
-debug pid=2591 socket=webview_devtools_remote_2591
-ls: /sdcard/Documents/Astrologers Workbench/: No such file or directory
+debug pid=2607 socket=webview_devtools_remote_2607
+total 8
+-rw-rw---- 1 u0_a136 media_rw 1339 2026-10-29 07:54 James_Alexander_·_sample_Best_Birth_Times.csv
