@@ -21,7 +21,7 @@ const out = { steps: [] }; const log = (k, v) => { out.steps.push([k, v]); conso
   await shot('simple-1-start');
   log('charts button', await ev(`${S}.document.getElementById('chartsBtn').textContent`));
   await ev(`${S}.document.getElementById('chartsBtn').click(); ${S}.document.getElementById('chartSearch').value = 'hussein'; ${S}.document.getElementById('chartSearch').dispatchEvent(new Event('input')); true`);
-  await sleep(800); log('search hussein', await ev(`[...${S}.document.querySelectorAll('.chart .open')].map(e => e.innerText.replace(/\n/g, ' '))`));
+  await sleep(800); log('search hussein', await ev(`[...${S}.document.querySelectorAll('.chart .open')].map(e => e.innerText.replace(/\\n/g, ' '))`));
   await shot('charts-1-search');
   // import the 230-chart backup the way a file picker would hand it over
   const txt = require('fs').readFileSync('test/charts-test.awbdb', 'utf8');
